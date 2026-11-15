@@ -27,7 +27,9 @@ export default function SiteLayout({
         <SiteHeader />
       </Suspense>
       <main className="flex-1">{children}</main>
-      <CompareFloatingBar />
+      <Suspense fallback={null}>
+        <CompareFloatingBar />
+      </Suspense>
       <SiteFooter />
     </div>
   );

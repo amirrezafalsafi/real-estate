@@ -3,11 +3,13 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Scale, X, AlertTriangle, ArrowLeft, Plus } from "lucide-react";
 import { useCompare } from "./CompareContext";
 import { formatPrice } from "@/lib/format";
 
 export function CompareFloatingBar() {
+  const pathname = usePathname();
   const {
     compareItems,
     compareIds,
@@ -19,6 +21,10 @@ export function CompareFloatingBar() {
   } = useCompare();
 
   if (!isMounted) {
+    return null;
+  }
+
+  if (pathname.startsWith("/compare")) {
     return null;
   }
 
