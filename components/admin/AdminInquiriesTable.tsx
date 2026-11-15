@@ -125,14 +125,14 @@ export function AdminInquiriesTable({ inquiries }: AdminInquiriesTableProps) {
                 <tr
                   key={item.id}
                   className={`hover:bg-slate-800/50 transition-colors ${
-                    !item.isRead ? "bg-amber-500/5" : ""
+                    !item.isRead ? "bg-blue-500/5" : ""
                   }`}
                 >
 
                   <td className="py-3 px-4 font-bold text-slate-100">
                     <div className="flex items-center gap-2">
                       {!item.isRead && (
-                        <span className="h-2 w-2 rounded-full bg-amber-400 shrink-0" title="پیام جدید" />
+                        <span className="h-2 w-2 rounded-full bg-blue-400 shrink-0" title="پیام جدید" />
                       )}
                       <span>{item.name}</span>
                     </div>
@@ -141,7 +141,7 @@ export function AdminInquiriesTable({ inquiries }: AdminInquiriesTableProps) {
                   <td className="py-3 px-4 font-mono dir-ltr text-left">
                     <a
                       href={`tel:${item.phone}`}
-                      className="inline-flex items-center gap-1.5 font-bold text-amber-400 hover:text-amber-300"
+                      className="inline-flex items-center gap-1.5 font-bold text-blue-400 hover:text-blue-300"
                     >
                       <Phone className="h-3 w-3 shrink-0" />
                       <span>{formatPhone(item.phone)}</span>
@@ -153,7 +153,7 @@ export function AdminInquiriesTable({ inquiries }: AdminInquiriesTableProps) {
                       <Link
                         href={`/properties/${item.property.slug}`}
                         target="_blank"
-                        className="inline-flex items-center gap-1 text-slate-300 hover:text-amber-400 transition-colors max-w-xs truncate"
+                        className="inline-flex items-center gap-1 text-slate-300 hover:text-blue-400 transition-colors max-w-xs truncate"
                         title={item.property.title}
                       >
                         <Building2 className="h-3.5 w-3.5 text-slate-500 shrink-0" />
@@ -186,7 +186,7 @@ export function AdminInquiriesTable({ inquiries }: AdminInquiriesTableProps) {
                       className={`inline-block rounded-lg px-2.5 py-1 text-[11px] font-bold border transition-colors ${
                         item.isRead
                           ? "bg-slate-800 text-slate-400 border-slate-700 hover:bg-slate-700"
-                          : "bg-amber-500/15 text-amber-400 border-amber-500/30 font-black hover:bg-amber-500/25"
+                          : "bg-blue-500/15 text-blue-400 border-blue-500/30 font-black hover:bg-blue-500/25"
                       }`}
                     >
                       {item.isRead ? "خوانده شده" : "جدید / خوانده نشده"}
@@ -227,7 +227,7 @@ export function AdminInquiriesTable({ inquiries }: AdminInquiriesTableProps) {
           <div className="w-full max-w-lg rounded-3xl border border-slate-800 bg-slate-900 p-6 shadow-2xl text-right">
             <div className="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
               <div className="flex items-center gap-2">
-                <Mail className="h-5 w-5 text-amber-400" />
+                <Mail className="h-5 w-5 text-blue-400" />
                 <h3 className="font-bold text-white text-sm">جزئیات پیام متقاضی</h3>
               </div>
               <button
@@ -248,7 +248,7 @@ export function AdminInquiriesTable({ inquiries }: AdminInquiriesTableProps) {
                   <span className="text-slate-500 block text-[11px]">شماره تماس:</span>
                   <a
                     href={`tel:${activeMessage.phone}`}
-                    className="font-bold text-amber-400 font-mono dir-ltr block text-sm"
+                    className="font-bold text-blue-400 font-mono dir-ltr block text-sm"
                   >
                     {formatPhone(activeMessage.phone)}
                   </a>
@@ -291,7 +291,7 @@ export function AdminInquiriesTable({ inquiries }: AdminInquiriesTableProps) {
                 className={`rounded-xl px-4 py-2 text-xs font-bold transition-colors ${
                   activeMessage.isRead
                     ? "bg-slate-800 text-slate-300 hover:bg-slate-700"
-                    : "bg-amber-500 text-slate-950 font-black hover:bg-amber-400"
+                    : "bg-blue-600 text-white font-black hover:bg-blue-500"
                 }`}
               >
                 {activeMessage.isRead ? "تغییر به خوانده‌نشده" : "علامت‌گذاری به عنوان خوانده‌شده"}

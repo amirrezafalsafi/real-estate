@@ -1,11 +1,77 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-sans: var(--font-vazirmatn), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #1e3a8a;
+  --color-primary-950: #172554;
+
+  --color-accent-50: #f0f9ff;
+  --color-accent-100: #e0f2fe;
+  --color-accent-200: #bae6fd;
+  --color-accent-300: #7dd3fc;
+  --color-accent-400: #38bdf8;
+  --color-accent-500: #0ea5e9;
+  --color-accent-600: #0284c7;
+  --color-accent-700: #0369a1;
+
+  --color-app-bg: var(--app-bg);
+  --color-app-surface: var(--app-surface);
+  --color-app-surface-elevated: var(--app-surface-elevated);
+  --color-app-border: var(--app-border);
+  --color-app-border-subtle: var(--app-border-subtle);
+  --color-app-text: var(--app-text);
+  --color-app-text-muted: var(--app-text-muted);
+  --color-app-primary: var(--app-primary);
+  --color-app-primary-hover: var(--app-primary-hover);
+  --color-app-primary-fg: var(--app-primary-fg);
+  --color-app-accent: var(--app-accent);
+  --color-app-accent-hover: var(--app-accent-hover);
+  --color-app-accent-light: var(--app-accent-light);
 }
 
 :root {
   --font-vazirmatn: var(--font-vazirmatn);
+  --app-bg: #f8faff;
+  --app-surface: #ffffff;
+  --app-surface-elevated: #ffffff;
+  --app-border: #e2e8f0;
+  --app-border-subtle: #eff6ff;
+  --app-text: #0f172a;
+  --app-text-muted: #64748b;
+  --app-primary: #2563eb;
+  --app-primary-hover: #1d4ed8;
+  --app-primary-fg: #ffffff;
+  --app-accent: #0ea5e9;
+  --app-accent-hover: #0284c7;
+  --app-accent-light: #eff6ff;
+}
+
+.dark {
+  --app-bg: #090e1a;
+  --app-surface: #0f172a;
+  --app-surface-elevated: #152238;
+  --app-border: #1e293b;
+  --app-border-subtle: #1e3a8a33;
+  --app-text: #f8fafc;
+  --app-text-muted: #94a3b8;
+  --app-primary: #3b82f6;
+  --app-primary-hover: #60a5fa;
+  --app-primary-fg: #ffffff;
+  --app-accent: #38bdf8;
+  --app-accent-hover: #7dd3fc;
+  --app-accent-light: #172554;
 }
 
 html {
@@ -14,4 +80,7 @@ html {
 
 body {
   font-family: var(--font-vazirmatn), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--app-bg);
+  color: var(--app-text);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }

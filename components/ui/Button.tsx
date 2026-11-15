@@ -29,15 +29,15 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variantStyles = {
       primary:
-        "bg-slate-900 text-white hover:bg-slate-800 active:bg-slate-950 focus:ring-slate-900 shadow-sm hover:shadow",
+        "bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-500 focus:ring-blue-500 shadow-sm hover:shadow-md",
       accent:
-        "bg-amber-500 text-slate-950 font-semibold hover:bg-amber-400 active:bg-amber-600 focus:ring-amber-500 shadow-sm hover:shadow-md",
+        "bg-blue-600 text-white font-semibold hover:bg-blue-500 active:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400 focus:ring-blue-500 shadow-sm hover:shadow-md",
       secondary:
-        "bg-slate-100 text-slate-900 hover:bg-slate-200 active:bg-slate-300 focus:ring-slate-400",
+        "bg-blue-50 text-blue-900 hover:bg-blue-100 dark:bg-slate-800 dark:text-blue-300 dark:hover:bg-slate-700 focus:ring-blue-400",
       outline:
-        "border border-slate-300 text-slate-800 bg-white hover:bg-slate-50 hover:border-slate-400 active:bg-slate-100 focus:ring-slate-500",
+        "border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-100 bg-white dark:bg-slate-900 hover:bg-blue-50/60 dark:hover:bg-slate-800 hover:border-blue-300 dark:hover:border-blue-500 focus:ring-blue-500",
       ghost:
-        "text-slate-700 hover:bg-slate-100 active:bg-slate-200 focus:ring-slate-400",
+        "text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-800 active:bg-blue-100 focus:ring-blue-400",
       danger:
         "bg-rose-600 text-white hover:bg-rose-700 active:bg-rose-800 focus:ring-rose-500 shadow-sm",
     };
@@ -58,7 +58,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {isLoading ? (
           <span className="flex items-center gap-2">
             <svg
-              className="animate-spin h-4 w-4"
+              className="animate-spin -ml-1 mr-1 h-4 w-4 text-current"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -70,20 +70,20 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                 r="10"
                 stroke="currentColor"
                 strokeWidth="4"
-              ></circle>
+              />
               <path
                 className="opacity-75"
                 fill="currentColor"
                 d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-              ></path>
+              />
             </svg>
-            <span>در حال پردازش...</span>
+            <span>در حال بارگذاری...</span>
           </span>
         ) : (
           <>
-            {rightIcon && <span className="inline-flex shrink-0">{rightIcon}</span>}
+            {rightIcon && <span className="shrink-0">{rightIcon}</span>}
             <span>{children}</span>
-            {leftIcon && <span className="inline-flex shrink-0">{leftIcon}</span>}
+            {leftIcon && <span className="shrink-0">{leftIcon}</span>}
           </>
         )}
       </button>
@@ -92,3 +92,4 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 );
 
 Button.displayName = "Button";
+export default Button;

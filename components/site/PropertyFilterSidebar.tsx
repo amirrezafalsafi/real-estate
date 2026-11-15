@@ -103,9 +103,8 @@ export function PropertyFilterSidebar({ cities }: PropertyFilterSidebarProps) {
 
   const filterFormContent = (
     <form onSubmit={applyFilters} className="space-y-6 text-right">
-
       <div className="space-y-1.5">
-        <label className="block text-xs font-bold text-slate-800">
+        <label className="block text-xs font-bold text-slate-800 dark:text-slate-200">
           جستجوی متنی (عنوان یا آدرس)
         </label>
         <div className="relative">
@@ -113,25 +112,25 @@ export function PropertyFilterSidebar({ cities }: PropertyFilterSidebarProps) {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="مثلاً نیاوران، ویلای استخردار..."
-            className="w-full rounded-xl border border-slate-200 bg-white pr-9 pl-3 py-2 text-xs text-slate-900 placeholder:text-slate-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500/20"
+            placeholder="مثلاً آپارتمان نوساز..."
+            className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 pr-9 pl-3 py-2 text-xs text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/20 transition-colors"
           />
           <Search className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-slate-400" />
         </div>
       </div>
 
       <div className="space-y-2">
-        <label className="block text-xs font-bold text-slate-800">
+        <label className="block text-xs font-bold text-slate-800 dark:text-slate-200">
           نوع معامله
         </label>
-        <div className="grid grid-cols-3 gap-1.5 p-1 bg-slate-100 rounded-xl">
+        <div className="grid grid-cols-3 gap-1.5 p-1 bg-slate-100 dark:bg-slate-800 rounded-xl">
           <button
             type="button"
             onClick={() => setListingType("")}
             className={`py-1.5 text-xs font-bold rounded-lg transition-all ${
               !listingType
-                ? "bg-white text-slate-900 shadow-2xs"
-                : "text-slate-600 hover:text-slate-900"
+                ? "bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-2xs"
+                : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
             }`}
           >
             همه
@@ -141,8 +140,8 @@ export function PropertyFilterSidebar({ cities }: PropertyFilterSidebarProps) {
             onClick={() => setListingType("SALE")}
             className={`py-1.5 text-xs font-bold rounded-lg transition-all ${
               listingType === "SALE"
-                ? "bg-emerald-600 text-white shadow-2xs"
-                : "text-slate-600 hover:text-slate-900"
+                ? "bg-blue-600 text-white shadow-2xs"
+                : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
             }`}
           >
             فروش
@@ -153,7 +152,7 @@ export function PropertyFilterSidebar({ cities }: PropertyFilterSidebarProps) {
             className={`py-1.5 text-xs font-bold rounded-lg transition-all ${
               listingType === "RENT"
                 ? "bg-blue-600 text-white shadow-2xs"
-                : "text-slate-600 hover:text-slate-900"
+                : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
             }`}
           >
             رهن و اجاره
@@ -162,35 +161,35 @@ export function PropertyFilterSidebar({ cities }: PropertyFilterSidebarProps) {
       </div>
 
       <div className="space-y-1.5">
-        <label className="block text-xs font-bold text-slate-800">
-          نوع کاربری
+        <label className="block text-xs font-bold text-slate-800 dark:text-slate-200">
+          نوع کاربری ملک
         </label>
         <div className="relative">
           <select
             value={propertyType}
             onChange={(e) => setPropertyType(e.target.value)}
-            className="w-full appearance-none rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs text-slate-800 focus:border-amber-500 focus:outline-none cursor-pointer pl-8"
+            className="w-full appearance-none rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-xs text-slate-800 dark:text-white focus:border-blue-500 focus:outline-none cursor-pointer pl-8 transition-colors"
           >
             <option value="">همه کاربری‌ها</option>
-            <option value="APARTMENT">آپارتمان و برج</option>
-            <option value="VILLA">ویلا و باغ</option>
+            <option value="APARTMENT">آپارتمان</option>
+            <option value="VILLA">ویلا</option>
             <option value="LAND">زمین و کلنگی</option>
-            <option value="OFFICE">اداری و شرکت</option>
-            <option value="SHOP">مغازه و تجاری</option>
+            <option value="OFFICE">اداری</option>
+            <option value="SHOP">تجاری</option>
           </select>
-          <Building className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-slate-400" />
+          <Building className="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-slate-400" />
         </div>
       </div>
 
       <div className="space-y-1.5">
-        <label className="block text-xs font-bold text-slate-800">
+        <label className="block text-xs font-bold text-slate-800 dark:text-slate-200">
           شهر
         </label>
         <div className="relative">
           <select
             value={city}
             onChange={(e) => setCity(e.target.value)}
-            className="w-full appearance-none rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs text-slate-800 focus:border-amber-500 focus:outline-none cursor-pointer pl-8"
+            className="w-full appearance-none rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-xs text-slate-800 dark:text-white focus:border-blue-500 focus:outline-none cursor-pointer pl-8 transition-colors"
           >
             <option value="">همه شهرها</option>
             {cities.map((c) => (
@@ -199,146 +198,134 @@ export function PropertyFilterSidebar({ cities }: PropertyFilterSidebarProps) {
               </option>
             ))}
           </select>
-          <MapPin className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-slate-400" />
+          <MapPin className="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-slate-400" />
         </div>
       </div>
 
       <div className="space-y-1.5">
-        <label className="block text-xs font-bold text-slate-800">
-          حداقل تعداد خواب
+        <label className="block text-xs font-bold text-slate-800 dark:text-slate-200">
+          حداقل خواب
         </label>
         <div className="relative">
           <select
             value={bedrooms}
             onChange={(e) => setBedrooms(e.target.value)}
-            className="w-full appearance-none rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs text-slate-800 focus:border-amber-500 focus:outline-none cursor-pointer pl-8"
+            className="w-full appearance-none rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-xs text-slate-800 dark:text-white focus:border-blue-500 focus:outline-none cursor-pointer pl-8 transition-colors"
           >
             <option value="">مهم نیست</option>
-            <option value="1">۱ خوابه یا بیشتر</option>
-            <option value="2">۲ خوابه یا بیشتر</option>
-            <option value="3">۳ خوابه یا بیشتر</option>
-            <option value="4">۴ خوابه یا بیشتر</option>
+            <option value="1">۱ خواب به بالا</option>
+            <option value="2">۲ خواب به بالا</option>
+            <option value="3">۳ خواب به بالا</option>
+            <option value="4">۴ خواب به بالا</option>
           </select>
-          <Bed className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-slate-400" />
+          <Bed className="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-slate-400" />
         </div>
       </div>
 
       <div className="space-y-2">
-        <label className="block text-xs font-bold text-slate-800">
-          بازه قیمت / ودیعه (تومان)
+        <label className="block text-xs font-bold text-slate-800 dark:text-slate-200">
+          محدوده قیمت کل (تومان)
         </label>
         <div className="grid grid-cols-2 gap-2">
-          <div>
-            <span className="block text-[10px] text-slate-400 mb-0.5">از قیمت:</span>
-            <input
-              type="number"
-              value={minPrice}
-              onChange={(e) => setMinPrice(e.target.value)}
-              placeholder="حداقل"
-              className="w-full rounded-xl border border-slate-200 bg-white px-2.5 py-1.5 text-xs text-slate-900 placeholder:text-slate-400 focus:border-amber-500 focus:outline-none"
-            />
-          </div>
-          <div>
-            <span className="block text-[10px] text-slate-400 mb-0.5">تا قیمت:</span>
-            <input
-              type="number"
-              value={maxPrice}
-              onChange={(e) => setMaxPrice(e.target.value)}
-              placeholder="حداکثر"
-              className="w-full rounded-xl border border-slate-200 bg-white px-2.5 py-1.5 text-xs text-slate-900 placeholder:text-slate-400 focus:border-amber-500 focus:outline-none"
-            />
-          </div>
+          <input
+            type="number"
+            value={minPrice}
+            onChange={(e) => setMinPrice(e.target.value)}
+            placeholder="حداقل قیمت"
+            className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-2.5 py-1.5 text-xs text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-blue-500 focus:outline-none transition-colors"
+          />
+          <input
+            type="number"
+            value={maxPrice}
+            onChange={(e) => setMaxPrice(e.target.value)}
+            placeholder="حداکثر قیمت"
+            className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-2.5 py-1.5 text-xs text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-blue-500 focus:outline-none transition-colors"
+          />
         </div>
       </div>
 
       <div className="space-y-2">
-        <label className="block text-xs font-bold text-slate-800">
-          بازه متراژ (متر مربع)
+        <label className="block text-xs font-bold text-slate-800 dark:text-slate-200">
+          محدوده متراژ (متر مربع)
         </label>
         <div className="grid grid-cols-2 gap-2">
-          <div>
-            <span className="block text-[10px] text-slate-400 mb-0.5">از متراژ:</span>
-            <input
-              type="number"
-              value={minArea}
-              onChange={(e) => setMinArea(e.target.value)}
-              placeholder="مثلاً ۵۰"
-              className="w-full rounded-xl border border-slate-200 bg-white px-2.5 py-1.5 text-xs text-slate-900 placeholder:text-slate-400 focus:border-amber-500 focus:outline-none"
-            />
-          </div>
-          <div>
-            <span className="block text-[10px] text-slate-400 mb-0.5">تا متراژ:</span>
-            <input
-              type="number"
-              value={maxArea}
-              onChange={(e) => setMaxArea(e.target.value)}
-              placeholder="مثلاً ۲۵۰"
-              className="w-full rounded-xl border border-slate-200 bg-white px-2.5 py-1.5 text-xs text-slate-900 placeholder:text-slate-400 focus:border-amber-500 focus:outline-none"
-            />
-          </div>
+          <input
+            type="number"
+            value={minArea}
+            onChange={(e) => setMinArea(e.target.value)}
+            placeholder="حداقل متراژ"
+            className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-2.5 py-1.5 text-xs text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-blue-500 focus:outline-none transition-colors"
+          />
+          <input
+            type="number"
+            value={maxArea}
+            onChange={(e) => setMaxArea(e.target.value)}
+            placeholder="حداکثر متراژ"
+            className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-2.5 py-1.5 text-xs text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-blue-500 focus:outline-none transition-colors"
+          />
         </div>
       </div>
 
-      <div className="space-y-2 pt-2 border-t border-slate-100">
-        <label className="block text-xs font-bold text-slate-800">
+      <div className="space-y-2 pt-2 border-t border-slate-100 dark:border-slate-800">
+        <label className="block text-xs font-bold text-slate-800 dark:text-slate-200">
           امکانات ضروری
         </label>
         <div className="grid grid-cols-2 gap-2 text-xs">
-          <label className="flex items-center gap-2 cursor-pointer select-none text-slate-700 hover:text-slate-900">
+          <label className="flex items-center gap-2 cursor-pointer select-none text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
             <button
               type="button"
               onClick={() => setParking(!parking)}
-              className="text-amber-500"
+              className="text-blue-600"
             >
               {parking ? (
-                <CheckSquare className="h-4 w-4 fill-amber-500 text-white" />
+                <CheckSquare className="h-4 w-4 fill-blue-600 text-white" />
               ) : (
-                <Square className="h-4 w-4 text-slate-300" />
+                <Square className="h-4 w-4 text-slate-300 dark:text-slate-600" />
               )}
             </button>
             <span>پارکینگ</span>
           </label>
 
-          <label className="flex items-center gap-2 cursor-pointer select-none text-slate-700 hover:text-slate-900">
+          <label className="flex items-center gap-2 cursor-pointer select-none text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
             <button
               type="button"
               onClick={() => setElevator(!elevator)}
-              className="text-amber-500"
+              className="text-blue-600"
             >
               {elevator ? (
-                <CheckSquare className="h-4 w-4 fill-amber-500 text-white" />
+                <CheckSquare className="h-4 w-4 fill-blue-600 text-white" />
               ) : (
-                <Square className="h-4 w-4 text-slate-300" />
+                <Square className="h-4 w-4 text-slate-300 dark:text-slate-600" />
               )}
             </button>
             <span>آسانسور</span>
           </label>
 
-          <label className="flex items-center gap-2 cursor-pointer select-none text-slate-700 hover:text-slate-900">
+          <label className="flex items-center gap-2 cursor-pointer select-none text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
             <button
               type="button"
               onClick={() => setStorage(!storage)}
-              className="text-amber-500"
+              className="text-blue-600"
             >
               {storage ? (
-                <CheckSquare className="h-4 w-4 fill-amber-500 text-white" />
+                <CheckSquare className="h-4 w-4 fill-blue-600 text-white" />
               ) : (
-                <Square className="h-4 w-4 text-slate-300" />
+                <Square className="h-4 w-4 text-slate-300 dark:text-slate-600" />
               )}
             </button>
             <span>انباری</span>
           </label>
 
-          <label className="flex items-center gap-2 cursor-pointer select-none text-slate-700 hover:text-slate-900">
+          <label className="flex items-center gap-2 cursor-pointer select-none text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
             <button
               type="button"
               onClick={() => setBalcony(!balcony)}
-              className="text-amber-500"
+              className="text-blue-600"
             >
               {balcony ? (
-                <CheckSquare className="h-4 w-4 fill-amber-500 text-white" />
+                <CheckSquare className="h-4 w-4 fill-blue-600 text-white" />
               ) : (
-                <Square className="h-4 w-4 text-slate-300" />
+                <Square className="h-4 w-4 text-slate-300 dark:text-slate-600" />
               )}
             </button>
             <span>بالکن</span>
@@ -346,7 +333,7 @@ export function PropertyFilterSidebar({ cities }: PropertyFilterSidebarProps) {
         </div>
       </div>
 
-      <div className="pt-4 border-t border-slate-100 flex flex-col gap-2">
+      <div className="pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-2">
         <Button
           type="submit"
           variant="primary"
@@ -363,7 +350,7 @@ export function PropertyFilterSidebar({ cities }: PropertyFilterSidebarProps) {
             variant="ghost"
             size="sm"
             onClick={clearFilters}
-            className="w-full text-xs text-rose-600 hover:bg-rose-50 hover:text-rose-700"
+            className="w-full text-xs text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/40 hover:text-rose-700"
             rightIcon={<RotateCcw className="h-3.5 w-3.5" />}
           >
             پاک کردن تمام فیلترها
@@ -375,17 +362,16 @@ export function PropertyFilterSidebar({ cities }: PropertyFilterSidebarProps) {
 
   return (
     <>
-
-      <div className="lg:hidden flex items-center justify-between gap-3 bg-white p-3.5 rounded-2xl border border-slate-200 shadow-xs mb-4">
+      <div className="lg:hidden flex items-center justify-between gap-3 bg-white dark:bg-slate-900 p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xs mb-4">
         <button
           type="button"
           onClick={() => setIsOpen(true)}
-          className="flex items-center gap-2 rounded-xl bg-slate-900 px-4 py-2.5 text-xs font-bold text-white shadow-xs"
+          className="flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2.5 text-xs font-bold text-white shadow-xs"
         >
-          <Filter className="h-4 w-4 text-amber-400" />
+          <Filter className="h-4 w-4 text-white" />
           <span>فیلترهای پیشرفته</span>
           {hasActiveFilters && (
-            <span className="flex h-2 w-2 rounded-full bg-amber-400 animate-pulse" />
+            <span className="flex h-2 w-2 rounded-full bg-white animate-pulse" />
           )}
         </button>
 
@@ -402,13 +388,13 @@ export function PropertyFilterSidebar({ cities }: PropertyFilterSidebarProps) {
       </div>
 
       <aside className="hidden lg:block w-72 shrink-0">
-        <div className="sticky top-24 rounded-3xl border border-slate-200 bg-white p-6 shadow-xs">
-          <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-5">
+        <div className="sticky top-24 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-xs">
+          <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-4 mb-5">
             <div className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-900 text-amber-400">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600 text-white">
                 <Layers className="h-4 w-4" />
               </div>
-              <h2 className="text-sm font-black text-slate-900">فیلترهای جستجو</h2>
+              <h2 className="text-sm font-black text-slate-900 dark:text-white">فیلترهای جستجو</h2>
             </div>
 
             {hasActiveFilters && (
@@ -430,26 +416,25 @@ export function PropertyFilterSidebar({ cities }: PropertyFilterSidebarProps) {
 
       {isOpen && (
         <div className="fixed inset-0 z-50 overflow-hidden lg:hidden animate-in fade-in duration-200">
-
           <div
-            className="absolute inset-0 bg-slate-950/50 backdrop-blur-xs"
+            className="absolute inset-0 bg-slate-950/60 backdrop-blur-xs"
             onClick={() => setIsOpen(false)}
           />
 
           <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
-            <div className="w-screen max-w-md bg-white shadow-2xl flex flex-col p-6 overflow-y-auto">
-              <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
+            <div className="w-screen max-w-md bg-white dark:bg-slate-900 shadow-2xl flex flex-col p-6 overflow-y-auto">
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-4 mb-6">
                 <div className="flex items-center gap-2">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-900 text-amber-400">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600 text-white">
                     <Filter className="h-4 w-4" />
                   </div>
-                  <h2 className="text-base font-black text-slate-900">فیلترهای پیشرفته</h2>
+                  <h2 className="text-base font-black text-slate-900 dark:text-white">فیلترهای پیشرفته</h2>
                 </div>
 
                 <button
                   type="button"
                   onClick={() => setIsOpen(false)}
-                  className="rounded-xl p-2 text-slate-400 hover:bg-slate-100 hover:text-slate-600"
+                  className="rounded-xl p-2 text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-600"
                 >
                   <X className="h-5 w-5" />
                 </button>

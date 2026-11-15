@@ -28,11 +28,11 @@ export function PropertySortSelect({ currentSort }: PropertySortSelectProps) {
 
   return (
     <div className="relative">
-      <ArrowUpDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-slate-400" />
+      <ArrowUpDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-slate-400 dark:text-slate-500" />
       <select
         value={currentSort}
         onChange={handleSortChange}
-        className="appearance-none rounded-xl border border-slate-200 bg-slate-50 pr-8 pl-3 py-2 text-xs font-bold text-slate-800 cursor-pointer focus:border-amber-500 focus:outline-none focus:bg-white"
+        className="appearance-none rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 pr-8 pl-3 py-2 text-xs font-bold text-slate-800 dark:text-slate-100 cursor-pointer focus:border-blue-500 focus:outline-none focus:bg-white dark:focus:bg-slate-850 transition-colors"
         aria-label="مرتب‌سازی آگهی‌ها"
       >
         <option value="newest">جدیدترین‌ها</option>

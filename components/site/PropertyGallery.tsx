@@ -68,7 +68,7 @@ export function PropertyGallery({ images, title }: PropertyGalleryProps) {
           onClick={() => setIsLightboxOpen(true)}
           className="absolute bottom-4 left-4 flex items-center gap-1.5 rounded-xl bg-slate-950/80 px-3.5 py-2 text-xs font-bold text-white shadow-lg backdrop-blur-md hover:bg-slate-900 transition-all select-none"
         >
-          <Maximize2 className="h-4 w-4 text-amber-400" />
+          <Maximize2 className="h-4 w-4 text-blue-400" />
           <span>مشاهده بزرگ‌تر ({toPersianDigits(galleryList.length)} تصویر)</span>
         </button>
 
@@ -110,7 +110,7 @@ export function PropertyGallery({ images, title }: PropertyGalleryProps) {
               onClick={() => setCurrentIndex(idx)}
               className={`relative aspect-16/10 w-24 shrink-0 overflow-hidden rounded-xl border-2 transition-all ${
                 currentIndex === idx
-                  ? "border-amber-500 ring-2 ring-amber-400/30 scale-102"
+                  ? "border-blue-600 ring-2 ring-blue-500/30 scale-102"
                   : "border-transparent opacity-70 hover:opacity-100"
               }`}
             >

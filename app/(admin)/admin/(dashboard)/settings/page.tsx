@@ -15,7 +15,7 @@ export default async function AdminSettingsPage() {
     <div className="space-y-6">
       <div className="border-b border-slate-800 pb-5">
         <h1 className="text-xl sm:text-2xl font-black text-white flex items-center gap-2">
-          <Settings className="h-6 w-6 text-amber-400" />
+          <Settings className="h-6 w-6 text-blue-400" />
           <span>تنظیمات و پیکربندی سامانه</span>
         </h1>
         <p className="mt-1 text-xs text-slate-400">
@@ -26,7 +26,7 @@ export default async function AdminSettingsPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="rounded-3xl border border-slate-800 bg-slate-900/90 p-6 space-y-4">
           <div className="flex items-center gap-3 border-b border-slate-800 pb-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-amber-500/15 text-amber-400 border border-amber-500/30">
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-600/15 text-blue-400 border border-blue-500/30">
               <Shield className="h-5 w-5" />
             </div>
             <div>

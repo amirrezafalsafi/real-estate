@@ -185,21 +185,21 @@ export function SubmitPropertyForm() {
 
   if (submittedProperty) {
     return (
-      <div className="rounded-3xl border border-emerald-200 bg-white p-8 sm:p-12 text-center max-w-2xl mx-auto shadow-xl space-y-6 animate-in zoom-in-95 duration-300">
-        <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 ring-8 ring-emerald-50">
+      <div className="rounded-3xl border border-emerald-200 dark:border-emerald-800 bg-white dark:bg-slate-900 p-8 sm:p-12 text-center max-w-2xl mx-auto shadow-xl space-y-6 animate-in zoom-in-95 duration-300 transition-colors">
+        <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 ring-8 ring-emerald-50 dark:ring-emerald-950/20">
           <CheckCircle2 className="h-10 w-10 stroke-[2]" />
         </div>
 
         <div className="space-y-2">
-          <h2 className="text-2xl font-black text-slate-900">آگهی شما با موفقیت ثبت شد!</h2>
-          <p className="text-sm text-slate-600 leading-relaxed">
+          <h2 className="text-2xl font-black text-slate-900 dark:text-white">آگهی شما با موفقیت ثبت شد!</h2>
+          <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             آگهی ملک «{submittedProperty.title}» در سامانه ثبت گردید و اکنون در لیست املاک فعال قابل مشاهده است.
           </p>
         </div>
 
         <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
           <Link href={`/properties/${submittedProperty.slug}`}>
-            <Button variant="accent" size="lg" className="w-full sm:w-auto font-black text-sm">
+            <Button variant="primary" size="lg" className="w-full sm:w-auto font-black text-sm">
               مشاهده آگهی منتشرشده
             </Button>
           </Link>
@@ -229,21 +229,21 @@ export function SubmitPropertyForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-8">
       {formError && (
-        <div className="flex items-start gap-3 rounded-2xl bg-rose-50 border border-rose-200 p-4 text-rose-800 text-xs sm:text-sm font-bold animate-in fade-in duration-200">
-          <AlertCircle className="h-5 w-5 text-rose-600 shrink-0 mt-0.5" />
+        <div className="flex items-start gap-3 rounded-2xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-800 p-4 text-rose-800 dark:text-rose-300 text-xs sm:text-sm font-bold animate-in fade-in duration-200 transition-colors">
+          <AlertCircle className="h-5 w-5 text-rose-600 dark:text-rose-400 shrink-0 mt-0.5" />
           <div className="leading-relaxed">{formError}</div>
         </div>
       )}
 
-      <div className="rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-8 space-y-6 shadow-xs">
-        <div className="flex items-center gap-2.5 pb-4 border-b border-slate-100">
-          <Building2 className="h-5 w-5 text-amber-500" />
-          <h2 className="text-base font-black text-slate-900">اطلاعات پایه و نوع معامله</h2>
+      <div className="rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 space-y-6 shadow-xs transition-colors">
+        <div className="flex items-center gap-2.5 pb-4 border-b border-slate-100 dark:border-slate-800">
+          <Building2 className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+          <h2 className="text-base font-black text-slate-900 dark:text-white">اطلاعات پایه و نوع معامله</h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label className="block text-xs font-black text-slate-800 mb-2">
+            <label className="block text-xs font-black text-slate-800 dark:text-slate-200 mb-2">
               نوع معامله <span className="text-rose-500">*</span>
             </label>
             <div className="grid grid-cols-2 gap-2">
@@ -252,8 +252,8 @@ export function SubmitPropertyForm() {
                 onClick={() => setListingType("SALE")}
                 className={`py-2.5 rounded-xl text-xs font-bold transition-all ${
                   listingType === "SALE"
-                    ? "bg-slate-900 text-white shadow-xs"
-                    : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                    ? "bg-blue-600 text-white shadow-md shadow-blue-500/20"
+                    : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700"
                 }`}
               >
                 فروش ملک
@@ -263,8 +263,8 @@ export function SubmitPropertyForm() {
                 onClick={() => setListingType("RENT")}
                 className={`py-2.5 rounded-xl text-xs font-bold transition-all ${
                   listingType === "RENT"
-                    ? "bg-slate-900 text-white shadow-xs"
-                    : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                    ? "bg-blue-600 text-white shadow-md shadow-blue-500/20"
+                    : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700"
                 }`}
               >
                 رهن و اجاره
@@ -273,14 +273,14 @@ export function SubmitPropertyForm() {
           </div>
 
           <div>
-            <label htmlFor="property-type" className="block text-xs font-black text-slate-800 mb-2">
+            <label htmlFor="property-type" className="block text-xs font-black text-slate-800 dark:text-slate-200 mb-2">
               نوع کاربری ملک <span className="text-rose-500">*</span>
             </label>
             <select
               id="property-type"
               value={propertyType}
               onChange={(e) => setPropertyType(e.target.value as PropertyType)}
-              className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2.5 text-xs font-bold text-slate-800 focus:border-amber-500 focus:bg-white focus:outline-none"
+              className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-3.5 py-2.5 text-xs font-bold text-slate-800 dark:text-slate-100 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-850 focus:outline-none transition-colors"
             >
               <option value="APARTMENT">آپارتمان مسکونی</option>
               <option value="VILLA">ویلا و باغ‌ویلا</option>
@@ -292,7 +292,7 @@ export function SubmitPropertyForm() {
         </div>
 
         <div>
-          <label htmlFor="prop-title" className="block text-xs font-black text-slate-800 mb-2">
+          <label htmlFor="prop-title" className="block text-xs font-black text-slate-800 dark:text-slate-200 mb-2">
             عنوان آگهی <span className="text-rose-500">*</span>
           </label>
           <Input
@@ -306,15 +306,15 @@ export function SubmitPropertyForm() {
         </div>
       </div>
 
-      <div className="rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-8 space-y-6 shadow-xs">
-        <div className="flex items-center gap-2.5 pb-4 border-b border-slate-100">
-          <DollarSign className="h-5 w-5 text-amber-500" />
-          <h2 className="text-base font-black text-slate-900">قیمت و شرایط مالی</h2>
+      <div className="rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 space-y-6 shadow-xs transition-colors">
+        <div className="flex items-center gap-2.5 pb-4 border-b border-slate-100 dark:border-slate-800">
+          <DollarSign className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+          <h2 className="text-base font-black text-slate-900 dark:text-white">قیمت و شرایط مالی</h2>
         </div>
 
         {listingType === "SALE" ? (
           <div>
-            <label htmlFor="prop-price" className="block text-xs font-black text-slate-800 mb-2">
+            <label htmlFor="prop-price" className="block text-xs font-black text-slate-800 dark:text-slate-200 mb-2">
               قیمت کل فروش (تومان) <span className="text-rose-500">*</span>
             </label>
             <Input
@@ -328,7 +328,7 @@ export function SubmitPropertyForm() {
               className="w-full text-xs font-medium"
             />
             {price && Number(price) > 0 && (
-              <p className="text-[11px] font-bold text-amber-900 mt-1.5">
+              <p className="text-[11px] font-bold text-blue-600 dark:text-blue-400 mt-1.5">
                 معادل: {formatNumber(Number(price))} تومان
               </p>
             )}
@@ -336,7 +336,7 @@ export function SubmitPropertyForm() {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
-              <label htmlFor="prop-deposit" className="block text-xs font-black text-slate-800 mb-2">
+              <label htmlFor="prop-deposit" className="block text-xs font-black text-slate-800 dark:text-slate-200 mb-2">
                 مبلغ ودیعه / رهن (تومان) <span className="text-rose-500">*</span>
               </label>
               <Input
@@ -350,14 +350,14 @@ export function SubmitPropertyForm() {
                 className="w-full text-xs font-medium"
               />
               {deposit && Number(deposit) > 0 && (
-                <p className="text-[11px] font-bold text-amber-900 mt-1.5">
+                <p className="text-[11px] font-bold text-blue-600 dark:text-blue-400 mt-1.5">
                   معادل: {formatNumber(Number(deposit))} تومان
                 </p>
               )}
             </div>
 
             <div>
-              <label htmlFor="prop-rent" className="block text-xs font-black text-slate-800 mb-2">
+              <label htmlFor="prop-rent" className="block text-xs font-black text-slate-800 dark:text-slate-200 mb-2">
                 اجاره ماهیانه (تومان) <span className="text-rose-500">*</span>
               </label>
               <Input
@@ -371,7 +371,7 @@ export function SubmitPropertyForm() {
                 className="w-full text-xs font-medium"
               />
               {monthlyRent && Number(monthlyRent) > 0 && (
-                <p className="text-[11px] font-bold text-amber-900 mt-1.5">
+                <p className="text-[11px] font-bold text-blue-600 dark:text-blue-400 mt-1.5">
                   معادل: {formatNumber(Number(monthlyRent))} تومان
                 </p>
               )}
@@ -380,15 +380,15 @@ export function SubmitPropertyForm() {
         )}
       </div>
 
-      <div className="rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-8 space-y-6 shadow-xs">
-        <div className="flex items-center gap-2.5 pb-4 border-b border-slate-100">
-          <Maximize2 className="h-5 w-5 text-amber-500" />
-          <h2 className="text-base font-black text-slate-900">مشخصات فنی و امکانات</h2>
+      <div className="rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 space-y-6 shadow-xs transition-colors">
+        <div className="flex items-center gap-2.5 pb-4 border-b border-slate-100 dark:border-slate-800">
+          <Maximize2 className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+          <h2 className="text-base font-black text-slate-900 dark:text-white">مشخصات فنی و امکانات</h2>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           <div>
-            <label htmlFor="prop-area" className="block text-xs font-black text-slate-800 mb-2">
+            <label htmlFor="prop-area" className="block text-xs font-black text-slate-800 dark:text-slate-200 mb-2">
               متراژ (متر مربع) <span className="text-rose-500">*</span>
             </label>
             <Input
@@ -404,7 +404,7 @@ export function SubmitPropertyForm() {
           </div>
 
           <div>
-            <label htmlFor="prop-bedrooms" className="block text-xs font-black text-slate-800 mb-2">
+            <label htmlFor="prop-bedrooms" className="block text-xs font-black text-slate-800 dark:text-slate-200 mb-2">
               تعداد اتاق خواب
             </label>
             <Input
@@ -419,7 +419,7 @@ export function SubmitPropertyForm() {
           </div>
 
           <div>
-            <label htmlFor="prop-bathrooms" className="block text-xs font-black text-slate-800 mb-2">
+            <label htmlFor="prop-bathrooms" className="block text-xs font-black text-slate-800 dark:text-slate-200 mb-2">
               تعداد حمام و سرویس
             </label>
             <Input
@@ -434,7 +434,7 @@ export function SubmitPropertyForm() {
           </div>
 
           <div>
-            <label htmlFor="prop-floor" className="block text-xs font-black text-slate-800 mb-2">
+            <label htmlFor="prop-floor" className="block text-xs font-black text-slate-800 dark:text-slate-200 mb-2">
               طبقه واحد
             </label>
             <Input
@@ -449,7 +449,7 @@ export function SubmitPropertyForm() {
         </div>
 
         <div>
-          <label htmlFor="prop-year" className="block text-xs font-black text-slate-800 mb-2">
+          <label htmlFor="prop-year" className="block text-xs font-black text-slate-800 dark:text-slate-200 mb-2">
             سال ساخت (شمسی)
           </label>
           <Input
@@ -465,60 +465,60 @@ export function SubmitPropertyForm() {
         </div>
 
         <div>
-          <span className="block text-xs font-black text-slate-800 mb-3">امکانات اصلی ملک</span>
+          <span className="block text-xs font-black text-slate-800 dark:text-slate-200 mb-3">امکانات اصلی ملک</span>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            <label className="flex items-center gap-2 p-3 rounded-xl border border-slate-200 bg-slate-50 cursor-pointer hover:bg-slate-100 transition-colors">
+            <label className="flex items-center gap-2 p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/60 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
               <input
                 type="checkbox"
                 checked={parking}
                 onChange={(e) => setParking(e.target.checked)}
-                className="h-4 w-4 rounded accent-amber-500"
+                className="h-4 w-4 rounded accent-blue-600"
               />
-              <span className="text-xs font-bold text-slate-800">پارکینگ سندی</span>
+              <span className="text-xs font-bold text-slate-800 dark:text-slate-200">پارکینگ سندی</span>
             </label>
 
-            <label className="flex items-center gap-2 p-3 rounded-xl border border-slate-200 bg-slate-50 cursor-pointer hover:bg-slate-100 transition-colors">
+            <label className="flex items-center gap-2 p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/60 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
               <input
                 type="checkbox"
                 checked={elevator}
                 onChange={(e) => setElevator(e.target.checked)}
-                className="h-4 w-4 rounded accent-amber-500"
+                className="h-4 w-4 rounded accent-blue-600"
               />
-              <span className="text-xs font-bold text-slate-800">آسانسور</span>
+              <span className="text-xs font-bold text-slate-800 dark:text-slate-200">آسانسور</span>
             </label>
 
-            <label className="flex items-center gap-2 p-3 rounded-xl border border-slate-200 bg-slate-50 cursor-pointer hover:bg-slate-100 transition-colors">
+            <label className="flex items-center gap-2 p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/60 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
               <input
                 type="checkbox"
                 checked={storage}
                 onChange={(e) => setStorage(e.target.checked)}
-                className="h-4 w-4 rounded accent-amber-500"
+                className="h-4 w-4 rounded accent-blue-600"
               />
-              <span className="text-xs font-bold text-slate-800">انباری اختصاصی</span>
+              <span className="text-xs font-bold text-slate-800 dark:text-slate-200">انباری اختصاصی</span>
             </label>
 
-            <label className="flex items-center gap-2 p-3 rounded-xl border border-slate-200 bg-slate-50 cursor-pointer hover:bg-slate-100 transition-colors">
+            <label className="flex items-center gap-2 p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/60 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
               <input
                 type="checkbox"
                 checked={balcony}
                 onChange={(e) => setBalcony(e.target.checked)}
-                className="h-4 w-4 rounded accent-amber-500"
+                className="h-4 w-4 rounded accent-blue-600"
               />
-              <span className="text-xs font-bold text-slate-800">بالکن / تراس</span>
+              <span className="text-xs font-bold text-slate-800 dark:text-slate-200">بالکن / تراس</span>
             </label>
           </div>
         </div>
       </div>
 
-      <div className="rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-8 space-y-6 shadow-xs">
-        <div className="flex items-center gap-2.5 pb-4 border-b border-slate-100">
-          <MapPin className="h-5 w-5 text-amber-500" />
-          <h2 className="text-base font-black text-slate-900">موقعیت و آدرس</h2>
+      <div className="rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 space-y-6 shadow-xs transition-colors">
+        <div className="flex items-center gap-2.5 pb-4 border-b border-slate-100 dark:border-slate-800">
+          <MapPin className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+          <h2 className="text-base font-black text-slate-900 dark:text-white">موقعیت و آدرس</h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label htmlFor="prop-city" className="block text-xs font-black text-slate-800 mb-2">
+            <label htmlFor="prop-city" className="block text-xs font-black text-slate-800 dark:text-slate-200 mb-2">
               شهر <span className="text-rose-500">*</span>
             </label>
             <Input
@@ -532,7 +532,7 @@ export function SubmitPropertyForm() {
           </div>
 
           <div>
-            <label htmlFor="prop-district" className="block text-xs font-black text-slate-800 mb-2">
+            <label htmlFor="prop-district" className="block text-xs font-black text-slate-800 dark:text-slate-200 mb-2">
               منطقه یا محله
             </label>
             <Input
@@ -546,7 +546,7 @@ export function SubmitPropertyForm() {
         </div>
 
         <div>
-          <label htmlFor="prop-address" className="block text-xs font-black text-slate-800 mb-2">
+          <label htmlFor="prop-address" className="block text-xs font-black text-slate-800 dark:text-slate-200 mb-2">
             آدرس دقیق ملک <span className="text-rose-500">*</span>
           </label>
           <Input
@@ -560,7 +560,7 @@ export function SubmitPropertyForm() {
         </div>
 
         <div>
-          <label htmlFor="prop-desc" className="block text-xs font-black text-slate-800 mb-2">
+          <label htmlFor="prop-desc" className="block text-xs font-black text-slate-800 dark:text-slate-200 mb-2">
             توضیحات و مزایای ملک <span className="text-rose-500">*</span>
           </label>
           <textarea
@@ -570,19 +570,19 @@ export function SubmitPropertyForm() {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder="درباره نورگیری، وضعیت سند، بازسازی، دسترسی‌ها و شرایط ویژه ملک توضیح دهید..."
-            className="w-full rounded-2xl border border-slate-200 bg-slate-50 p-3.5 text-xs font-medium text-slate-800 placeholder:text-slate-400 focus:border-amber-500 focus:bg-white focus:outline-none transition-colors resize-none"
+            className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 p-3.5 text-xs font-medium text-slate-800 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-800 focus:outline-none transition-colors resize-none"
           />
         </div>
       </div>
 
-      <div className="rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-8 space-y-6 shadow-xs">
-        <div className="flex items-center gap-2.5 pb-4 border-b border-slate-100">
-          <Upload className="h-5 w-5 text-amber-500" />
-          <h2 className="text-base font-black text-slate-900">تصاویر ملک</h2>
+      <div className="rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 space-y-6 shadow-xs transition-colors">
+        <div className="flex items-center gap-2.5 pb-4 border-b border-slate-100 dark:border-slate-800">
+          <Upload className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+          <h2 className="text-base font-black text-slate-900 dark:text-white">تصاویر ملک</h2>
         </div>
 
         <div className="space-y-4">
-          <label className="block w-full rounded-2xl border-2 border-dashed border-slate-300 hover:border-amber-500 bg-slate-50/50 hover:bg-amber-50/20 p-8 text-center cursor-pointer transition-all">
+          <label className="block w-full rounded-2xl border-2 border-dashed border-slate-300 dark:border-slate-700 hover:border-blue-500 bg-slate-50/50 dark:bg-slate-800/40 hover:bg-blue-50/20 dark:hover:bg-blue-950/20 p-8 text-center cursor-pointer transition-all">
             <input
               type="file"
               multiple
@@ -592,7 +592,7 @@ export function SubmitPropertyForm() {
               className="hidden"
             />
             <div className="flex flex-col items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-600">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-600/10 dark:bg-blue-500/15 text-blue-600 dark:text-blue-400">
                 {isUploading ? (
                   <Loader2 className="h-6 w-6 animate-spin" />
                 ) : (
@@ -600,10 +600,10 @@ export function SubmitPropertyForm() {
                 )}
               </div>
               <div>
-                <p className="text-sm font-bold text-slate-900">
+                <p className="text-sm font-bold text-slate-900 dark:text-white">
                   {isUploading ? "در حال آپلود تصاویر..." : "انتخاب یا کشیدن تصاویر ملک به اینجا"}
                 </p>
-                <p className="text-xs text-slate-500 mt-1">
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
                   فرمت‌های مجاز: JPG, PNG, WebP (حداکثر ۵ مگابایت برای هر تصویر)
                 </p>
               </div>
@@ -613,7 +613,7 @@ export function SubmitPropertyForm() {
           {images.length > 0 && (
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2">
               {images.map((imgUrl, idx) => (
-                <div key={idx} className="relative aspect-16/10 rounded-xl overflow-hidden bg-slate-100 border border-slate-200 group">
+                <div key={idx} className="relative aspect-16/10 rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 group">
                   <Image src={imgUrl} alt={`تصویر ملک ${idx + 1}`} fill className="object-cover" />
                   <button
                     type="button"
@@ -623,7 +623,7 @@ export function SubmitPropertyForm() {
                     <X className="h-3.5 w-3.5" />
                   </button>
                   {idx === 0 && (
-                    <span className="absolute bottom-1.5 right-1.5 bg-amber-500 text-slate-950 px-2 py-0.5 rounded text-[10px] font-black">
+                    <span className="absolute bottom-1.5 right-1.5 bg-blue-600 text-white px-2 py-0.5 rounded text-[10px] font-black shadow-sm">
                       تصویر اصلی
                     </span>
                   )}
@@ -634,15 +634,15 @@ export function SubmitPropertyForm() {
         </div>
       </div>
 
-      <div className="rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-8 space-y-6 shadow-xs">
-        <div className="flex items-center gap-2.5 pb-4 border-b border-slate-100">
-          <Sparkles className="h-5 w-5 text-amber-500" />
-          <h2 className="text-base font-black text-slate-900">مشخصات تماس مالک / نماینده</h2>
+      <div className="rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 space-y-6 shadow-xs transition-colors">
+        <div className="flex items-center gap-2.5 pb-4 border-b border-slate-100 dark:border-slate-800">
+          <Sparkles className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+          <h2 className="text-base font-black text-slate-900 dark:text-white">مشخصات تماس مالک / نماینده</h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label htmlFor="owner-name" className="block text-xs font-black text-slate-800 mb-2">
+            <label htmlFor="owner-name" className="block text-xs font-black text-slate-800 dark:text-slate-200 mb-2">
               نام و نام خانوادگی مالک یا وکیل
             </label>
             <Input
@@ -655,7 +655,7 @@ export function SubmitPropertyForm() {
           </div>
 
           <div>
-            <label htmlFor="owner-phone" className="block text-xs font-black text-slate-800 mb-2">
+            <label htmlFor="owner-phone" className="block text-xs font-black text-slate-800 dark:text-slate-200 mb-2">
               شماره تلفن همراه <span className="text-rose-500">*</span>
             </label>
             <Input
@@ -675,10 +675,10 @@ export function SubmitPropertyForm() {
       <div className="pt-2">
         <Button
           type="submit"
-          variant="accent"
+          variant="primary"
           size="lg"
           disabled={isSubmitting || isUploading}
-          className="w-full py-4 text-sm font-black shadow-lg shadow-amber-500/20"
+          className="w-full py-4 text-sm font-black shadow-lg shadow-blue-500/20"
           rightIcon={
             isSubmitting ? (
               <Loader2 className="h-5 w-5 animate-spin" />

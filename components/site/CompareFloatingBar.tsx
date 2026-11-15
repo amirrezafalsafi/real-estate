@@ -32,15 +32,15 @@ export function CompareFloatingBar() {
   return (
     <aside aria-label="نوار مقایسه املاک" className="fixed bottom-4 inset-x-4 z-40 mx-auto max-w-4xl">
       {limitWarning && (
-        <div className="mb-2 flex items-center justify-between gap-3 rounded-2xl bg-amber-500 text-slate-950 px-4 py-2.5 shadow-xl animate-in fade-in slide-in-from-bottom-2 duration-300 font-bold text-xs sm:text-sm">
+        <div className="mb-2 flex items-center justify-between gap-3 rounded-2xl bg-blue-600 text-white px-4 py-2.5 shadow-xl animate-in fade-in slide-in-from-bottom-2 duration-300 font-bold text-xs sm:text-sm">
           <div className="flex items-center gap-2">
-            <AlertTriangle className="h-4 w-4 shrink-0 text-slate-950" />
+            <AlertTriangle className="h-4 w-4 shrink-0 text-white" />
             <span>{limitWarning}</span>
           </div>
           <button
             type="button"
             onClick={dismissWarning}
-            className="rounded-lg p-1 hover:bg-amber-600/30 transition-colors"
+            className="rounded-lg p-1 hover:bg-blue-700 transition-colors"
             aria-label="بستن پیام هشدار"
           >
             <X className="h-4 w-4" />
@@ -52,7 +52,7 @@ export function CompareFloatingBar() {
         <div className="flex flex-col gap-3 rounded-2xl border border-slate-700/80 bg-slate-900/95 p-3.5 sm:p-4 text-white shadow-2xl backdrop-blur-md transition-all sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-1 items-center gap-3 overflow-x-auto pb-1 sm:pb-0">
             <div className="hidden lg:flex flex-col items-center justify-center border-l border-slate-700/80 pl-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-amber-500/10 text-amber-400">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400">
                 <Scale className="h-4 w-4" />
               </div>
               <span className="text-[10px] font-bold text-slate-400 mt-1">مقایسه</span>
@@ -77,7 +77,7 @@ export function CompareFloatingBar() {
                   </div>
 
                   <div className="flex-1 min-w-0 text-right">
-                    <span className="block text-[10px] font-medium text-amber-400">
+                    <span className="block text-[10px] font-medium text-blue-400">
                       ملک {index === 0 ? "اول" : "دوم"}
                     </span>
                     <p className="truncate text-xs font-semibold text-slate-100" title={item.title}>
@@ -104,7 +104,7 @@ export function CompareFloatingBar() {
               {!isReady && (
                 <Link
                   href="/properties"
-                  className="hidden sm:flex items-center gap-2 rounded-xl border border-dashed border-slate-600 bg-slate-800/40 px-3 py-2 text-xs font-medium text-slate-400 hover:border-amber-500/60 hover:text-amber-400 transition-colors"
+                  className="hidden sm:flex items-center gap-2 rounded-xl border border-dashed border-slate-600 bg-slate-800/40 px-3 py-2 text-xs font-medium text-slate-400 hover:border-blue-500/60 hover:text-blue-400 transition-colors"
                 >
                   <Plus className="h-3.5 w-3.5" />
                   <span>یک ملک دیگر را برای مقایسه انتخاب کنید</span>
@@ -125,7 +125,7 @@ export function CompareFloatingBar() {
             {isReady ? (
               <Link
                 href={compareUrl}
-                className="inline-flex items-center gap-2 rounded-xl bg-amber-500 px-4 py-2 text-xs sm:text-sm font-bold text-slate-950 shadow-md hover:bg-amber-400 active:scale-95 transition-all"
+                className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2 text-xs sm:text-sm font-bold text-white shadow-md hover:bg-blue-500 active:scale-95 transition-all"
               >
                 <span>مشاهده جدول مقایسه</span>
                 <ArrowLeft className="h-4 w-4" />

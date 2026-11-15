@@ -44,9 +44,9 @@ export function PropertyCard({ property, className }: PropertyCardProps) {
 
   return (
     <article
-      className={`group flex flex-col overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-xl ${className || ""}`}
+      className={`group flex flex-col overflow-hidden rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 dark:hover:border-blue-600 hover:shadow-xl ${className || ""}`}
     >
-      <div className="relative aspect-16/10 w-full overflow-hidden bg-slate-100">
+      <div className="relative aspect-16/10 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
         <Link href={`/properties/${property.slug}`} className="block h-full w-full">
           <Image
             src={primaryImage}
@@ -57,12 +57,11 @@ export function PropertyCard({ property, className }: PropertyCardProps) {
             loading="lazy"
           />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-black/20" />
         </Link>
 
         <div className="absolute top-3 right-3 left-3 flex items-center justify-between gap-2 pointer-events-none">
           <div className="flex items-center gap-1.5 flex-wrap">
-
             <Badge
               variant={isSale ? "sale" : "rent"}
               className="shadow-sm backdrop-blur-xs font-semibold"
@@ -73,9 +72,9 @@ export function PropertyCard({ property, className }: PropertyCardProps) {
             {property.featured && (
               <Badge
                 variant="featured"
-                className="shadow-sm backdrop-blur-xs flex items-center gap-1 font-bold text-amber-900 bg-amber-400 border-amber-500"
+                className="shadow-sm backdrop-blur-xs flex items-center gap-1 font-bold text-white bg-blue-600 border-blue-500"
               >
-                <Sparkles className="w-3 h-3 fill-amber-900" />
+                <Sparkles className="w-3 h-3 fill-white" />
                 <span>ویژه</span>
               </Badge>
             )}
@@ -87,7 +86,7 @@ export function PropertyCard({ property, className }: PropertyCardProps) {
         </div>
 
         <div className="absolute bottom-2.5 right-3 left-3 flex items-center gap-1 text-white text-xs font-medium drop-shadow-sm pointer-events-none">
-          <MapPin className="h-3.5 w-3.5 shrink-0 text-amber-400" />
+          <MapPin className="h-3.5 w-3.5 shrink-0 text-blue-400" />
           <span className="truncate">
             {property.city}
             {property.district ? `، ${property.district}` : ""}
@@ -96,14 +95,13 @@ export function PropertyCard({ property, className }: PropertyCardProps) {
       </div>
 
       <div className="flex flex-1 flex-col p-4 sm:p-5 text-right">
-
-        <h3 className="mb-2 line-clamp-1 text-base font-bold text-slate-900 transition-colors group-hover:text-amber-600">
+        <h3 className="mb-2 line-clamp-1 text-base font-bold text-slate-900 dark:text-white transition-colors group-hover:text-blue-600 dark:group-hover:text-blue-400">
           <Link href={`/properties/${property.slug}`} title={property.title}>
             {property.title}
           </Link>
         </h3>
 
-        <div className="mb-4 grid grid-cols-3 gap-2 border-y border-slate-100 py-2.5 text-xs text-slate-600">
+        <div className="mb-4 grid grid-cols-3 gap-2 border-y border-slate-100 dark:border-slate-800/80 py-2.5 text-xs text-slate-600 dark:text-slate-400">
           <div className="flex items-center gap-1.5 justify-start">
             <Maximize2 className="h-3.5 w-3.5 text-slate-400 shrink-0" />
             <span>{formatArea(property.area)}</span>
@@ -124,21 +122,21 @@ export function PropertyCard({ property, className }: PropertyCardProps) {
           {isSale ? (
             <div className="space-y-0.5">
               <span className="text-[11px] font-medium text-slate-400">قیمت کل:</span>
-              <p className="text-base sm:text-lg font-extrabold text-slate-950">
+              <p className="text-base sm:text-lg font-extrabold text-slate-950 dark:text-white">
                 {formatPrice(property.price)}
               </p>
             </div>
           ) : (
             <div className="space-y-1">
               <div className="flex items-center justify-between text-xs">
-                <span className="text-slate-500">ودیعه:</span>
-                <span className="font-bold text-slate-900">
+                <span className="text-slate-500 dark:text-slate-400">ودیعه:</span>
+                <span className="font-bold text-slate-900 dark:text-white">
                   {formatPrice(property.deposit, "تومان", { fallbackToNegotiable: true })}
                 </span>
               </div>
               <div className="flex items-center justify-between text-xs">
-                <span className="text-slate-500">اجاره ماهانه:</span>
-                <span className="font-bold text-amber-600">
+                <span className="text-slate-500 dark:text-slate-400">اجاره ماهانه:</span>
+                <span className="font-bold text-blue-600 dark:text-blue-400">
                   {formatPrice(property.monthlyRent, "تومان", { fallbackToNegotiable: true })}
                 </span>
               </div>
@@ -146,7 +144,7 @@ export function PropertyCard({ property, className }: PropertyCardProps) {
           )}
         </div>
 
-        <div className="pt-2 border-t border-slate-100 flex items-center justify-between gap-2">
+        <div className="pt-2 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between gap-2">
           <button
             type="button"
             onClick={(e) => {
@@ -164,18 +162,18 @@ export function PropertyCard({ property, className }: PropertyCardProps) {
             }}
             className={`flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-xs font-semibold transition-all ${
               inCompare
-                ? "bg-amber-500 text-slate-950 font-bold shadow-xs hover:bg-amber-400"
-                : "bg-slate-100 text-slate-700 hover:bg-slate-200 hover:text-slate-900"
+                ? "bg-blue-600 text-white font-bold shadow-xs hover:bg-blue-700"
+                : "bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-slate-700 hover:text-blue-600 dark:hover:text-blue-400"
             }`}
           >
             {inCompare ? (
               <>
-                <Check className="h-3.5 w-3.5 text-slate-950 stroke-[3]" />
+                <Check className="h-3.5 w-3.5 text-white stroke-[3]" />
                 <span>در لیست مقایسه</span>
               </>
             ) : (
               <>
-                <Scale className="h-3.5 w-3.5 text-slate-500" />
+                <Scale className="h-3.5 w-3.5 text-slate-500 dark:text-slate-400" />
                 <span>افزودن به مقایسه</span>
               </>
             )}
@@ -183,10 +181,10 @@ export function PropertyCard({ property, className }: PropertyCardProps) {
 
           <Link
             href={`/properties/${property.slug}`}
-            className="text-xs font-bold text-slate-900 hover:text-amber-600 transition-colors inline-flex items-center gap-1"
+            className="text-xs font-bold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors inline-flex items-center gap-1"
           >
             جزئیات
-            <span className="text-amber-500">←</span>
+            <span>←</span>
           </Link>
         </div>
       </div>

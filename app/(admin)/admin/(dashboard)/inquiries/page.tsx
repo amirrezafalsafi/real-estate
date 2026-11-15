@@ -103,7 +103,7 @@ async function InquiriesContent({
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-slate-800 pb-5">
         <div>
           <h1 className="text-xl sm:text-2xl font-black text-white flex items-center gap-2">
-            <Mail className="h-6 w-6 text-amber-400" />
+            <Mail className="h-6 w-6 text-blue-400" />
             <span>درخواست‌های تماس و مشاوره</span>
           </h1>
           <p className="mt-1 text-xs text-slate-400">
@@ -123,7 +123,7 @@ async function InquiriesContent({
             name="query"
             defaultValue={searchTerm}
             placeholder="جستجو بر اساس نام متقاضی، شماره یا متن پیام..."
-            className="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-2 text-xs text-slate-100 placeholder:text-slate-500 pr-10 focus:border-amber-500 focus:outline-none"
+            className="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-2 text-xs text-slate-100 placeholder:text-slate-500 pr-10 focus:border-blue-500 focus:outline-none"
           />
           <Search className="pointer-events-none absolute right-3.5 top-2.5 h-4 w-4 text-slate-500" />
         </form>
@@ -137,7 +137,7 @@ async function InquiriesContent({
                 href={createQueryUrl({ status: tab.value, page: "1" })}
                 className={`rounded-xl px-3.5 py-1.5 text-xs font-bold transition-all shrink-0 ${
                   isSelected
-                    ? "bg-amber-500 text-slate-950 font-black shadow-sm"
+                    ? "bg-blue-600 text-white font-black shadow-sm shadow-blue-500/20"
                     : "bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-slate-200"
                 }`}
               >

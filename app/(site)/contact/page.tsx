@@ -28,7 +28,7 @@ export default function ContactPage() {
       primaryValue: "۰۲۱-۲۲۳۳۴۴۵۵",
       secondaryValue: "۰۲۱-۸۸۹۹۰۰۱۱",
       link: "tel:02122334455",
-      accent: "amber",
+      accent: "blue",
     },
     {
       icon: MapPin,
@@ -80,23 +80,23 @@ export default function ContactPage() {
 
   return (
     <div className="container mx-auto px-4 py-10 sm:px-6 lg:px-8 space-y-14">
-      <div className="flex items-center gap-2 text-xs text-slate-500">
-        <Link href="/" className="hover:text-slate-900 transition-colors">
+      <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+        <Link href="/" className="hover:text-slate-900 dark:hover:text-white transition-colors">
           صفحه اصلی
         </Link>
-        <ChevronLeft className="h-3.5 w-3.5 text-slate-400" />
-        <span className="font-bold text-slate-900">تماس با ما</span>
+        <ChevronLeft className="h-3.5 w-3.5 text-slate-400 dark:text-slate-500" />
+        <span className="font-bold text-slate-900 dark:text-white">تماس با ما</span>
       </div>
 
       <div className="text-center max-w-2xl mx-auto space-y-3">
-        <div className="inline-flex items-center gap-2 rounded-full bg-amber-500/10 px-4 py-1.5 text-xs font-black text-amber-900 border border-amber-500/20">
-          <Headphones className="h-4 w-4 text-amber-600" />
+        <div className="inline-flex items-center gap-2 rounded-full bg-blue-600/10 dark:bg-blue-500/15 px-4 py-1.5 text-xs font-black text-blue-700 dark:text-blue-300 border border-blue-500/20">
+          <Headphones className="h-4 w-4 text-blue-600 dark:text-blue-400" />
           <span>پاسخگویی و پشتیبانی همه‌روزه</span>
         </div>
-        <h1 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
+        <h1 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
           ارتباط با کارشناسان مسکن پلاس
         </h1>
-        <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+        <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
           پرسش، پیشنهاد یا نیاز به مشاوره تخصصی در زمینه خرید، فروش، رهن یا اجاره دارید؟ تیم پشتیبانی و مشاوران حقوقی ما مشتاقانه آماده پاسخگویی به شما هستند.
         </p>
       </div>
@@ -107,30 +107,30 @@ export default function ContactPage() {
           return (
             <div
               key={idx}
-              className="rounded-3xl border border-slate-200/90 bg-white p-6 shadow-xs hover:border-amber-400 hover:shadow-md transition-all flex flex-col justify-between gap-4 text-right"
+              className="rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-xs hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-md transition-all flex flex-col justify-between gap-4 text-right"
             >
               <div className="space-y-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-900 text-amber-400 shadow-xs">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-600 text-white shadow-md shadow-blue-500/20">
                   <Icon className="h-6 w-6 stroke-[2]" />
                 </div>
                 <div>
-                  <h3 className="font-black text-slate-900 text-base">{card.title}</h3>
-                  <p className="text-xs text-slate-500 mt-0.5">{card.subtitle}</p>
+                  <h3 className="font-black text-slate-900 dark:text-white text-base">{card.title}</h3>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{card.subtitle}</p>
                 </div>
               </div>
 
-              <div className="pt-3 border-t border-slate-100 space-y-1 text-xs">
+              <div className="pt-3 border-t border-slate-100 dark:border-slate-800 space-y-1 text-xs">
                 {card.link ? (
                   <a
                     href={card.link}
-                    className="block font-black text-slate-800 hover:text-amber-600 transition-colors"
+                    className="block font-black text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     {card.primaryValue}
                   </a>
                 ) : (
-                  <p className="font-black text-slate-800">{card.primaryValue}</p>
+                  <p className="font-black text-slate-800 dark:text-slate-200">{card.primaryValue}</p>
                 )}
-                <p className="text-slate-500 text-[11px] font-medium">{card.secondaryValue}</p>
+                <p className="text-slate-500 dark:text-slate-400 text-[11px] font-medium">{card.secondaryValue}</p>
               </div>
             </div>
           );
@@ -138,14 +138,14 @@ export default function ContactPage() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        <div className="lg:col-span-7 rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-8 shadow-xs">
-          <div className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-500/10 text-amber-600">
+        <div className="lg:col-span-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-xs transition-colors">
+          <div className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100 dark:border-slate-800">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600/10 dark:bg-blue-500/15 text-blue-600 dark:text-blue-400">
               <Building2 className="h-5 w-5" />
             </div>
             <div>
-              <h2 className="text-lg font-black text-slate-900">ارسال پیام یا درخواست مشاوره</h2>
-              <p className="text-xs text-slate-500 mt-0.5">
+              <h2 className="text-lg font-black text-slate-900 dark:text-white">ارسال پیام یا درخواست مشاوره</h2>
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
                 فرم زیر را تکمیل فرمایید تا کارشناس متخصص در کمتر از یک ساعت با شما تماس بگیرد
               </p>
             </div>
@@ -155,9 +155,9 @@ export default function ContactPage() {
         </div>
 
         <div className="lg:col-span-5 space-y-6">
-          <div className="rounded-3xl border border-slate-200/90 bg-slate-900 p-6 sm:p-8 text-white space-y-5 shadow-lg">
+          <div className="rounded-3xl border border-slate-800 bg-slate-900 p-6 sm:p-8 text-white space-y-5 shadow-lg">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-500 text-slate-950 font-black">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white font-black shadow-md shadow-blue-500/20">
                 <ShieldCheck className="h-5 w-5 stroke-[2.5]" />
               </div>
               <div>
@@ -173,7 +173,7 @@ export default function ContactPage() {
             <div className="pt-4 border-t border-slate-800 space-y-3 text-xs">
               <div className="flex items-center justify-between text-slate-300">
                 <span>تلفن تماس فوری:</span>
-                <a href="tel:02122334455" className="font-bold text-amber-400 hover:underline" dir="ltr">
+                <a href="tel:02122334455" className="font-bold text-blue-400 hover:underline" dir="ltr">
                   021-22334455
                 </a>
               </div>
@@ -184,12 +184,12 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="rounded-3xl border border-slate-200/90 bg-slate-50 p-6 sm:p-8 space-y-4">
-            <div className="flex items-center gap-2 text-slate-900 font-black text-sm">
-              <MapPin className="h-4 w-4 text-amber-500" />
+          <div className="rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-slate-50 dark:bg-slate-850 p-6 sm:p-8 space-y-4 transition-colors">
+            <div className="flex items-center gap-2 text-slate-900 dark:text-white font-black text-sm">
+              <MapPin className="h-4 w-4 text-blue-600 dark:text-blue-400" />
               <span>موقعیت مکانی دفتر مرکزی مسکن پلاس</span>
             </div>
-            <p className="text-xs text-slate-600 leading-relaxed">
+            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
               تهران، سعادت‌آباد، میدان کاج، بلوار فرهنگ، نبش خیابان پیوند، برج تجاری-اداری مسکن پلاس، ورودی شمالی، طبقه ۵، واحد ۵۰۲
             </p>
             <div className="pt-2 flex items-center gap-3">
@@ -197,24 +197,24 @@ export default function ContactPage() {
                 href="https://maps.google.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-white border border-slate-200 px-4 py-2 text-xs font-bold text-slate-800 hover:bg-slate-100 transition-colors shadow-2xs"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-2 text-xs font-bold text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors shadow-2xs"
               >
                 <span>مسیریابی روی نقشه</span>
-                <ChevronLeft className="h-3.5 w-3.5 text-slate-400" />
+                <ChevronLeft className="h-3.5 w-3.5 text-slate-400 dark:text-slate-500" />
               </a>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-10 space-y-6 shadow-xs">
-        <div className="flex items-center gap-3 pb-4 border-b border-slate-100">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-500/10 text-amber-600">
+      <div className="rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-10 space-y-6 shadow-xs transition-colors">
+        <div className="flex items-center gap-3 pb-4 border-b border-slate-100 dark:border-slate-800">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600/10 dark:bg-blue-500/15 text-blue-600 dark:text-blue-400">
             <HelpCircle className="h-5 w-5" />
           </div>
           <div>
-            <h2 className="text-lg sm:text-xl font-black text-slate-900">پرسش‌های متداول شما</h2>
-            <p className="text-xs text-slate-500 mt-0.5">پاسخ به سوالات پرتکرار مراجعین و خریداران محترم</p>
+            <h2 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white">پرسش‌های متداول شما</h2>
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">پاسخ به سوالات پرتکرار مراجعین و خریداران محترم</p>
           </div>
         </div>
 
@@ -222,10 +222,10 @@ export default function ContactPage() {
           {faqs.map((faq, idx) => (
             <div
               key={idx}
-              className="rounded-2xl border border-slate-100 bg-slate-50/70 p-5 space-y-2 text-right"
+              className="rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-850 p-5 space-y-2 text-right transition-colors"
             >
-              <h3 className="font-black text-slate-900 text-sm">{faq.q}</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">{faq.a}</p>
+              <h3 className="font-black text-slate-900 dark:text-white text-sm">{faq.q}</h3>
+              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">{faq.a}</p>
             </div>
           ))}
         </div>

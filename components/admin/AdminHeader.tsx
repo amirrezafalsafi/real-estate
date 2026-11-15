@@ -1,12 +1,13 @@
 import React from "react";
 import { AdminLogoutButton } from "./AdminLogoutButton";
 import { Shield, User } from "lucide-react";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export function AdminHeader() {
   return (
     <header className="h-18 border-b border-slate-800 bg-slate-950/90 backdrop-blur-md px-6 flex items-center justify-between shrink-0">
       <div className="flex items-center gap-3">
-        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-500/10 text-blue-400 border border-blue-500/20">
           <Shield className="h-4 w-4" />
         </div>
         <div>
@@ -15,9 +16,11 @@ export function AdminHeader() {
         </div>
       </div>
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-3 sm:gap-4">
+        <ThemeToggle className="border-slate-800 bg-slate-900/60 text-slate-300" />
+
         <div className="hidden sm:flex items-center gap-2.5 rounded-xl border border-slate-800 bg-slate-900/60 px-3.5 py-1.5 text-right">
-          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-amber-500/20 text-amber-400 font-bold text-xs">
+          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-500/20 text-blue-400 font-bold text-xs">
             <User className="h-4 w-4" />
           </div>
           <div>

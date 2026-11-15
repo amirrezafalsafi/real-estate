@@ -165,7 +165,7 @@ export function AdminPropertiesTable({ properties }: AdminPropertiesTableProps) 
                           />
                         </div>
                         <div className="min-w-0 max-w-xs">
-                          <span className="block font-bold text-slate-100 truncate hover:text-amber-400 transition-colors">
+                          <span className="block font-bold text-slate-100 truncate hover:text-blue-400 transition-colors">
                             {prop.title}
                           </span>
                           <span className="flex items-center gap-1 text-[11px] text-slate-400 mt-0.5">
@@ -183,7 +183,7 @@ export function AdminPropertiesTable({ properties }: AdminPropertiesTableProps) 
                       <span
                         className={`inline-block rounded-md px-2 py-0.5 text-[11px] font-bold border ${
                           prop.listingType === "SALE"
-                            ? "bg-amber-500/10 text-amber-400 border-amber-500/30"
+                            ? "bg-blue-500/10 text-blue-400 border-blue-500/30"
                             : "bg-sky-500/10 text-sky-400 border-sky-500/30"
                         }`}
                       >
@@ -206,7 +206,7 @@ export function AdminPropertiesTable({ properties }: AdminPropertiesTableProps) 
                           </div>
                           <div className="text-[11px] text-slate-400">
                             اجاره:{" "}
-                            <span className="font-bold text-amber-400">
+                            <span className="font-bold text-blue-400">
                               {formatPrice(prop.monthlyRent, "تومان", { fallbackToNegotiable: true })}
                             </span>
                           </div>
@@ -237,7 +237,7 @@ export function AdminPropertiesTable({ properties }: AdminPropertiesTableProps) 
                         onClick={() => handleFeaturedToggle(prop.id, prop.featured)}
                         className={`inline-flex h-8 w-8 items-center justify-center rounded-lg border transition-all ${
                           prop.featured
-                            ? "bg-amber-400 text-slate-950 border-amber-500 shadow-sm shadow-amber-500/20"
+                            ? "bg-blue-600 text-white border-blue-500 shadow-sm shadow-blue-500/20"
                             : "bg-slate-800 text-slate-500 border-slate-700 hover:text-slate-300"
                         }`}
                         title={prop.featured ? "حذف از املاک ویژه" : "تنظیم به عنوان ملک ویژه"}
@@ -255,7 +255,7 @@ export function AdminPropertiesTable({ properties }: AdminPropertiesTableProps) 
 
                         <Link
                           href={`/admin/properties/${prop.id}/edit`}
-                          className="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-700 bg-slate-800 text-slate-300 hover:border-amber-500 hover:text-amber-400 transition-colors"
+                          className="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-700 bg-slate-800 text-slate-300 hover:border-blue-500 hover:text-blue-400 transition-colors"
                           title="ویرایش ملک"
                         >
                           <Edit className="h-3.5 w-3.5" />

@@ -56,7 +56,7 @@ export default function AdminLoginPage() {
     <div className="flex min-h-screen items-center justify-center bg-slate-950 px-4 py-12 text-right">
       <div className="w-full max-w-md">
         <div className="mb-8 text-center">
-          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 shadow-xl shadow-amber-500/5">
+          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-600/10 border border-blue-500/20 text-blue-400 shadow-xl shadow-blue-500/10">
             <ShieldCheck className="h-9 w-9 stroke-[1.8]" />
           </div>
           <h1 className="text-2xl font-black tracking-tight text-white sm:text-3xl">
@@ -92,7 +92,7 @@ export default function AdminLoginPage() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="admin@maskanplus.ir"
                   dir="ltr"
-                  className="w-full rounded-xl border border-slate-700 bg-slate-800/80 px-4 py-3 pl-10 text-sm text-slate-100 placeholder:text-slate-500 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20 text-left font-sans"
+                  className="w-full rounded-xl border border-slate-700 bg-slate-800/80 px-4 py-3 pl-10 text-sm text-slate-100 placeholder:text-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 text-left font-sans"
                 />
                 <Mail className="pointer-events-none absolute left-3.5 top-3.5 h-4 w-4 text-slate-400" />
               </div>
@@ -114,7 +114,7 @@ export default function AdminLoginPage() {
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••••••"
                   dir="ltr"
-                  className="w-full rounded-xl border border-slate-700 bg-slate-800/80 px-4 py-3 pl-10 text-sm text-slate-100 placeholder:text-slate-500 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20 text-left font-sans"
+                  className="w-full rounded-xl border border-slate-700 bg-slate-800/80 px-4 py-3 pl-10 text-sm text-slate-100 placeholder:text-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 text-left font-sans"
                 />
                 <button
                   type="button"
@@ -134,11 +134,11 @@ export default function AdminLoginPage() {
             <button
               type="submit"
               disabled={isLoading}
-              className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-amber-500 py-3.5 px-4 text-sm font-black text-slate-950 shadow-lg shadow-amber-500/10 hover:bg-amber-400 active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 py-3.5 px-4 text-sm font-black text-white shadow-lg shadow-blue-500/20 hover:bg-blue-500 active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isLoading ? (
                 <>
-                  <Loader2 className="h-4 w-4 animate-spin text-slate-950" />
+                  <Loader2 className="h-4 w-4 animate-spin text-white" />
                   <span>در حال اعتبارسنجی...</span>
                 </>
               ) : (

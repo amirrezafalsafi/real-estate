@@ -3,12 +3,15 @@
 import type { ReactNode } from "react";
 import { QueryProvider } from "./QueryProvider";
 import { CompareProvider } from "@/components/site/CompareContext";
+import { ThemeProvider } from "./ThemeProvider";
 
 export function Providers({ children }: { children: ReactNode }) {
   return (
-    <QueryProvider>
-      <CompareProvider>{children}</CompareProvider>
-    </QueryProvider>
+    <ThemeProvider>
+      <QueryProvider>
+        <CompareProvider>{children}</CompareProvider>
+      </QueryProvider>
+    </ThemeProvider>
   );
 }
 

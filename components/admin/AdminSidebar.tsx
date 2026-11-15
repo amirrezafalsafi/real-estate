@@ -50,7 +50,7 @@ export function AdminSidebar() {
     <aside className="w-64 shrink-0 border-l border-slate-800 bg-slate-950 flex flex-col justify-between">
       <div>
         <div className="flex items-center gap-3 border-b border-slate-800/80 px-6 py-5">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-500/15 text-amber-400 border border-amber-500/30">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600/15 text-blue-400 border border-blue-500/30">
             <ShieldCheck className="h-5 w-5" />
           </div>
           <div className="flex flex-col text-right">
@@ -69,13 +69,13 @@ export function AdminSidebar() {
                 href={item.href}
                 className={`flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-xs font-bold transition-all ${
                   active
-                    ? "bg-amber-500 text-slate-950 shadow-md shadow-amber-500/10 font-black"
+                    ? "bg-blue-600 text-white shadow-md shadow-blue-500/20 font-black"
                     : "text-slate-400 hover:bg-slate-900 hover:text-slate-200"
                 }`}
               >
                 <Icon
                   className={`h-4 w-4 shrink-0 ${
-                    active ? "text-slate-950 stroke-[2.5]" : "text-slate-500"
+                    active ? "text-white stroke-[2.5]" : "text-slate-500"
                   }`}
                 />
                 <span>{item.name}</span>

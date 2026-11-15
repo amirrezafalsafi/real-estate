@@ -68,15 +68,15 @@ export function ConsultationForm({
   return (
     <form onSubmit={handleSubmit} className="space-y-4 text-right">
       {status === "success" && (
-        <div className="flex items-center gap-2 rounded-xl bg-emerald-50 border border-emerald-200 p-3.5 text-xs font-semibold text-emerald-800">
-          <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
+        <div className="flex items-center gap-2 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 p-3.5 text-xs font-semibold text-emerald-800 dark:text-emerald-300 transition-colors">
+          <CheckCircle2 className="h-4 w-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
           <span>{feedbackMessage}</span>
         </div>
       )}
 
       {status === "error" && (
-        <div className="flex items-center gap-2 rounded-xl bg-rose-50 border border-rose-200 p-3.5 text-xs font-semibold text-rose-800">
-          <AlertCircle className="h-4 w-4 text-rose-600 shrink-0" />
+        <div className="flex items-center gap-2 rounded-xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-800 p-3.5 text-xs font-semibold text-rose-800 dark:text-rose-300 transition-colors">
+          <AlertCircle className="h-4 w-4 text-rose-600 dark:text-rose-400 shrink-0" />
           <span>{feedbackMessage}</span>
         </div>
       )}
@@ -101,7 +101,7 @@ export function ConsultationForm({
       </div>
 
       <div className="space-y-1.5">
-        <label className="block text-xs font-semibold text-slate-700">
+        <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300">
           توضیحات یا پیام شما
         </label>
         <textarea
@@ -112,14 +112,14 @@ export function ConsultationForm({
             placeholderMessage ||
             "مثال: تمایل به هماهنگی برای بازدید حضوری در روزهای آخر هفته دارم..."
           }
-          className="w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20"
+          className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-3.5 py-2.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-colors"
           required
         />
       </div>
 
       <Button
         type="submit"
-        variant="accent"
+        variant="primary"
         size="lg"
         isLoading={isLoading}
         rightIcon={<PhoneCall className="h-4 w-4" />}

@@ -110,19 +110,18 @@ async function PropertiesContent({
       <PropertyFilterSidebar cities={filterOptions.cities} />
 
       <div className="flex-1 w-full space-y-6">
-
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 rounded-3xl border border-slate-200 bg-white p-4 sm:p-5 shadow-xs">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 sm:p-5 shadow-xs transition-colors">
           <div>
-            <h1 className="text-lg sm:text-xl font-black text-slate-900">
+            <h1 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white">
               لیست آگهی‌های املاک
             </h1>
-            <p className="text-xs text-slate-500 mt-0.5">
-              نمایش <span className="font-bold text-slate-900">{formatNumber(total)}</span> ملک منطبق با جستجو
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+              نمایش <span className="font-bold text-blue-600 dark:text-blue-400">{formatNumber(total)}</span> ملک منطبق با جستجو
             </p>
           </div>
 
           <div className="flex items-center gap-2 self-end sm:self-auto">
-            <span className="text-xs text-slate-400 font-medium">مرتب‌سازی:</span>
+            <span className="text-xs text-slate-400 dark:text-slate-500 font-medium">مرتب‌سازی:</span>
             <PropertySortSelect currentSort={sort} />
           </div>
         </div>
@@ -135,55 +134,55 @@ async function PropertiesContent({
           params.parking ||
           params.elevator) && (
           <div className="flex flex-wrap items-center gap-2 text-xs">
-            <span className="text-slate-400 text-[11px] font-bold">فیلترهای فعال:</span>
+            <span className="text-slate-400 dark:text-slate-500 text-[11px] font-bold">فیلترهای فعال:</span>
 
             {params.listingType && (
               <Link
                 href={createParamUrl({ listingType: undefined, page: "1" })}
-                className="inline-flex items-center gap-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 px-2.5 py-1 text-slate-700 font-semibold"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 px-2.5 py-1 text-slate-700 dark:text-slate-300 font-semibold transition-colors"
               >
                 <span>معامله: {params.listingType === "SALE" ? "فروش" : "رهن و اجاره"}</span>
-                <X className="h-3 w-3 text-slate-400 hover:text-slate-700" />
+                <X className="h-3 w-3 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200" />
               </Link>
             )}
 
             {params.propertyType && (
               <Link
                 href={createParamUrl({ propertyType: undefined, page: "1" })}
-                className="inline-flex items-center gap-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 px-2.5 py-1 text-slate-700 font-semibold"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 px-2.5 py-1 text-slate-700 dark:text-slate-300 font-semibold transition-colors"
               >
                 <span>کاربری: {PROPERTY_TYPE_NAMES[params.propertyType] || params.propertyType}</span>
-                <X className="h-3 w-3 text-slate-400 hover:text-slate-700" />
+                <X className="h-3 w-3 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200" />
               </Link>
             )}
 
             {params.city && (
               <Link
                 href={createParamUrl({ city: undefined, page: "1" })}
-                className="inline-flex items-center gap-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 px-2.5 py-1 text-slate-700 font-semibold"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 px-2.5 py-1 text-slate-700 dark:text-slate-300 font-semibold transition-colors"
               >
                 <span>شهر: {params.city}</span>
-                <X className="h-3 w-3 text-slate-400 hover:text-slate-700" />
+                <X className="h-3 w-3 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200" />
               </Link>
             )}
 
             {params.query && (
               <Link
                 href={createParamUrl({ query: undefined, search: undefined, page: "1" })}
-                className="inline-flex items-center gap-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 px-2.5 py-1 text-slate-700 font-semibold"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 px-2.5 py-1 text-slate-700 dark:text-slate-300 font-semibold transition-colors"
               >
                 <span>جستجو: «{params.query}»</span>
-                <X className="h-3 w-3 text-slate-400 hover:text-slate-700" />
+                <X className="h-3 w-3 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200" />
               </Link>
             )}
 
             {params.bedrooms && (
               <Link
                 href={createParamUrl({ bedrooms: undefined, page: "1" })}
-                className="inline-flex items-center gap-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 px-2.5 py-1 text-slate-700 font-semibold"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 px-2.5 py-1 text-slate-700 dark:text-slate-300 font-semibold transition-colors"
               >
                 <span>حداقل {toPersianDigits(params.bedrooms)} خواب</span>
-                <X className="h-3 w-3 text-slate-400 hover:text-slate-700" />
+                <X className="h-3 w-3 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200" />
               </Link>
             )}
 
@@ -197,23 +196,23 @@ async function PropertiesContent({
         )}
 
         {items.length === 0 ? (
-          <div className="rounded-3xl border border-slate-200 bg-white p-12 text-center space-y-5 shadow-xs">
-            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-50 text-amber-600">
+          <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-12 text-center space-y-5 shadow-xs transition-colors">
+            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400">
               <Filter className="h-8 w-8" />
             </div>
 
             <div className="space-y-1">
-              <h2 className="text-lg font-black text-slate-900">
+              <h2 className="text-lg font-black text-slate-900 dark:text-white">
                 هیچ ملکی با این مشخصات یافت نشد
               </h2>
-              <p className="text-xs sm:text-sm text-slate-500 max-w-md mx-auto leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-md mx-auto leading-relaxed">
                 ممکن است فیلترهای اعمال‌شده بیش از حد محدودکننده باشند. برای یافتن گزینه‌های بیشتر، فیلترها را حذف یا تغییر دهید.
               </p>
             </div>
 
             <Link
               href="/properties"
-              className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-6 py-3 text-xs font-bold text-white shadow-md hover:bg-slate-800 transition-all"
+              className="inline-flex items-center gap-2 rounded-xl bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-500 px-6 py-3 text-xs font-bold text-white shadow-md shadow-blue-500/20 transition-all"
             >
               <span>حذف تمام فیلترها و مشاهده همه</span>
             </Link>
@@ -230,12 +229,11 @@ async function PropertiesContent({
         )}
 
         {totalPages > 1 && (
-          <div className="flex items-center justify-center gap-1.5 pt-8 border-t border-slate-200">
-
+          <div className="flex items-center justify-center gap-1.5 pt-8 border-t border-slate-200 dark:border-slate-800">
             {page > 1 ? (
               <Link
                 href={createParamUrl({ page: String(page - 1) })}
-                className="flex h-10 px-3 items-center justify-center rounded-xl border border-slate-200 bg-white text-xs font-bold text-slate-700 hover:bg-slate-50 transition-colors gap-1"
+                className="flex h-10 px-3 items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-xs font-bold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors gap-1"
               >
                 <ChevronRight className="h-4 w-4" />
                 <span>قبلی</span>
@@ -250,8 +248,8 @@ async function PropertiesContent({
                   href={createParamUrl({ page: String(pageNum) })}
                   className={`flex h-10 w-10 items-center justify-center rounded-xl text-xs font-bold transition-all ${
                     isCurrent
-                      ? "bg-slate-900 text-white shadow-md scale-105"
-                      : "bg-white border border-slate-200 text-slate-700 hover:bg-slate-50"
+                      ? "bg-blue-600 text-white shadow-md shadow-blue-500/20 scale-105"
+                      : "bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800"
                   }`}
                 >
                   {toPersianDigits(pageNum)}
@@ -262,7 +260,7 @@ async function PropertiesContent({
             {page < totalPages ? (
               <Link
                 href={createParamUrl({ page: String(page + 1) })}
-                className="flex h-10 px-3 items-center justify-center rounded-xl border border-slate-200 bg-white text-xs font-bold text-slate-700 hover:bg-slate-50 transition-colors gap-1"
+                className="flex h-10 px-3 items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-xs font-bold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors gap-1"
               >
                 <span>بعدی</span>
                 <ChevronLeft className="h-4 w-4" />
@@ -278,14 +276,12 @@ async function PropertiesContent({
 function PropertiesLoadingSkeleton() {
   return (
     <div className="flex flex-col lg:flex-row gap-8 items-start text-right animate-pulse">
-
-      <div className="hidden lg:block w-72 shrink-0 h-130 rounded-3xl bg-slate-200/80" />
-
+      <div className="hidden lg:block w-72 shrink-0 h-130 rounded-3xl bg-slate-200/80 dark:bg-slate-800/80" />
       <div className="flex-1 w-full space-y-6">
-        <div className="h-16 rounded-3xl bg-slate-200/80" />
+        <div className="h-16 rounded-3xl bg-slate-200/80 dark:bg-slate-800/80" />
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
           {Array.from({ length: 6 }).map((_, i) => (
-            <div key={i} className="h-96 rounded-2xl bg-slate-200/80" />
+            <div key={i} className="h-96 rounded-2xl bg-slate-200/80 dark:bg-slate-800/80" />
           ))}
         </div>
       </div>

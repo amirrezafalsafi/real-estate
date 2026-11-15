@@ -56,7 +56,7 @@ export default async function AdminDashboardPage() {
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between border-b border-slate-800 pb-5">
         <div>
           <h1 className="text-xl sm:text-2xl font-black text-white flex items-center gap-2">
-            <span className="text-amber-400">📊</span>
+            <span className="text-blue-400">📊</span>
             <span>پیشخوان و خلاصه آمار سامانه</span>
           </h1>
           <p className="mt-1 text-xs sm:text-sm text-slate-400">
@@ -76,7 +76,7 @@ export default async function AdminDashboardPage() {
         <div className="rounded-2xl border border-slate-800 bg-slate-900/90 p-5 shadow-lg backdrop-blur-xs">
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold text-slate-400">کل املاک ثبت‌شده</span>
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20">
               <Building2 className="h-5 w-5" />
             </div>
           </div>
@@ -88,17 +88,17 @@ export default async function AdminDashboardPage() {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-amber-500/30 bg-gradient-to-br from-amber-500/10 via-slate-900 to-slate-900 p-5 shadow-lg">
+        <div className="rounded-2xl border border-blue-500/30 bg-gradient-to-br from-blue-500/10 via-slate-900 to-slate-900 p-5 shadow-lg">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-amber-300">درخواست‌های جدید مشاوره</span>
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-500 text-slate-950 font-black">
+            <span className="text-xs font-bold text-blue-300">درخواست‌های جدید مشاوره</span>
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white font-black shadow-md shadow-blue-500/20">
               <Mail className="h-5 w-5" />
             </div>
           </div>
-          <p className="mt-4 text-3xl font-black text-amber-400">
+          <p className="mt-4 text-3xl font-black text-blue-400">
             {formatNumber(newInquiries)}
           </p>
-          <div className="mt-2 flex items-center gap-1 text-[11px] text-amber-200/80">
+          <div className="mt-2 flex items-center gap-1 text-[11px] text-blue-200/80">
             <span>نیاز به بررسی و پاسخگویی</span>
           </div>
         </div>
@@ -139,14 +139,14 @@ export default async function AdminDashboardPage() {
           <div className="mb-5 flex items-center justify-between border-b border-slate-800 pb-4">
             <div>
               <h2 className="text-base font-bold text-white flex items-center gap-2">
-                <Mail className="h-4 w-4 text-amber-400" />
+                <Mail className="h-4 w-4 text-blue-400" />
                 <span>آخرین درخواست‌های مشاوره و بازدید</span>
               </h2>
               <p className="text-xs text-slate-400 mt-0.5">
                 لیست متقاضیان و درخواست‌های ارتباط اخیر
               </p>
             </div>
-            <span className="rounded-lg bg-amber-500/10 px-2.5 py-1 text-xs font-bold text-amber-400 border border-amber-500/20">
+            <span className="rounded-lg bg-blue-500/10 px-2.5 py-1 text-xs font-bold text-blue-400 border border-blue-500/20">
               {toPersianDigits(newInquiries)} جدید
             </span>
           </div>
@@ -163,7 +163,7 @@ export default async function AdminDashboardPage() {
                     <span className="font-bold text-sm text-slate-200">
                       {inquiry.name}
                     </span>
-                    <span className="font-mono text-xs text-amber-400 dir-ltr">
+                    <span className="font-mono text-xs text-blue-400 dir-ltr">
                       {inquiry.phone}
                     </span>
                   </div>
@@ -181,7 +181,7 @@ export default async function AdminDashboardPage() {
                       <span>مشاوره عمومی</span>
                     )}
 
-                    <span className={inquiry.isRead ? "text-slate-500" : "text-amber-400 font-bold"}>
+                    <span className={inquiry.isRead ? "text-slate-500" : "text-blue-400 font-bold"}>
                       {inquiry.isRead ? "خوانده شده" : "جدید و خوانده نشده"}
                     </span>
                   </div>
@@ -220,7 +220,7 @@ export default async function AdminDashboardPage() {
                     <span>{prop.city}</span>
                   </span>
 
-                  <span className="font-bold text-amber-400">
+                  <span className="font-bold text-blue-400">
                     {prop.listingType === "SALE"
                       ? formatPrice(prop.price, "تومان", { fallbackToNegotiable: true })
                       : formatPrice(prop.deposit, "تومان", { fallbackToNegotiable: true })}
