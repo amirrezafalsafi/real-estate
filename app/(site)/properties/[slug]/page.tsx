@@ -124,7 +124,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
       : null;
 
   return (
-    <div className="min-h-screen bg-slate-50/70 dark:bg-slate-950 text-slate-900 dark:text-slate-100 pb-20 transition-colors">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 pb-20 transition-colors">
 
       <div className="border-b border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 transition-colors">
         <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8">

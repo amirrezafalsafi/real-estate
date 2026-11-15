@@ -7,6 +7,7 @@ import { ADMIN_COOKIE_NAME, verifyAdminToken } from "@/lib/admin-auth";
 import { propertyZodSchema, type PropertyInput } from "@/lib/validations/property.zod";
 import { createSlug } from "@/lib/utils";
 import type { PropertyStatus } from "@/types";
+import { getCurrentUser } from "@/lib/user-auth";
 
 async function ensureAdminSession() {
   const cookieStore = await cookies();
@@ -320,6 +321,8 @@ export async function submitPublicPropertyAction(
     });
     const slug = await generateUniqueSlug(validated.slug || validated.title);
 
+    const user = await getCurrentUser();
+
     const property = await prisma.property.create({
       data: {
         title: validated.title,
@@ -344,6 +347,7 @@ export async function submitPublicPropertyAction(
         address: validated.address ?? null,
         featured: false,
         status: "ACTIVE",
+        userId: user?.id || null,
         images: {
           create:
             validated.images && validated.images.length > 0
@@ -368,6 +372,7 @@ export async function submitPublicPropertyAction(
           phone: data.contactPhone.trim(),
           message: `ثبت آگهی جدید: «${property.title}» - شهر: ${property.city}`,
           propertyId: property.id,
+          userId: user?.id || null,
           isRead: false,
         },
       });

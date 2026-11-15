@@ -337,7 +337,7 @@ export async function getCategoryCounts() {
   };
 }
 
-export async function createProperty(data: PropertyFormData) {
+export async function createProperty(data: PropertyFormData, userId?: string | null) {
   const baseSlug = createSlug(data.title);
   const uniqueSuffix = Date.now().toString().slice(-5);
   const slug = `${baseSlug}-${uniqueSuffix}`;
@@ -366,6 +366,7 @@ export async function createProperty(data: PropertyFormData) {
       address: data.address ?? null,
       featured: data.featured ?? false,
       status: (data.status as "ACTIVE" | "SOLD" | "RENTED" | "HIDDEN") ?? "ACTIVE",
+      userId: userId ?? null,
     },
   });
 }

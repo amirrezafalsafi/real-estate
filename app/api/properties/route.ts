@@ -3,6 +3,7 @@ import { ValidationError } from "yup";
 import { getProperties, createProperty } from "@/server/services/property.service";
 import { propertyFilterQuerySchema } from "@/lib/validations/property-filter.zod";
 import { propertySchema } from "@/lib/validations/property.schema";
+import { getCurrentUser } from "@/lib/user-auth";
 
 export async function GET(request: NextRequest) {
   try {
@@ -88,7 +89,8 @@ export async function POST(request: NextRequest) {
       stripUnknown: true,
     });
 
-    const property = await createProperty(validatedData);
+    const user = await getCurrentUser();
+    const property = await createProperty(validatedData, user?.id || null);
 
     return NextResponse.json(
       {

@@ -59,8 +59,12 @@ model Property {
   createdAt    DateTime       @default(now())
   updatedAt    DateTime       @updatedAt
 
+  userId       String?
+  user         User?          @relation(fields: [userId], references: [id], onDelete: SetNull)
+
   images       PropertyImage[]
   inquiries    Inquiry[]
+  favorites    Favorite[]
 
   @@map("properties")
 }
@@ -86,6 +90,36 @@ model AdminUser {
   @@map("admin_users")
 }
 
+model User {
+  id           String     @id @default(cuid())
+  phone        String     @unique
+  email        String?    @unique
+  name         String
+  passwordHash String
+  avatar       String?
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  properties   Property[]
+  inquiries    Inquiry[]
+  favorites    Favorite[]
+
+  @@map("users")
+}
+
+model Favorite {
+  id         String   @id @default(cuid())
+  userId     String
+  propertyId String
+  createdAt  DateTime @default(now())
+
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  property   Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, propertyId])
+  @@map("favorites")
+}
+
 model Inquiry {
   id         String    @id @default(cuid())
   name       String
@@ -94,6 +128,8 @@ model Inquiry {
   isRead     Boolean   @default(false)
   propertyId String?
   property   Property? @relation(fields: [propertyId], references: [id], onDelete: SetNull)
+  userId     String?
+  user       User?     @relation(fields: [userId], references: [id], onDelete: SetNull)
   createdAt  DateTime  @default(now())
 
   @@map("inquiries")
