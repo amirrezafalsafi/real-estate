@@ -280,7 +280,7 @@ export function SubmitPropertyForm() {
               id="property-type"
               value={propertyType}
               onChange={(e) => setPropertyType(e.target.value as PropertyType)}
-              className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-3.5 py-2.5 text-xs font-bold text-slate-800 dark:text-slate-100 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-850 focus:outline-none transition-colors"
+              className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-3.5 py-2.5 text-xs font-bold text-slate-800 dark:text-slate-100 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-900 focus:outline-none transition-colors"
             >
               <option value="APARTMENT">آپارتمان مسکونی</option>
               <option value="VILLA">ویلا و باغ‌ویلا</option>

@@ -328,30 +328,30 @@ async function CompareContent({
               </td>
             </tr>
 
-            <tr className="hover:bg-slate-50/50">
-              <td className="p-4 font-bold text-slate-700 flex items-center gap-2">
-                <Building2 className="h-4 w-4 text-slate-400" />
+            <tr className="hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors">
+              <td className="p-4 font-bold text-slate-700 dark:text-slate-300 flex items-center gap-2">
+                <Building2 className="h-4 w-4 text-slate-400 dark:text-slate-500" />
                 <span>نوع ملک</span>
               </td>
-              <td className="p-4 font-semibold text-slate-900">
+              <td className="p-4 font-semibold text-slate-900 dark:text-slate-100">
                 {PROPERTY_TYPE_TITLES[propA.propertyType] || propA.propertyType}
               </td>
-              <td className="p-4 font-semibold text-slate-900">
+              <td className="p-4 font-semibold text-slate-900 dark:text-slate-100">
                 {PROPERTY_TYPE_TITLES[propB.propertyType] || propB.propertyType}
               </td>
             </tr>
 
-            <tr className="hover:bg-slate-50/50">
-              <td className="p-4 font-bold text-slate-700">قیمت / شرایط مالی</td>
+            <tr className="hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors">
+              <td className="p-4 font-bold text-slate-700 dark:text-slate-300">قیمت / شرایط مالی</td>
 
               <td
                 className={`p-4 ${
-                  priceWinner === "A" ? "bg-emerald-50/70 border-r-4 border-r-emerald-500" : ""
+                  priceWinner === "A" ? "bg-emerald-50/70 dark:bg-emerald-950/30 border-r-4 border-r-emerald-500" : ""
                 }`}
               >
                 {propA.listingType === "SALE" ? (
                   <div>
-                    <span className="text-base font-black text-slate-950">
+                    <span className="text-base font-black text-slate-950 dark:text-white">
                       {formatPrice(propA.price)}
                     </span>
                     {priceWinner === "A" && (
@@ -426,18 +426,18 @@ async function CompareContent({
             </tr>
 
             {(pricePerMeterA || pricePerMeterB) && (
-              <tr className="hover:bg-slate-50/50">
-                <td className="p-4 font-bold text-slate-700">قیمت هر متر مربع</td>
+              <tr className="hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors">
+                <td className="p-4 font-bold text-slate-700 dark:text-slate-300">قیمت هر متر مربع</td>
                 <td
                   className={`p-4 ${
                     pricePerMeterWinner === "A"
-                      ? "bg-emerald-50/70 border-r-4 border-r-emerald-500 font-bold"
+                      ? "bg-emerald-50/70 dark:bg-emerald-950/30 border-r-4 border-r-emerald-500 font-bold"
                       : ""
                   }`}
                 >
                   {pricePerMeterA ? (
                     <div>
-                      <span>{formatPrice(pricePerMeterA)}</span>
+                      <span className="font-bold text-slate-900 dark:text-white">{formatPrice(pricePerMeterA)}</span>
                       {pricePerMeterWinner === "A" && (
                         <span className="mr-2 inline-flex items-center gap-1 rounded-md bg-emerald-600 text-white px-2 py-0.5 text-[10px] font-bold">
                           ارزان‌تر
@@ -445,19 +445,19 @@ async function CompareContent({
                       )}
                     </div>
                   ) : (
-                    <span className="text-slate-400">مربوط به فروش نیست</span>
+                    <span className="text-slate-400 dark:text-slate-500">مربوط به فروش نیست</span>
                   )}
                 </td>
                 <td
                   className={`p-4 ${
                     pricePerMeterWinner === "B"
-                      ? "bg-emerald-50/70 border-r-4 border-r-emerald-500 font-bold"
+                      ? "bg-emerald-50/70 dark:bg-emerald-950/30 border-r-4 border-r-emerald-500 font-bold"
                       : ""
                   }`}
                 >
                   {pricePerMeterB ? (
                     <div>
-                      <span>{formatPrice(pricePerMeterB)}</span>
+                      <span className="font-bold text-slate-900 dark:text-white">{formatPrice(pricePerMeterB)}</span>
                       {pricePerMeterWinner === "B" && (
                         <span className="mr-2 inline-flex items-center gap-1 rounded-md bg-emerald-600 text-white px-2 py-0.5 text-[10px] font-bold">
                           ارزان‌تر
@@ -465,22 +465,22 @@ async function CompareContent({
                       )}
                     </div>
                   ) : (
-                    <span className="text-slate-400">مربوط به فروش نیست</span>
+                    <span className="text-slate-400 dark:text-slate-500">مربوط به فروش نیست</span>
                   )}
                 </td>
               </tr>
             )}
 
-            <tr className="hover:bg-slate-50/50">
-              <td className="p-4 font-bold text-slate-700 flex items-center gap-2">
-                <Maximize2 className="h-4 w-4 text-slate-400" />
+            <tr className="hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors">
+              <td className="p-4 font-bold text-slate-700 dark:text-slate-300 flex items-center gap-2">
+                <Maximize2 className="h-4 w-4 text-slate-400 dark:text-slate-500" />
                 <span>متراژ زیربنا</span>
               </td>
               <td
                 className={`p-4 ${
                   areaWinner === "A"
-                    ? "bg-emerald-50/70 border-r-4 border-r-emerald-500 font-black text-emerald-950"
-                    : "font-bold text-slate-900"
+                    ? "bg-emerald-50/70 dark:bg-emerald-950/30 border-r-4 border-r-emerald-500 font-black text-emerald-950 dark:text-emerald-200"
+                    : "font-bold text-slate-900 dark:text-slate-100"
                 }`}
               >
                 <span>{formatArea(propA.area)}</span>
@@ -493,8 +493,8 @@ async function CompareContent({
               <td
                 className={`p-4 ${
                   areaWinner === "B"
-                    ? "bg-emerald-50/70 border-r-4 border-r-emerald-500 font-black text-emerald-950"
-                    : "font-bold text-slate-900"
+                    ? "bg-emerald-50/70 dark:bg-emerald-950/30 border-r-4 border-r-emerald-500 font-black text-emerald-950 dark:text-emerald-200"
+                    : "font-bold text-slate-900 dark:text-slate-100"
                 }`}
               >
                 <span>{formatArea(propB.area)}</span>
@@ -506,19 +506,19 @@ async function CompareContent({
               </td>
             </tr>
 
-            <tr className="hover:bg-slate-50/50">
-              <td className="p-4 font-bold text-slate-700 flex items-center gap-2">
-                <Bed className="h-4 w-4 text-slate-400" />
+            <tr className="hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors">
+              <td className="p-4 font-bold text-slate-700 dark:text-slate-300 flex items-center gap-2">
+                <Bed className="h-4 w-4 text-slate-400 dark:text-slate-500" />
                 <span>تعداد اتاق خواب</span>
               </td>
               <td
                 className={`p-4 ${
                   bedroomsWinner === "A"
-                    ? "bg-emerald-50/70 border-r-4 border-r-emerald-500 font-bold"
+                    ? "bg-emerald-50/70 dark:bg-emerald-950/30 border-r-4 border-r-emerald-500 font-bold"
                     : ""
                 }`}
               >
-                <span>{formatBedrooms(propA.bedrooms)}</span>
+                <span className="text-slate-900 dark:text-slate-100">{formatBedrooms(propA.bedrooms)}</span>
                 {bedroomsWinner === "A" && (
                   <span className="mr-2 rounded-md bg-emerald-600 text-white px-2 py-0.5 text-[10px] font-bold">
                     خواب بیشتر
@@ -528,11 +528,11 @@ async function CompareContent({
               <td
                 className={`p-4 ${
                   bedroomsWinner === "B"
-                    ? "bg-emerald-50/70 border-r-4 border-r-emerald-500 font-bold"
+                    ? "bg-emerald-50/70 dark:bg-emerald-950/30 border-r-4 border-r-emerald-500 font-bold"
                     : ""
                 }`}
               >
-                <span>{formatBedrooms(propB.bedrooms)}</span>
+                <span className="text-slate-900 dark:text-slate-100">{formatBedrooms(propB.bedrooms)}</span>
                 {bedroomsWinner === "B" && (
                   <span className="mr-2 rounded-md bg-emerald-600 text-white px-2 py-0.5 text-[10px] font-bold">
                     خواب بیشتر
@@ -541,32 +541,32 @@ async function CompareContent({
               </td>
             </tr>
 
-            <tr className="hover:bg-slate-50/50">
-              <td className="p-4 font-bold text-slate-700 flex items-center gap-2">
-                <Bath className="h-4 w-4 text-slate-400" />
+            <tr className="hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors">
+              <td className="p-4 font-bold text-slate-700 dark:text-slate-300 flex items-center gap-2">
+                <Bath className="h-4 w-4 text-slate-400 dark:text-slate-500" />
                 <span>سرویس بهداشتی / حمام</span>
               </td>
-              <td className="p-4 font-medium text-slate-900">
+              <td className="p-4 font-medium text-slate-900 dark:text-slate-100">
                 {toPersianDigits(propA.bathrooms)} سرویس
               </td>
-              <td className="p-4 font-medium text-slate-900">
+              <td className="p-4 font-medium text-slate-900 dark:text-slate-100">
                 {toPersianDigits(propB.bathrooms)} سرویس
               </td>
             </tr>
 
-            <tr className="hover:bg-slate-50/50">
-              <td className="p-4 font-bold text-slate-700 flex items-center gap-2">
-                <Layers className="h-4 w-4 text-slate-400" />
+            <tr className="hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors">
+              <td className="p-4 font-bold text-slate-700 dark:text-slate-300 flex items-center gap-2">
+                <Layers className="h-4 w-4 text-slate-400 dark:text-slate-500" />
                 <span>طبقه</span>
               </td>
-              <td className="p-4 font-medium text-slate-900">
+              <td className="p-4 font-medium text-slate-900 dark:text-slate-100">
                 {propA.floor !== null && propA.floor !== undefined
                   ? propA.floor === 0
                     ? "همکف"
                     : `طبقه ${toPersianDigits(propA.floor)}`
                   : "مشخص نشده"}
               </td>
-              <td className="p-4 font-medium text-slate-900">
+              <td className="p-4 font-medium text-slate-900 dark:text-slate-100">
                 {propB.floor !== null && propB.floor !== undefined
                   ? propB.floor === 0
                     ? "همکف"
@@ -575,19 +575,19 @@ async function CompareContent({
               </td>
             </tr>
 
-            <tr className="hover:bg-slate-50/50">
-              <td className="p-4 font-bold text-slate-700 flex items-center gap-2">
-                <Calendar className="h-4 w-4 text-slate-400" />
+            <tr className="hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors">
+              <td className="p-4 font-bold text-slate-700 dark:text-slate-300 flex items-center gap-2">
+                <Calendar className="h-4 w-4 text-slate-400 dark:text-slate-500" />
                 <span>سال ساخت</span>
               </td>
               <td
                 className={`p-4 ${
                   yearWinner === "A"
-                    ? "bg-emerald-50/70 border-r-4 border-r-emerald-500 font-bold"
+                    ? "bg-emerald-50/70 dark:bg-emerald-950/30 border-r-4 border-r-emerald-500 font-bold"
                     : ""
                 }`}
               >
-                <span>{propA.yearBuilt ? `سال ${toPersianDigits(propA.yearBuilt)}` : "نوساز"}</span>
+                <span className="text-slate-900 dark:text-slate-100">{propA.yearBuilt ? `سال ${toPersianDigits(propA.yearBuilt)}` : "نوساز"}</span>
                 {yearWinner === "A" && (
                   <span className="mr-2 rounded-md bg-emerald-600 text-white px-2 py-0.5 text-[10px] font-bold">
                     نوسازتر
@@ -597,11 +597,11 @@ async function CompareContent({
               <td
                 className={`p-4 ${
                   yearWinner === "B"
-                    ? "bg-emerald-50/70 border-r-4 border-r-emerald-500 font-bold"
+                    ? "bg-emerald-50/70 dark:bg-emerald-950/30 border-r-4 border-r-emerald-500 font-bold"
                     : ""
                 }`}
               >
-                <span>{propB.yearBuilt ? `سال ${toPersianDigits(propB.yearBuilt)}` : "نوساز"}</span>
+                <span className="text-slate-900 dark:text-slate-100">{propB.yearBuilt ? `سال ${toPersianDigits(propB.yearBuilt)}` : "نوساز"}</span>
                 {yearWinner === "B" && (
                   <span className="mr-2 rounded-md bg-emerald-600 text-white px-2 py-0.5 text-[10px] font-bold">
                     نوسازتر
@@ -610,12 +610,12 @@ async function CompareContent({
               </td>
             </tr>
 
-            <tr className="hover:bg-slate-50/50">
-              <td className="p-4 font-bold text-slate-700">پارکینگ اختصاصی</td>
+            <tr className="hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors">
+              <td className="p-4 font-bold text-slate-700 dark:text-slate-300">پارکینگ اختصاصی</td>
               <td
                 className={`p-4 ${
                   propA.parking && !propB.parking
-                    ? "bg-emerald-50/70 border-r-4 border-r-emerald-500"
+                    ? "bg-emerald-50/70 dark:bg-emerald-950/30 border-r-4 border-r-emerald-500"
                     : ""
                 }`}
               >
@@ -634,41 +634,41 @@ async function CompareContent({
               <td
                 className={`p-4 ${
                   propB.parking && !propA.parking
-                    ? "bg-emerald-50/70 border-r-4 border-r-emerald-500"
+                    ? "bg-emerald-50/70 dark:bg-emerald-950/30 border-r-4 border-r-emerald-500"
                     : ""
                 }`}
               >
                 {propB.parking ? (
-                  <span className="inline-flex items-center gap-1.5 font-bold text-emerald-700">
+                  <span className="inline-flex items-center gap-1.5 font-bold text-emerald-700 dark:text-emerald-400">
                     <Check className="h-4 w-4 stroke-[3]" />
                     <span>دارد</span>
                   </span>
                 ) : (
-                  <span className="inline-flex items-center gap-1.5 font-medium text-slate-400">
-                    <X className="h-4 w-4 text-slate-300" />
+                  <span className="inline-flex items-center gap-1.5 font-medium text-slate-400 dark:text-slate-500">
+                    <X className="h-4 w-4 text-slate-300 dark:text-slate-600" />
                     <span>ندارد</span>
                   </span>
                 )}
               </td>
             </tr>
 
-            <tr className="hover:bg-slate-50/50">
-              <td className="p-4 font-bold text-slate-700">آسانسور</td>
+            <tr className="hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors">
+              <td className="p-4 font-bold text-slate-700 dark:text-slate-300">آسانسور</td>
               <td
                 className={`p-4 ${
                   propA.elevator && !propB.elevator
-                    ? "bg-emerald-50/70 border-r-4 border-r-emerald-500"
+                    ? "bg-emerald-50/70 dark:bg-emerald-950/30 border-r-4 border-r-emerald-500"
                     : ""
                 }`}
               >
                 {propA.elevator ? (
-                  <span className="inline-flex items-center gap-1.5 font-bold text-emerald-700">
+                  <span className="inline-flex items-center gap-1.5 font-bold text-emerald-700 dark:text-emerald-400">
                     <Check className="h-4 w-4 stroke-[3]" />
                     <span>دارد</span>
                   </span>
                 ) : (
-                  <span className="inline-flex items-center gap-1.5 font-medium text-slate-400">
-                    <X className="h-4 w-4 text-slate-300" />
+                  <span className="inline-flex items-center gap-1.5 font-medium text-slate-400 dark:text-slate-500">
+                    <X className="h-4 w-4 text-slate-300 dark:text-slate-600" />
                     <span>ندارد</span>
                   </span>
                 )}
@@ -676,41 +676,41 @@ async function CompareContent({
               <td
                 className={`p-4 ${
                   propB.elevator && !propA.elevator
-                    ? "bg-emerald-50/70 border-r-4 border-r-emerald-500"
+                    ? "bg-emerald-50/70 dark:bg-emerald-950/30 border-r-4 border-r-emerald-500"
                     : ""
                 }`}
               >
                 {propB.elevator ? (
-                  <span className="inline-flex items-center gap-1.5 font-bold text-emerald-700">
+                  <span className="inline-flex items-center gap-1.5 font-bold text-emerald-700 dark:text-emerald-400">
                     <Check className="h-4 w-4 stroke-[3]" />
                     <span>دارد</span>
                   </span>
                 ) : (
-                  <span className="inline-flex items-center gap-1.5 font-medium text-slate-400">
-                    <X className="h-4 w-4 text-slate-300" />
+                  <span className="inline-flex items-center gap-1.5 font-medium text-slate-400 dark:text-slate-500">
+                    <X className="h-4 w-4 text-slate-300 dark:text-slate-600" />
                     <span>ندارد</span>
                   </span>
                 )}
               </td>
             </tr>
 
-            <tr className="hover:bg-slate-50/50">
-              <td className="p-4 font-bold text-slate-700">انباری</td>
+            <tr className="hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors">
+              <td className="p-4 font-bold text-slate-700 dark:text-slate-300">انباری</td>
               <td
                 className={`p-4 ${
                   propA.storage && !propB.storage
-                    ? "bg-emerald-50/70 border-r-4 border-r-emerald-500"
+                    ? "bg-emerald-50/70 dark:bg-emerald-950/30 border-r-4 border-r-emerald-500"
                     : ""
                 }`}
               >
                 {propA.storage ? (
-                  <span className="inline-flex items-center gap-1.5 font-bold text-emerald-700">
+                  <span className="inline-flex items-center gap-1.5 font-bold text-emerald-700 dark:text-emerald-400">
                     <Check className="h-4 w-4 stroke-[3]" />
                     <span>دارد</span>
                   </span>
                 ) : (
-                  <span className="inline-flex items-center gap-1.5 font-medium text-slate-400">
-                    <X className="h-4 w-4 text-slate-300" />
+                  <span className="inline-flex items-center gap-1.5 font-medium text-slate-400 dark:text-slate-500">
+                    <X className="h-4 w-4 text-slate-300 dark:text-slate-600" />
                     <span>ندارد</span>
                   </span>
                 )}
@@ -718,41 +718,41 @@ async function CompareContent({
               <td
                 className={`p-4 ${
                   propB.storage && !propA.storage
-                    ? "bg-emerald-50/70 border-r-4 border-r-emerald-500"
+                    ? "bg-emerald-50/70 dark:bg-emerald-950/30 border-r-4 border-r-emerald-500"
                     : ""
                 }`}
               >
                 {propB.storage ? (
-                  <span className="inline-flex items-center gap-1.5 font-bold text-emerald-700">
+                  <span className="inline-flex items-center gap-1.5 font-bold text-emerald-700 dark:text-emerald-400">
                     <Check className="h-4 w-4 stroke-[3]" />
                     <span>دارد</span>
                   </span>
                 ) : (
-                  <span className="inline-flex items-center gap-1.5 font-medium text-slate-400">
-                    <X className="h-4 w-4 text-slate-300" />
+                  <span className="inline-flex items-center gap-1.5 font-medium text-slate-400 dark:text-slate-500">
+                    <X className="h-4 w-4 text-slate-300 dark:text-slate-600" />
                     <span>ندارد</span>
                   </span>
                 )}
               </td>
             </tr>
 
-            <tr className="hover:bg-slate-50/50">
-              <td className="p-4 font-bold text-slate-700">بالکن / تراس</td>
+            <tr className="hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors">
+              <td className="p-4 font-bold text-slate-700 dark:text-slate-300">بالکن / تراس</td>
               <td
                 className={`p-4 ${
                   propA.balcony && !propB.balcony
-                    ? "bg-emerald-50/70 border-r-4 border-r-emerald-500"
+                    ? "bg-emerald-50/70 dark:bg-emerald-950/30 border-r-4 border-r-emerald-500"
                     : ""
                 }`}
               >
                 {propA.balcony ? (
-                  <span className="inline-flex items-center gap-1.5 font-bold text-emerald-700">
+                  <span className="inline-flex items-center gap-1.5 font-bold text-emerald-700 dark:text-emerald-400">
                     <Check className="h-4 w-4 stroke-[3]" />
                     <span>دارد</span>
                   </span>
                 ) : (
-                  <span className="inline-flex items-center gap-1.5 font-medium text-slate-400">
-                    <X className="h-4 w-4 text-slate-300" />
+                  <span className="inline-flex items-center gap-1.5 font-medium text-slate-400 dark:text-slate-500">
+                    <X className="h-4 w-4 text-slate-300 dark:text-slate-600" />
                     <span>ندارد</span>
                   </span>
                 )}
@@ -760,18 +760,18 @@ async function CompareContent({
               <td
                 className={`p-4 ${
                   propB.balcony && !propA.balcony
-                    ? "bg-emerald-50/70 border-r-4 border-r-emerald-500"
+                    ? "bg-emerald-50/70 dark:bg-emerald-950/30 border-r-4 border-r-emerald-500"
                     : ""
                 }`}
               >
                 {propB.balcony ? (
-                  <span className="inline-flex items-center gap-1.5 font-bold text-emerald-700">
+                  <span className="inline-flex items-center gap-1.5 font-bold text-emerald-700 dark:text-emerald-400">
                     <Check className="h-4 w-4 stroke-[3]" />
                     <span>دارد</span>
                   </span>
                 ) : (
-                  <span className="inline-flex items-center gap-1.5 font-medium text-slate-400">
-                    <X className="h-4 w-4 text-slate-300" />
+                  <span className="inline-flex items-center gap-1.5 font-medium text-slate-400 dark:text-slate-500">
+                    <X className="h-4 w-4 text-slate-300 dark:text-slate-600" />
                     <span>ندارد</span>
                   </span>
                 )}

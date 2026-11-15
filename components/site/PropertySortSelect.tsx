@@ -32,7 +32,7 @@ export function PropertySortSelect({ currentSort }: PropertySortSelectProps) {
       <select
         value={currentSort}
         onChange={handleSortChange}
-        className="appearance-none rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 pr-8 pl-3 py-2 text-xs font-bold text-slate-800 dark:text-slate-100 cursor-pointer focus:border-blue-500 focus:outline-none focus:bg-white dark:focus:bg-slate-850 transition-colors"
+        className="appearance-none rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 pr-8 pl-3 py-2 text-xs font-bold text-slate-800 dark:text-slate-100 cursor-pointer focus:border-blue-500 focus:outline-none focus:bg-white dark:focus:bg-slate-900 transition-colors"
         aria-label="مرتب‌سازی آگهی‌ها"
       >
         <option value="newest">جدیدترین‌ها</option>

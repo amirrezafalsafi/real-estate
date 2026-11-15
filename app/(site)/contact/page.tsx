@@ -184,12 +184,12 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-slate-50 dark:bg-slate-850 p-6 sm:p-8 space-y-4 transition-colors">
+          <div className="rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 space-y-4 shadow-xs transition-colors">
             <div className="flex items-center gap-2 text-slate-900 dark:text-white font-black text-sm">
               <MapPin className="h-4 w-4 text-blue-600 dark:text-blue-400" />
               <span>موقعیت مکانی دفتر مرکزی مسکن پلاس</span>
             </div>
-            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
               تهران، سعادت‌آباد، میدان کاج، بلوار فرهنگ، نبش خیابان پیوند، برج تجاری-اداری مسکن پلاس، ورودی شمالی، طبقه ۵، واحد ۵۰۲
             </p>
             <div className="pt-2 flex items-center gap-3">
@@ -197,7 +197,7 @@ export default function ContactPage() {
                 href="https://maps.google.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-2 text-xs font-bold text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors shadow-2xs"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-2 text-xs font-bold text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors shadow-2xs"
               >
                 <span>مسیریابی روی نقشه</span>
                 <ChevronLeft className="h-3.5 w-3.5 text-slate-400 dark:text-slate-500" />
@@ -222,10 +222,10 @@ export default function ContactPage() {
           {faqs.map((faq, idx) => (
             <div
               key={idx}
-              className="rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-850 p-5 space-y-2 text-right transition-colors"
+              className="rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-800/60 p-5 space-y-2 text-right transition-colors"
             >
               <h3 className="font-black text-slate-900 dark:text-white text-sm">{faq.q}</h3>
-              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">{faq.a}</p>
+              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">{faq.a}</p>
             </div>
           ))}
         </div>

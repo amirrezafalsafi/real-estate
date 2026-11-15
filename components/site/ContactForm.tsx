@@ -112,7 +112,7 @@ export function ContactForm() {
           id="contact-subject"
           value={subject}
           onChange={(e) => setSubject(e.target.value)}
-          className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-3.5 py-2.5 text-xs font-bold text-slate-800 dark:text-slate-100 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-850 focus:outline-none transition-colors"
+          className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-3.5 py-2.5 text-xs font-bold text-slate-800 dark:text-slate-100 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-900 focus:outline-none transition-colors"
         >
           <option value="مشاوره خرید یا سرمایه‌گذاری">مشاوره خرید یا سرمایه‌گذاری ملک</option>
           <option value="مشاوره فروش یا ثبت آگهی">مشاوره فروش یا واگذاری ملک</option>
@@ -134,7 +134,7 @@ export function ContactForm() {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="توضیحات تکمیلی، شهر و منطقه مورد نظر یا زمان مناسب برای تماس را مرقوم فرمایید..."
-          className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 p-3.5 text-xs font-medium text-slate-800 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-850 focus:outline-none transition-colors resize-none"
+          className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 p-3.5 text-xs font-medium text-slate-800 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-900 focus:outline-none transition-colors resize-none"
         />
       </div>
 

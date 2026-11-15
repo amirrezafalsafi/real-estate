@@ -39,6 +39,8 @@
   --color-app-accent: var(--app-accent);
   --color-app-accent-hover: var(--app-accent-hover);
   --color-app-accent-light: var(--app-accent-light);
+
+  --color-slate-850: #131d33;
 }
 
 :root {

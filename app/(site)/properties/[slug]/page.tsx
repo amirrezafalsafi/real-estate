@@ -124,27 +124,27 @@ export default async function PropertyDetailPage({ params }: PageProps) {
       : null;
 
   return (
-    <div className="min-h-screen bg-slate-50/70 pb-20">
+    <div className="min-h-screen bg-slate-50/70 dark:bg-slate-950 text-slate-900 dark:text-slate-100 pb-20 transition-colors">
 
-      <div className="border-b border-slate-200/80 bg-white">
+      <div className="border-b border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 transition-colors">
         <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8">
-          <nav aria-label="مسیر راهنما" className="flex items-center gap-2 text-xs text-slate-500">
-            <Link href="/" className="hover:text-slate-900 transition-colors">
+          <nav aria-label="مسیر راهنما" className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+            <Link href="/" className="hover:text-slate-900 dark:hover:text-white transition-colors">
               خانه
             </Link>
-            <ChevronLeft className="h-3 w-3 text-slate-400" />
-            <Link href="/properties" className="hover:text-slate-900 transition-colors">
+            <ChevronLeft className="h-3 w-3 text-slate-400 dark:text-slate-500" />
+            <Link href="/properties" className="hover:text-slate-900 dark:hover:text-white transition-colors">
               املاک
             </Link>
-            <ChevronLeft className="h-3 w-3 text-slate-400" />
+            <ChevronLeft className="h-3 w-3 text-slate-400 dark:text-slate-500" />
             <Link
               href={`/properties?city=${encodeURIComponent(property.city)}`}
-              className="hover:text-slate-900 transition-colors"
+              className="hover:text-slate-900 dark:hover:text-white transition-colors"
             >
               {property.city}
             </Link>
-            <ChevronLeft className="h-3 w-3 text-slate-400" />
-            <span className="truncate max-w-[200px] sm:max-w-md font-medium text-slate-800">
+            <ChevronLeft className="h-3 w-3 text-slate-400 dark:text-slate-500" />
+            <span className="truncate max-w-[200px] sm:max-w-md font-medium text-slate-800 dark:text-slate-200">
               {property.title}
             </span>
           </nav>
