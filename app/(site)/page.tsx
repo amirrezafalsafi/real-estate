@@ -129,7 +129,7 @@ export default async function HomePage() {
             priority
             className="object-cover object-center brightness-35"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-950/50" />
+          <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/70 to-slate-950/50" />
         </div>
 
         <div className="pointer-events-none absolute -top-40 right-1/4 -z-10 h-96 w-96 rounded-full bg-blue-600/20 blur-3xl" />
@@ -321,7 +321,7 @@ export default async function HomePage() {
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/60 to-transparent" />
 
                 <div className="relative z-10 p-6 space-y-2">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white shadow-md">
@@ -408,7 +408,7 @@ export default async function HomePage() {
       </section>
 
       <section className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl border border-blue-400/30 bg-gradient-to-r from-blue-700 via-blue-600 to-blue-800 p-8 sm:p-14 text-white shadow-xl text-center space-y-6">
+        <div className="relative overflow-hidden rounded-3xl border border-blue-400/30 bg-linear-to-r from-blue-700 via-blue-600 to-blue-800 p-8 sm:p-14 text-white shadow-xl text-center space-y-6">
           <div className="max-w-2xl mx-auto space-y-3">
             <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white">
               قصد فروش یا اجاره دادن ملک خود را دارید؟
