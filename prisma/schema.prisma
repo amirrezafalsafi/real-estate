@@ -1,0 +1,100 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+enum ListingType {
+  SALE
+  RENT
+}
+
+enum PropertyType {
+  APARTMENT
+  VILLA
+  LAND
+  OFFICE
+  SHOP
+}
+
+enum PropertyStatus {
+  ACTIVE
+  SOLD
+  RENTED
+  HIDDEN
+}
+
+model Property {
+  id           String         @id @default(cuid())
+  title        String
+  slug         String         @unique
+  description  String
+  listingType  ListingType
+  propertyType PropertyType
+
+  price        Float?
+  deposit      Float?
+  monthlyRent  Float?
+
+  area         Float
+  bedrooms     Int            @default(0)
+  bathrooms    Int            @default(1)
+  floor        Int?
+  yearBuilt    Int?
+
+  parking      Boolean        @default(false)
+  elevator     Boolean        @default(false)
+  storage      Boolean        @default(false)
+  balcony      Boolean        @default(false)
+
+  city         String
+  district     String?
+  address      String?
+
+  featured     Boolean        @default(false)
+  status       PropertyStatus @default(ACTIVE)
+
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+
+  images       PropertyImage[]
+  inquiries    Inquiry[]
+
+  @@map("properties")
+}
+
+model PropertyImage {
+  id         String   @id @default(cuid())
+  url        String
+  order      Int      @default(0)
+  propertyId String
+  property   Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+
+  @@map("property_images")
+}
+
+model AdminUser {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@map("admin_users")
+}
+
+model Inquiry {
+  id         String    @id @default(cuid())
+  name       String
+  phone      String
+  message    String
+  isRead     Boolean   @default(false)
+  propertyId String?
+  property   Property? @relation(fields: [propertyId], references: [id], onDelete: SetNull)
+  createdAt  DateTime  @default(now())
+
+  @@map("inquiries")
+}
