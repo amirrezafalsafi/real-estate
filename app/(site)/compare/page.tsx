@@ -820,11 +820,51 @@ async function CompareContent({
   );
 }
 
-function CompareSkeleton() {
+export function CompareSkeleton() {
   return (
-    <div className="space-y-6 animate-pulse">
-      <div className="h-10 w-72 rounded-2xl bg-slate-200" />
-      <div className="h-150 w-full rounded-3xl bg-slate-200" />
+    <div className="space-y-8 animate-pulse text-right">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-5">
+        <div className="space-y-2">
+          <div className="h-4 w-40 rounded bg-slate-200 dark:bg-slate-800" />
+          <div className="h-8 w-64 rounded-xl bg-slate-200 dark:bg-slate-800" />
+          <div className="h-3 w-80 rounded bg-slate-100 dark:bg-slate-800/60" />
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="h-9 w-32 rounded-xl bg-slate-200 dark:bg-slate-800" />
+          <div className="h-9 w-36 rounded-xl bg-slate-200 dark:bg-slate-800" />
+        </div>
+      </div>
+
+      <div className="overflow-x-auto rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-md">
+        <div className="p-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-800/80 flex items-center justify-between">
+          <div className="h-4 w-24 rounded bg-slate-200 dark:bg-slate-700" />
+          <div className="h-6 w-28 rounded-md bg-blue-600/20 dark:bg-blue-500/20" />
+          <div className="h-6 w-28 rounded-md bg-sky-500/20 dark:bg-sky-500/20" />
+        </div>
+
+        <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-6 border-b border-slate-100 dark:border-slate-800">
+          <div className="space-y-3">
+            <div className="aspect-16/10 w-full rounded-2xl bg-slate-200 dark:bg-slate-800" />
+            <div className="h-5 w-3/4 rounded-lg bg-slate-200 dark:bg-slate-800" />
+            <div className="h-4 w-1/3 rounded bg-slate-100 dark:bg-slate-800/60" />
+          </div>
+          <div className="space-y-3">
+            <div className="aspect-16/10 w-full rounded-2xl bg-slate-200 dark:bg-slate-800" />
+            <div className="h-5 w-3/4 rounded-lg bg-slate-200 dark:bg-slate-800" />
+            <div className="h-4 w-1/3 rounded bg-slate-100 dark:bg-slate-800/60" />
+          </div>
+        </div>
+
+        <div className="divide-y divide-slate-100 dark:divide-slate-800">
+          {Array.from({ length: 8 }).map((_, i) => (
+            <div key={i} className="p-4 flex items-center justify-between">
+              <div className="h-4 w-28 rounded bg-slate-200 dark:bg-slate-800" />
+              <div className="h-4 w-32 rounded bg-slate-100 dark:bg-slate-800/60" />
+              <div className="h-4 w-32 rounded bg-slate-100 dark:bg-slate-800/60" />
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

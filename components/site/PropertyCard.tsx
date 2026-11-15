@@ -192,4 +192,43 @@ export function PropertyCard({ property, className }: PropertyCardProps) {
   );
 }
 
+export function PropertyCardSkeleton({ className = "" }: { className?: string }) {
+  return (
+    <div
+      className={`flex flex-col overflow-hidden rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs animate-pulse ${className}`}
+    >
+      <div className="relative aspect-16/10 w-full bg-slate-200/80 dark:bg-slate-800/80">
+        <div className="absolute top-3 right-3 flex gap-2">
+          <div className="h-5 w-16 rounded-md bg-slate-300/80 dark:bg-slate-700/80" />
+          <div className="h-5 w-12 rounded-md bg-slate-300/80 dark:bg-slate-700/80" />
+        </div>
+        <div className="absolute bottom-2.5 right-3 h-4 w-32 rounded bg-slate-300/80 dark:bg-slate-700/80" />
+      </div>
+
+      <div className="flex flex-1 flex-col p-4 sm:p-5 text-right space-y-4">
+        <div className="space-y-2">
+          <div className="h-5 w-5/6 rounded-lg bg-slate-200 dark:bg-slate-800" />
+          <div className="h-4 w-1/2 rounded-lg bg-slate-100 dark:bg-slate-800/60" />
+        </div>
+
+        <div className="grid grid-cols-3 gap-2 border-y border-slate-100 dark:border-slate-800/80 py-3">
+          <div className="h-4 rounded bg-slate-200/70 dark:bg-slate-800/70" />
+          <div className="h-4 rounded bg-slate-200/70 dark:bg-slate-800/70" />
+          <div className="h-4 rounded bg-slate-200/70 dark:bg-slate-800/70" />
+        </div>
+
+        <div className="space-y-1.5 pt-1">
+          <div className="h-3 w-16 rounded bg-slate-200/60 dark:bg-slate-800/60" />
+          <div className="h-6 w-36 rounded-lg bg-slate-200 dark:bg-slate-800" />
+        </div>
+
+        <div className="pt-2 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between">
+          <div className="h-7 w-28 rounded-lg bg-slate-200/80 dark:bg-slate-800/80" />
+          <div className="h-4 w-12 rounded bg-slate-200/80 dark:bg-slate-800/80" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default PropertyCard;

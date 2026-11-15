@@ -183,12 +183,54 @@ async function InquiriesContent({
   );
 }
 
-function InquiriesLoadingSkeleton() {
+export function InquiriesLoadingSkeleton() {
   return (
-    <div className="space-y-6 animate-pulse">
-      <div className="h-12 w-64 rounded-2xl bg-slate-800" />
-      <div className="h-16 w-full rounded-2xl bg-slate-800" />
-      <div className="h-96 w-full rounded-2xl bg-slate-800" />
+    <div className="space-y-6 animate-pulse text-right">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-slate-800 pb-5">
+        <div className="space-y-2">
+          <div className="h-7 w-64 rounded-xl bg-slate-800" />
+          <div className="h-3 w-48 rounded bg-slate-800/60" />
+        </div>
+      </div>
+
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 rounded-2xl border border-slate-800 bg-slate-900/90 p-4">
+        <div className="h-9 w-full max-w-md rounded-xl bg-slate-800" />
+        <div className="flex items-center gap-2">
+          {Array.from({ length: 3 }).map((_, i) => (
+            <div key={i} className="h-8 w-16 rounded-xl bg-slate-800/70" />
+          ))}
+        </div>
+      </div>
+
+      <div className="overflow-x-auto rounded-3xl border border-slate-800 bg-slate-900/90">
+        <div className="p-4 border-b border-slate-800 bg-slate-850 flex items-center justify-between">
+          <div className="h-4 w-32 rounded bg-slate-800" />
+          <div className="h-4 w-28 rounded bg-slate-800" />
+          <div className="h-4 w-40 rounded bg-slate-800" />
+          <div className="h-4 w-20 rounded bg-slate-800" />
+          <div className="h-4 w-16 rounded bg-slate-800" />
+        </div>
+        <div className="divide-y divide-slate-800/60">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <div key={i} className="p-4 flex items-center justify-between gap-4">
+              <div className="space-y-1.5">
+                <div className="h-4 w-28 rounded bg-slate-800" />
+                <div className="h-3 w-20 rounded bg-slate-800/60" />
+              </div>
+              <div className="h-4 w-24 rounded bg-slate-800" />
+              <div className="space-y-1">
+                <div className="h-4 w-48 rounded bg-slate-800" />
+                <div className="h-3 w-36 rounded bg-slate-800/60" />
+              </div>
+              <div className="h-6 w-20 rounded-lg bg-slate-800" />
+              <div className="flex items-center gap-2">
+                <div className="h-8 w-8 rounded-lg bg-slate-800" />
+                <div className="h-8 w-8 rounded-lg bg-slate-800" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
