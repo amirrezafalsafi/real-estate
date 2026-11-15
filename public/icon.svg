@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="plusGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+  </defs>
+  <rect width="472" height="472" x="20" y="20" rx="104" fill="url(#bgGrad)" />
+  <rect x="100" y="210" width="124" height="200" rx="16" fill="#ffffff" />
+  <rect x="122" y="236" width="34" height="26" rx="6" fill="#2563eb" />
+  <rect x="168" y="236" width="34" height="26" rx="6" fill="#2563eb" />
+  <rect x="122" y="280" width="34" height="26" rx="6" fill="#2563eb" />
+  <rect x="168" y="280" width="34" height="26" rx="6" fill="#2563eb" />
+  <rect x="122" y="324" width="34" height="26" rx="6" fill="#2563eb" />
+  <rect x="168" y="324" width="34" height="26" rx="6" fill="#2563eb" />
+  <rect x="238" y="125" width="144" height="285" rx="18" fill="#ffffff" />
+  <rect x="262" y="155" width="38" height="28" rx="6" fill="#2563eb" />
+  <rect x="316" y="155" width="38" height="28" rx="6" fill="#2563eb" />
+  <rect x="262" y="200" width="38" height="28" rx="6" fill="#2563eb" />
+  <rect x="316" y="200" width="38" height="28" rx="6" fill="#2563eb" />
+  <rect x="262" y="245" width="38" height="28" rx="6" fill="#2563eb" />
+  <rect x="316" y="245" width="38" height="28" rx="6" fill="#2563eb" />
+  <rect x="262" y="290" width="38" height="28" rx="6" fill="#2563eb" />
+  <rect x="316" y="290" width="38" height="28" rx="6" fill="#2563eb" />
+  <path d="M290 410 V355 C290 348 296 342 303 342 H317 C324 342 330 348 330 355 V410 Z" fill="#2563eb" />
+  <rect x="80" y="410" width="320" height="12" rx="6" fill="#ffffff" />
+  <circle cx="395" cy="115" r="54" fill="url(#plusGrad)" stroke="#ffffff" stroke-width="8" />
+  <path d="M395 85 V145 M365 115 H425" stroke="#ffffff" stroke-width="12" stroke-linecap="round" />
+</svg>
