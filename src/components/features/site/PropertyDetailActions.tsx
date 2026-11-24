@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Scale, Check, Share2, Copy } from "lucide-react";
 import { useCompare } from "./CompareContext";
+import { FavoriteButton } from "./FavoriteButton";
 
 interface PropertyDetailActionsProps {
   propertyId: string;
@@ -67,6 +68,8 @@ export function PropertyDetailActions({
 
   return (
     <div className="flex items-center gap-2">
+      <FavoriteButton propertyId={propertyId} showLabel />
+
       <button
         type="button"
         onClick={handleToggleCompare}

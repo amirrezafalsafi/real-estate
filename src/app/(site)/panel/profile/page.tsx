@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
-import { User, Mail, Phone, Lock, Save, ShieldCheck, ChevronLeft, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { User, Lock, Save, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { useUserAuth } from "@/components/providers/UserAuthProvider";
 
 export default function UserProfileSettingsPage() {
@@ -86,22 +85,14 @@ export default function UserProfileSettingsPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-slate-200/90 dark:border-slate-800 pb-5">
         <div>
-          <nav aria-label="مسیر راهنما" className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mb-2">
-            <Link href="/" className="hover:text-slate-900 dark:hover:text-white transition-colors">
-              خانه
-            </Link>
-            <ChevronLeft className="h-3 w-3 text-slate-400 dark:text-slate-500" />
-            <Link href="/panel" className="hover:text-slate-900 dark:hover:text-white transition-colors">
-              پنل کاربری
-            </Link>
-            <ChevronLeft className="h-3 w-3 text-slate-400 dark:text-slate-500" />
-            <span className="font-bold text-slate-900 dark:text-white">تنظیمات پروفایل</span>
-          </nav>
-          <h1 className="text-2xl font-black text-slate-900 dark:text-white">اطلاعات کاربری و امنیت</h1>
+          <h1 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white flex items-center gap-2">
+            <User className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+            <span>اطلاعات کاربری و امنیت</span>
+          </h1>
           <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-            مشخصات فردی، آدرس ایمیل و کلمه عبور حساب خود را به‌روزرسانی فرمایید.
+            مشخصات فردی، آدرس ایمیل و کلمه عبور حساب کاربری خود را به‌روزرسانی فرمایید.
           </p>
         </div>
       </div>

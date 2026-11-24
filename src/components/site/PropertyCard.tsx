@@ -15,6 +15,7 @@ import {
 import { formatPrice, formatBedrooms, formatArea } from "@/lib/format";
 import { Badge } from "@/components/ui/Badge";
 import { useCompare } from "./CompareContext";
+import { FavoriteButton } from "./FavoriteButton";
 import type { PropertyItem } from "@/types";
 
 export interface PropertyCardProps {
@@ -80,9 +81,12 @@ export function PropertyCard({ property, className }: PropertyCardProps) {
             )}
           </div>
 
-          <span className="rounded-lg bg-slate-900/80 px-2 py-1 text-[11px] font-medium text-white shadow-sm backdrop-blur-xs">
-            {propertyTypeFa}
-          </span>
+          <div className="flex items-center gap-1.5 pointer-events-auto">
+            <FavoriteButton propertyId={property.id} size="sm" />
+            <span className="rounded-lg bg-slate-900/80 px-2 py-1 text-[11px] font-medium text-white shadow-sm backdrop-blur-xs">
+              {propertyTypeFa}
+            </span>
+          </div>
         </div>
 
         <div className="absolute bottom-2.5 right-3 left-3 flex items-center gap-1 text-white text-xs font-medium drop-shadow-sm pointer-events-none">

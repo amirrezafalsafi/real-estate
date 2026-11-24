@@ -7,12 +7,13 @@ import {
   LayoutDashboard,
   Building2,
   Mail,
+  Bookmark,
   Settings,
   PlusCircle,
   LogOut,
-  User,
-  Shield,
   ChevronLeft,
+  Globe,
+  ShieldCheck,
 } from "lucide-react";
 import { useUser } from "@/components/providers/UserAuthProvider";
 import { toPersianDigits } from "@/lib/format";
@@ -28,9 +29,10 @@ export function UserPanelSidebar({ user }: UserPanelSidebarProps) {
 
   const navItems = [
     { label: "پیشخوان کاربری", href: "/panel", icon: LayoutDashboard },
-    { label: "آگهی‌های من", href: "/panel/properties", icon: Building2 },
-    { label: "درخواست‌های من", href: "/panel/inquiries", icon: Mail },
-    { label: "تنظیمات حساب", href: "/panel/profile", icon: Settings },
+    { label: "املاک و آگهی‌های من", href: "/panel/properties", icon: Building2 },
+    { label: "درخواست‌ها و پیام‌ها", href: "/panel/inquiries", icon: Mail },
+    { label: "املاک نشان‌شده", href: "/panel/favorites", icon: Bookmark },
+    { label: "تنظیمات حساب کاربری", href: "/panel/profile", icon: Settings },
   ];
 
   const getInitials = (name: string) => {
@@ -53,6 +55,10 @@ export function UserPanelSidebar({ user }: UserPanelSidebarProps) {
             <p className="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5 truncate" dir="ltr">
               {toPersianDigits(user.phone)}
             </p>
+            <div className="inline-flex items-center gap-1 mt-1 rounded-md bg-blue-50 dark:bg-blue-950/60 px-2 py-0.5 text-[10px] font-bold text-blue-700 dark:text-blue-300">
+              <ShieldCheck className="h-3 w-3" />
+              <span>کاربر تایید شده</span>
+            </div>
           </div>
         </div>
 
@@ -83,16 +89,24 @@ export function UserPanelSidebar({ user }: UserPanelSidebarProps) {
         <div className="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-2">
           <Link
             href="/submit-property"
-            className="flex items-center justify-center gap-2 rounded-xl bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 py-2.5 px-3 text-xs font-bold text-blue-700 dark:text-blue-300 hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors w-full"
+            className="flex items-center justify-center gap-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white py-2.5 px-3 text-xs font-bold shadow-sm shadow-blue-500/20 transition-all w-full"
           >
-            <PlusCircle className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+            <PlusCircle className="h-4 w-4" />
             <span>ثبت رایگان ملک جدید</span>
+          </Link>
+
+          <Link
+            href="/"
+            className="flex items-center justify-center gap-2 rounded-xl py-2 px-3 text-xs font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors w-full"
+          >
+            <Globe className="h-4 w-4 text-slate-400" />
+            <span>بازگشت به سایت اصلی</span>
           </Link>
 
           <button
             type="button"
             onClick={logout}
-            className="flex items-center justify-center gap-2 rounded-xl py-2 px-3 text-xs font-bold text-slate-500 hover:text-rose-600 dark:text-slate-400 dark:hover:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/20 transition-colors w-full"
+            className="flex items-center justify-center gap-2 rounded-xl py-2 px-3 text-xs font-bold text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/20 transition-colors w-full"
           >
             <LogOut className="h-4 w-4" />
             <span>خروج از حساب</span>

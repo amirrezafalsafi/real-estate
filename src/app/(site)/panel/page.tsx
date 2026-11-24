@@ -3,6 +3,7 @@ import Link from "next/link";
 import {
   Building2,
   Mail,
+  Bookmark,
   ShieldCheck,
   PlusCircle,
   Search,
@@ -30,7 +31,7 @@ export default async function UserPanelPage() {
     return null;
   }
 
-  const [propertiesCount, inquiriesCount, recentProperties] = await Promise.all([
+  const [propertiesCount, inquiriesCount, favoritesCount, recentProperties] = await Promise.all([
     prisma.property.count({
       where: { userId: user.id },
     }),
@@ -38,6 +39,9 @@ export default async function UserPanelPage() {
       where: {
         OR: [{ userId: user.id }, { phone: user.phone }],
       },
+    }),
+    prisma.favorite.count({
+      where: { userId: user.id },
     }),
     prisma.property.findMany({
       where: { userId: user.id },
@@ -70,8 +74,11 @@ export default async function UserPanelPage() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-        <div className="rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-xs space-y-3 transition-colors">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <Link
+          href="/panel/properties"
+          className="rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-xs space-y-3 transition-all hover:border-blue-400 block"
+        >
           <div className="flex items-center justify-between">
             <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-600/10 text-blue-600 dark:bg-blue-500/15 dark:text-blue-400">
               <Building2 className="h-5 w-5" />
@@ -82,9 +89,12 @@ export default async function UserPanelPage() {
             {formatNumber(propertiesCount)}
           </p>
           <p className="text-xs text-slate-500 dark:text-slate-400">ملک ثبت‌شده توسط شما</p>
-        </div>
+        </Link>
 
-        <div className="rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-xs space-y-3 transition-colors">
+        <Link
+          href="/panel/inquiries"
+          className="rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-xs space-y-3 transition-all hover:border-sky-400 block"
+        >
           <div className="flex items-center justify-between">
             <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-sky-500/10 text-sky-600 dark:bg-sky-500/15 dark:text-sky-400">
               <Mail className="h-5 w-5" />
@@ -94,8 +104,24 @@ export default async function UserPanelPage() {
           <p className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
             {formatNumber(inquiriesCount)}
           </p>
-          <p className="text-xs text-slate-500 dark:text-slate-400">پیام یا درخواست مشاوره ارسال‌شده</p>
-        </div>
+          <p className="text-xs text-slate-500 dark:text-slate-400">پیام یا درخواست مشاوره</p>
+        </Link>
+
+        <Link
+          href="/panel/favorites"
+          className="rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-xs space-y-3 transition-all hover:border-amber-400 block"
+        >
+          <div className="flex items-center justify-between">
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-600 dark:bg-amber-500/15 dark:text-amber-400">
+              <Bookmark className="h-5 w-5" />
+            </div>
+            <span className="text-xs font-bold text-slate-400">نشان‌شده‌ها</span>
+          </div>
+          <p className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
+            {formatNumber(favoritesCount)}
+          </p>
+          <p className="text-xs text-slate-500 dark:text-slate-400">ملک ذخیره‌شده در علاقه‌مندی‌ها</p>
+        </Link>
 
         <div className="rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-xs space-y-3 transition-colors">
           <div className="flex items-center justify-between">
@@ -107,7 +133,7 @@ export default async function UserPanelPage() {
           <p className="text-lg sm:text-xl font-black text-emerald-600 dark:text-emerald-400">
             کاربر ویژه
           </p>
-          <p className="text-xs text-slate-500 dark:text-slate-400">دسترسی نامحدود به ثبت آگهی رایگان</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400">دسترسی به تمام امکانات سامانه</p>
         </div>
       </div>
 
