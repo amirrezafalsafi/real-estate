@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { vazirmatn } from "./fonts";
-import { Providers } from "@/components/providers";
-import "./globals.css";
+import { Providers } from "./_layout";
+import "#styles/index.css";
 
 export const metadata: Metadata = {
   title: {

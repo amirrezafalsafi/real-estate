@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
+    "target": "ES2022",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -19,7 +19,21 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "#actions/*": ["./src/actions/*"],
+      "#api/*": ["./src/api/*"],
+      "#app/*": ["./src/app/*"],
+      "#components/*": ["./src/components/*"],
+      "#configs/*": ["./src/configs/*"],
+      "#constants/*": ["./src/constants/*"],
+      "#enums/*": ["./src/enums/*"],
+      "#hooks/*": ["./src/hooks/*"],
+      "#libraries/*": ["./src/libraries/*"],
+      "#public/*": ["./public/*"],
+      "#stores/*": ["./src/stores/*"],
+      "#styles/*": ["./src/styles/*"],
+      "#types/*": ["./src/types/*"],
+      "#utilities/*": ["./src/utilities/*"],
+      "@/*": ["./src/*", "./*"]
     }
   },
   "include": [

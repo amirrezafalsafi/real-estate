@@ -1,0 +1,1 @@
+export { vazirmatn } from "./configs";
