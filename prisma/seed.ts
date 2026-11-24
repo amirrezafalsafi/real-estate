@@ -34,7 +34,14 @@ async function main() {
       passwordHash: hashPassword(defaultPassword),
     },
   });
-  console.log(`👤 کاربر مدیر ایجاد شد: ${admin.email} (رمز عبور: ${defaultPassword})`);
+
+  await prisma.adminUser.create({
+    data: {
+      email: "amirfal@gmail.com",
+      name: "امیررضا",
+      passwordHash: hashPassword("Amir@1234"),
+    },
+  });
 
   const sampleImages = [
     [
