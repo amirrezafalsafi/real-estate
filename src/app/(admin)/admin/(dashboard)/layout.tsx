@@ -2,6 +2,8 @@ import { Suspense, type ReactNode } from "react";
 import { AdminSidebar } from "@/components/admin/AdminSidebar";
 import { AdminHeader } from "@/components/admin/AdminHeader";
 
+export const instant = false;
+
 function SidebarFallback() {
   return <aside className="w-64 shrink-0 border-l border-slate-800 bg-slate-950" />;
 }
