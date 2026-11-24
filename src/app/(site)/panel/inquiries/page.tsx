@@ -11,6 +11,8 @@ export const metadata: Metadata = {
   description: "پیگیری وضعیت درخواست‌های مشاوره و پیام‌های ارسال‌شده",
 };
 
+export const instant = false;
+
 export default async function UserInquiriesPage() {
   const user = await getCurrentUser();
 

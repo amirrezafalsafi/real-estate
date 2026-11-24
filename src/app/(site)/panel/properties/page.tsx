@@ -24,6 +24,8 @@ export const metadata: Metadata = {
   description: "مدیریت، تغییر وضعیت و بررسی فایل‌های ملکی ثبت‌شده توسط شما",
 };
 
+export const instant = false;
+
 interface UserPropertiesPageProps {
   searchParams?: Promise<{ status?: string }>;
 }

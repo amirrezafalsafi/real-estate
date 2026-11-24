@@ -24,6 +24,8 @@ export const metadata: Metadata = {
   description: "مدیریت املاک ثبت‌شده، درخواست‌های مشاوره و اطلاعات حساب کاربری",
 };
 
+export const instant = false;
+
 export default async function UserPanelPage() {
   const user = await getCurrentUser();
 

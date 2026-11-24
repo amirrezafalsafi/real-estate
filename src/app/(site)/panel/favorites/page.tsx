@@ -12,6 +12,8 @@ export const metadata: Metadata = {
   description: "لیست املاک ذخیره و نشان‌شده توسط شما",
 };
 
+export const instant = false;
+
 export default async function UserFavoritesPage() {
   const user = await getCurrentUser();
 
