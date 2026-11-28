@@ -5,6 +5,9 @@ const USER_JWT_SECRET_STRING =
   process.env.USER_JWT_SECRET ||
   "sarpanah-user-secret-jwt-key-2026-production-ready-key";
 const USER_JWT_SECRET = new TextEncoder().encode(USER_JWT_SECRET_STRING);
+const USER_JWT_LEGACY_SECRET = new TextEncoder().encode(
+  "maskan-plus-user-secret-jwt-key-2026-production-ready-key"
+);
 
 export const USER_COOKIE_NAME = "user_session";
 
@@ -40,7 +43,14 @@ export async function signUserToken(payload: UserSessionData): Promise<string> {
 
 export async function verifyUserToken(token: string): Promise<UserSessionData | null> {
   try {
-    const { payload } = await jwtVerify(token, USER_JWT_SECRET);
+    let payload;
+    try {
+      const res = await jwtVerify(token, USER_JWT_SECRET);
+      payload = res.payload;
+    } catch {
+      const res = await jwtVerify(token, USER_JWT_LEGACY_SECRET);
+      payload = res.payload;
+    }
     if (!payload.id || !payload.phone) {
       return null;
     }

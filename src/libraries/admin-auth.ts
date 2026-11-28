@@ -4,6 +4,9 @@ const JWT_SECRET_STRING =
   process.env.ADMIN_JWT_SECRET ||
   "sarpanah-super-secret-jwt-key-2026-production-ready-key";
 const JWT_SECRET = new TextEncoder().encode(JWT_SECRET_STRING);
+const JWT_LEGACY_SECRET = new TextEncoder().encode(
+  "maskan-plus-super-secret-jwt-key-2026-production-ready-key"
+);
 
 export const ADMIN_COOKIE_NAME = "admin_session";
 
@@ -35,7 +38,14 @@ export async function signAdminToken(payload: AdminSessionData): Promise<string>
 
 export async function verifyAdminToken(token: string): Promise<AdminSessionData | null> {
   try {
-    const { payload } = await jwtVerify(token, JWT_SECRET);
+    let payload;
+    try {
+      const res = await jwtVerify(token, JWT_SECRET);
+      payload = res.payload;
+    } catch {
+      const res = await jwtVerify(token, JWT_LEGACY_SECRET);
+      payload = res.payload;
+    }
     if (!payload.id || !payload.email) {
       return null;
     }

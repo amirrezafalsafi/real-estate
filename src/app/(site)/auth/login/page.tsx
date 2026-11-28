@@ -2,13 +2,12 @@
 
 import React, { useState, Suspense } from "react";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { LogIn, Phone, Lock, Eye, EyeOff, Building2, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { useUser } from "@/components/providers/UserAuthProvider";
 
 function LoginFormContent() {
-  const router = useRouter();
   const searchParams = useSearchParams();
   const redirectUrl = searchParams.get("redirect") || "/panel";
   const { refreshUser } = useUser();
@@ -40,8 +39,7 @@ function LoginFormContent() {
       }
 
       await refreshUser();
-      router.push(redirectUrl);
-      router.refresh();
+      window.location.href = redirectUrl;
     } catch {
       setError("خطای غیرمنتظره رخ داد. لطفاً مجدداً تلاش کنید.");
       setIsLoading(false);
@@ -81,7 +79,7 @@ function LoginFormContent() {
               htmlFor="identifier"
               className="block text-xs font-black text-slate-800 dark:text-slate-200 mb-1.5"
             >
-              شماره موبایل یا ایمیل
+              شماره موبایل، ایمیل یا نام کاربری
             </label>
             <div className="relative">
               <input
@@ -91,7 +89,7 @@ function LoginFormContent() {
                 autoComplete="username"
                 value={identifier}
                 onChange={(e) => setIdentifier(e.target.value)}
-                placeholder="مثال: 09123456789 یا ایمیل"
+                placeholder="مثال: 09123456789 یا ایمیل یا نام کاربری"
                 className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 py-3 pr-10 pl-4 text-xs font-bold text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-900 focus:outline-none transition-colors"
                 dir="ltr"
               />

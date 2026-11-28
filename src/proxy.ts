@@ -40,7 +40,8 @@ export async function proxy(request: NextRequest) {
     const session = token ? await verifyUserToken(token) : null;
 
     if (session) {
-      return NextResponse.redirect(new URL("/panel", request.url));
+      const redirectTarget = request.nextUrl.searchParams.get("redirect") || "/panel";
+      return NextResponse.redirect(new URL(redirectTarget, request.url));
     }
   }
 

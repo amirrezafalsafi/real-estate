@@ -153,7 +153,7 @@ export function SiteHeader() {
                 <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-600 text-white text-xs font-black shadow-2xs">
                   {getUserInitials(user.name)}
                 </div>
-                <span className="hidden sm:inline max-w-[100px] truncate">{user.name || "کاربر سرپناه"}</span>
+                <span className="hidden sm:inline max-w-25 truncate">{user.name || "کاربر سرپناه"}</span>
                 <ChevronDown className="h-3.5 w-3.5 text-slate-400 dark:text-slate-500" />
               </button>
 

@@ -21,23 +21,42 @@ export async function POST(request: NextRequest) {
 
     if (!rawIdentifier || !password) {
       return NextResponse.json(
-        { error: "لطفاً شماره موبایل یا ایمیل و رمز عبور را وارد فرمایید." },
+        { error: "لطفاً شماره موبایل، ایمیل یا نام کاربری و رمز عبور را وارد فرمایید." },
         { status: 400 }
       );
     }
 
     const isEmail = rawIdentifier.includes("@");
-    const normalizedIdentifier = isEmail
-      ? rawIdentifier.toLowerCase()
-      : normalizePhone(rawIdentifier);
+    const cleanedPhone = normalizePhone(rawIdentifier);
+    const isPotentialPhone = cleanedPhone.length >= 10 && cleanedPhone.startsWith("09");
 
-    const user = isEmail
-      ? await prisma.user.findUnique({ where: { email: normalizedIdentifier } })
-      : await prisma.user.findUnique({ where: { phone: normalizedIdentifier } });
+    let user = null;
+
+    if (isEmail) {
+      user = await prisma.user.findUnique({
+        where: { email: rawIdentifier.toLowerCase() },
+      });
+    } else if (isPotentialPhone) {
+      user = await prisma.user.findUnique({
+        where: { phone: cleanedPhone },
+      });
+    }
+
+    if (!user) {
+      user = await prisma.user.findFirst({
+        where: {
+          OR: [
+            { name: rawIdentifier },
+            { email: rawIdentifier.toLowerCase() },
+            ...(cleanedPhone ? [{ phone: cleanedPhone }] : []),
+          ],
+        },
+      });
+    }
 
     if (!user) {
       return NextResponse.json(
-        { error: "شماره موبایل، ایمیل یا رمز عبور اشتباه است." },
+        { error: "شماره موبایل، ایمیل، نام کاربری یا رمز عبور اشتباه است." },
         { status: 401 }
       );
     }
@@ -45,7 +64,7 @@ export async function POST(request: NextRequest) {
     const isValidPassword = await bcrypt.compare(password, user.passwordHash);
     if (!isValidPassword) {
       return NextResponse.json(
-        { error: "شماره موبایل، ایمیل یا رمز عبور اشتباه است." },
+        { error: "شماره موبایل، ایمیل، نام کاربری یا رمز عبور اشتباه است." },
         { status: 401 }
       );
     }
