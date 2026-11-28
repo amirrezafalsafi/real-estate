@@ -527,11 +527,11 @@ export default async function PropertyDetailPage({ params }: PageProps) {
                     نیاز به راهنمایی فوری دارید؟
                   </span>
                   <a
-                    href="tel:02188889999"
+                    href="tel:01133334455"
                     className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-4 py-2.5 text-xs font-bold text-slate-800 dark:text-slate-200 hover:border-blue-300 dark:hover:border-blue-500 hover:bg-slate-100 dark:hover:bg-slate-700/80 transition-colors"
                   >
                     <Phone className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-                    <span>تماس مستقیم با کارشناس: ۰۲۱-۸۸۸۸۹۹۹۹</span>
+                    <span>تماس مستقیم با کارشناس: ۰۱۱-۳۳۳۳۴۴۵۵</span>
                   </a>
                 </div>
               </div>

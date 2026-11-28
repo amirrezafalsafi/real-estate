@@ -80,8 +80,8 @@ async function CompareContent({
     if (studioProperties.length >= 2) {
       presets.push({
         id: "preset-1",
-        title: "مقایسه دو آپارتمان مدرن پایتخت",
-        description: "بررسی همزمان دو ملک لوکس در مناطق ممتاز تهران همراه با مقایسه متراژ و قیمت هر متر",
+        title: "مقایسه دو آپارتمان مدرن در ساری",
+        description: "بررسی همزمان دو ملک لوکس در مناطق ممتاز ساری همراه با مقایسه متراژ و قیمت هر متر",
         propertyA: studioProperties[0] as unknown as PropertyItem,
         propertyB: studioProperties[1] as unknown as PropertyItem,
       });
@@ -131,8 +131,8 @@ async function CompareContent({
     if (studioProperties.length >= 2) {
       presets.push({
         id: "preset-1",
-        title: "مقایسه دو آپارتمان مدرن پایتخت",
-        description: "بررسی همزمان دو ملک لوکس در مناطق ممتاز تهران همراه با مقایسه متراژ و قیمت هر متر",
+        title: "مقایسه دو آپارتمان مدرن در ساری",
+        description: "بررسی همزمان دو ملک لوکس در مناطق ممتاز ساری همراه با مقایسه متراژ و قیمت هر متر",
         propertyA: studioProperties[0] as unknown as PropertyItem,
         propertyB: studioProperties[1] as unknown as PropertyItem,
       });

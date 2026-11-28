@@ -33,7 +33,7 @@ export function SubmitPropertyForm() {
   const [bathrooms, setBathrooms] = useState("1");
   const [floor, setFloor] = useState("");
   const [yearBuilt, setYearBuilt] = useState("1402");
-  const [city, setCity] = useState("تهران");
+  const [city, setCity] = useState("ساری");
   const [district, setDistrict] = useState("");
   const [address, setAddress] = useState("");
   const [description, setDescription] = useState("");
@@ -300,7 +300,7 @@ export function SubmitPropertyForm() {
             required
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            placeholder="مثال: آپارتمان ۱۲۰ متری نوساز روبه آفتاب در سعادت‌آباد"
+            placeholder="مثال: آپارتمان ۱۲۰ متری نوساز روبه آفتاب در خیابان فرهنگ ساری"
             className="w-full text-xs font-medium"
           />
         </div>
@@ -526,7 +526,7 @@ export function SubmitPropertyForm() {
               required
               value={city}
               onChange={(e) => setCity(e.target.value)}
-              placeholder="مثال: تهران، مشهد، اصفهان، شیراز..."
+              placeholder="مثال: ساری، بابل، قائم‌شهر، آمل..."
               className="w-full text-xs font-medium"
             />
           </div>
@@ -539,7 +539,7 @@ export function SubmitPropertyForm() {
               id="prop-district"
               value={district}
               onChange={(e) => setDistrict(e.target.value)}
-              placeholder="مثال: سعادت‌آباد، نیاوران، سجاد..."
+              placeholder="مثال: بلوار فرهنگ، پیوند، خیابان قارن، طبرستان..."
               className="w-full text-xs font-medium"
             />
           </div>

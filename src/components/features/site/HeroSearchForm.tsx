@@ -120,7 +120,7 @@ export function HeroSearchForm({ cities }: HeroSearchFormProps) {
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="مثلاً سعادت‌آباد، نیاوران، نوساز..."
+              placeholder="مثلاً بلوار فرهنگ، خیابان قارن، نوساز..."
               className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950/90 pr-3 pl-9 py-3 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors"
             />
             <Search className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />

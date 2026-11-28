@@ -25,16 +25,16 @@ export default function ContactPage() {
       icon: PhoneCall,
       title: "تلفن‌های تماس مستقیم",
       subtitle: "پاسخگویی سریع مشاوران ملکی",
-      primaryValue: "۰۲۱-۲۲۳۳۴۴۵۵",
-      secondaryValue: "۰۲۱-۸۸۹۹۰۰۱۱",
-      link: "tel:02122334455",
+      primaryValue: "۰۱۱-۳۳۲۲۴۴۵۵",
+      secondaryValue: "۰۱۱-۳۳۸۸۹۹۰۰",
+      link: "tel:01133224455",
       accent: "blue",
     },
     {
       icon: MapPin,
       title: "نشانی دفتر مرکزی",
       subtitle: "ملاقات حضوری با هماهنگی قبلی",
-      primaryValue: "تهران، سعادت‌آباد، بلوار فرهنگ",
+      primaryValue: "مازندران، ساری، بلوار فرهنگ",
       secondaryValue: "نبش خیابان پیوند، برج سرپناه، طبقه ۵",
       link: "https://nshn.ir",
       accent: "sky",
@@ -173,8 +173,8 @@ export default function ContactPage() {
             <div className="pt-4 border-t border-slate-800 space-y-3 text-xs">
               <div className="flex items-center justify-between text-slate-300">
                 <span>تلفن تماس فوری:</span>
-                <a href="tel:02122334455" className="font-bold text-blue-400 hover:underline" dir="ltr">
-                  021-22334455
+                <a href="tel:01133224455" className="font-bold text-blue-400 hover:underline" dir="ltr">
+                  011-33224455
                 </a>
               </div>
               <div className="flex items-center justify-between text-slate-300">
@@ -190,7 +190,7 @@ export default function ContactPage() {
               <span>موقعیت مکانی دفتر مرکزی سرپناه</span>
             </div>
             <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-              تهران، سعادت‌آباد، میدان کاج، بلوار فرهنگ، نبش خیابان پیوند، برج تجاری-اداری سرپناه، ورودی شمالی، طبقه ۵، واحد ۵۰۲
+              مازندران، ساری، میدان شهرداری، بلوار فرهنگ، نبش خیابان پیوند، برج تجاری-اداری سرپناه، ورودی شمالی، طبقه ۵، واحد ۵۰۲
             </p>
             <div className="pt-2 flex items-center gap-3">
               <a

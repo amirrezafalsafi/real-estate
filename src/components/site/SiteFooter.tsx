@@ -139,13 +139,13 @@ export function SiteFooter() {
             <ul className="space-y-3 text-xs sm:text-sm text-slate-400">
               <li className="flex items-start gap-2.5">
                 <MapPin className="h-4 w-4 text-blue-400 shrink-0 mt-0.5" />
-                <span>تهران، سعادت‌آباد، بلوار فرهنگ، نبش خیابان پیوند، برج سرپناه</span>
+                <span>ساری، بلوار فرهنگ، نبش خیابان پیوند، برج سرپناه</span>
               </li>
 
               <li className="flex items-center gap-2.5">
                 <Phone className="h-4 w-4 text-blue-400 shrink-0" />
                 <span dir="ltr" className="font-semibold text-slate-200">
-                  ۰۲۱-۲۲۳۳۴۴۵۵
+                  ۰۱۱-۳۳۲۲۴۴۵۵
                 </span>
               </li>
 

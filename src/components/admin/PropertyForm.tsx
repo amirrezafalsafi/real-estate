@@ -96,7 +96,7 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
   const [storage, setStorage] = useState(initialData?.storage ?? false);
   const [balcony, setBalcony] = useState(initialData?.balcony ?? false);
 
-  const [city, setCity] = useState(initialData?.city || "تهران");
+  const [city, setCity] = useState(initialData?.city || "ساری");
   const [district, setDistrict] = useState(initialData?.district || "");
   const [address, setAddress] = useState(initialData?.address || "");
 
@@ -337,7 +337,7 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
                 required
                 value={title}
                 onChange={handleTitleChange}
-                placeholder="مثال: فروش آپارتمان ۱۶۰ متری لوکس در سعادت‌آباد"
+                placeholder="مثال: فروش آپارتمان ۱۶۰ متری لوکس در خیابان فرهنگ ساری"
                 className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/90 px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-850 focus:outline-none transition-colors"
               />
             </div>
@@ -609,7 +609,7 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
                   required
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
-                  placeholder="مثال: تهران"
+                  placeholder="مثال: ساری"
                   className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-850 focus:outline-none transition-colors"
                 />
               </div>
@@ -620,7 +620,7 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
                   type="text"
                   value={district}
                   onChange={(e) => setDistrict(e.target.value)}
-                  placeholder="مثال: سعادت‌آباد"
+                  placeholder="مثال: بلوار فرهنگ"
                   className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-850 focus:outline-none transition-colors"
                 />
               </div>
