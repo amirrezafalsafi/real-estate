@@ -40,7 +40,7 @@ export function ThemeToggle({ className = "", showLabel = false }: ThemeTogglePr
     >
       <div className="relative h-5 w-5">
         <Sun
-          className={`absolute inset-0 h-5 w-5 text-amber-500 transition-all duration-500 ease-out ${
+          className={`absolute inset-0 h-5 w-5 text-blue-600 dark:text-blue-400 transition-all duration-500 ease-out ${
             isDark
               ? "rotate-90 scale-0 opacity-0"
               : "rotate-0 scale-100 opacity-100"
