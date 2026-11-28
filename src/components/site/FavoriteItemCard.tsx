@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
@@ -33,7 +34,7 @@ interface FavoriteItemCardProps {
   };
 }
 
-export function FavoriteItemCard({ favoriteId, property }: FavoriteItemCardProps) {
+export function FavoriteItemCard({ property }: FavoriteItemCardProps) {
   const router = useRouter();
   const [isRemoving, setIsRemoving] = useState(false);
 
@@ -65,10 +66,12 @@ export function FavoriteItemCard({ favoriteId, property }: FavoriteItemCardProps
     <div className="rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 sm:p-5 shadow-xs space-y-4 flex flex-col justify-between transition-colors">
       <div className="space-y-3">
         <div className="relative aspect-16/10 w-full overflow-hidden rounded-2xl bg-slate-100 dark:bg-slate-800">
-          <img
+          <Image
             src={primaryImage}
             alt={property.title}
-            className="h-full w-full object-cover"
+            fill
+            sizes="(max-width: 768px) 100vw, 33vw"
+            className="object-cover"
           />
           <div className="absolute top-2.5 right-2.5">
             <Badge variant={isSale ? "sale" : "rent"} size="sm">

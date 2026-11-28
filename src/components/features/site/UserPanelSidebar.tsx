@@ -10,8 +10,6 @@ import {
   Settings,
   PlusCircle,
   LogOut,
-  User,
-  Shield,
   ChevronLeft,
 } from "lucide-react";
 import { useUser } from "@/components/providers/UserAuthProvider";

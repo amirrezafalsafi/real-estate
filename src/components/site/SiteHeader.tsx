@@ -18,7 +18,6 @@ import {
   LayoutDashboard,
   FileText,
   ChevronDown,
-  ShieldAlert,
 } from "lucide-react";
 import { useCompare } from "./CompareContext";
 import { toPersianDigits } from "@/lib/format";
@@ -71,7 +70,8 @@ export function SiteHeader() {
     return pathname.startsWith(href);
   };
 
-  const getUserInitials = (name: string) => {
+  const getUserInitials = (name?: string | null) => {
+    if (!name) return "کاربر";
     const parts = name.trim().split(" ");
     if (parts.length >= 2) {
       return `${parts[0][0]} ${parts[1][0]}`;
@@ -153,14 +153,14 @@ export function SiteHeader() {
                 <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-600 text-white text-xs font-black shadow-2xs">
                   {getUserInitials(user.name)}
                 </div>
-                <span className="hidden sm:inline max-w-[100px] truncate">{user.name}</span>
+                <span className="hidden sm:inline max-w-[100px] truncate">{user.name || "کاربر سرپناه"}</span>
                 <ChevronDown className="h-3.5 w-3.5 text-slate-400 dark:text-slate-500" />
               </button>
 
               {userDropdownOpen && (
                 <div className="absolute left-0 mt-2 w-56 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-2 shadow-xl animate-in fade-in duration-150 z-50 text-right">
                   <div className="px-3 py-2.5 border-b border-slate-100 dark:border-slate-800">
-                    <p className="text-xs font-black text-slate-900 dark:text-white truncate">{user.name}</p>
+                    <p className="text-xs font-black text-slate-900 dark:text-white truncate">{user.name || "کاربر گرامی"}</p>
                     <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5" dir="ltr">
                       {user.phone}
                     </p>
@@ -243,7 +243,7 @@ export function SiteHeader() {
                       {getUserInitials(user.name)}
                     </div>
                     <div>
-                      <p className="font-black text-slate-900 dark:text-white text-sm">{user.name}</p>
+                      <p className="font-black text-slate-900 dark:text-white text-sm">{user.name || "کاربر گرامی"}</p>
                       <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5" dir="ltr">
                         {user.phone}
                       </p>

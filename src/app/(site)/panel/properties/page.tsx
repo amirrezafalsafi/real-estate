@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import type { PropertyStatus } from "@prisma/client";
 import {
   Building2,
@@ -7,10 +8,6 @@ import {
   MapPin,
   Maximize2,
   Bed,
-  Calendar,
-  CheckCircle2,
-  Clock,
-  ArrowUpDown,
 } from "lucide-react";
 import prisma from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/user-auth";
@@ -166,10 +163,12 @@ export default async function UserPropertiesPage({ searchParams }: UserPropertie
             >
               <div className="space-y-3">
                 <div className="relative aspect-16/10 w-full overflow-hidden rounded-2xl bg-slate-100 dark:bg-slate-800">
-                  <img
+                  <Image
                     src={prop.images[0]?.url || "/images/properties/prop-1.webp"}
                     alt={prop.title}
-                    className="h-full w-full object-cover"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
                   />
                   <div className="absolute top-2.5 right-2.5 flex items-center gap-1.5">
                     <Badge variant={prop.listingType === "SALE" ? "sale" : "rent"} size="sm">

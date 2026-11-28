@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Building2,
   Mail,
@@ -9,13 +10,11 @@ import {
   Search,
   Scale,
   ArrowLeft,
-  CheckCircle2,
-  Clock,
   Sparkles,
 } from "lucide-react";
 import prisma from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/user-auth";
-import { formatNumber, formatPrice, toPersianDigits } from "@/lib/format";
+import { formatNumber, formatPrice } from "@/lib/format";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 
@@ -186,10 +185,12 @@ export default async function UserPanelPage() {
               >
                 <div className="flex items-center gap-3.5 min-w-0">
                   <div className="relative h-14 w-16 shrink-0 overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-800">
-                    <img
+                    <Image
                       src={prop.images[0]?.url || "/images/properties/prop-1.webp"}
                       alt={prop.title}
-                      className="h-full w-full object-cover"
+                      fill
+                      sizes="64px"
+                      className="object-cover"
                     />
                   </div>
                   <div className="space-y-1 min-w-0">

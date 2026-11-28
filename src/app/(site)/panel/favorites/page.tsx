@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Bookmark, Building2, Search, ArrowLeft } from "lucide-react";
+import { Bookmark, Search } from "lucide-react";
 import prisma from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/user-auth";
 import { formatNumber } from "@/lib/format";

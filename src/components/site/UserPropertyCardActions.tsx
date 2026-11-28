@@ -4,13 +4,11 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
-  ExternalLink,
   Trash2,
   Share2,
   Check,
   ChevronDown,
   Loader2,
-  AlertCircle,
   Eye,
 } from "lucide-react";
 

@@ -27,7 +27,7 @@ async function main() {
   await prisma.adminUser.deleteMany();
 
   const defaultPassword = "Admin@123456";
-  const admin = await prisma.adminUser.create({
+  await prisma.adminUser.create({
     data: {
       email: "admin@sarpanah.ir",
       name: "مدیر ارشد سامانه",

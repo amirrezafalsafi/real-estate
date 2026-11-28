@@ -7,6 +7,7 @@ import { useUserAuth } from "@/components/providers/UserAuthProvider";
 export default function UserProfileSettingsPage() {
   const { user, refreshUser } = useUserAuth();
 
+  const [prevUser, setPrevUser] = useState(user);
   const [name, setName] = useState(user?.name || "");
   const [email, setEmail] = useState(user?.email || "");
   const [currentPassword, setCurrentPassword] = useState("");
@@ -17,12 +18,11 @@ export default function UserProfileSettingsPage() {
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  React.useEffect(() => {
-    if (user) {
-      setName(user.name || "");
-      setEmail(user.email || "");
-    }
-  }, [user]);
+  if (user !== prevUser) {
+    setPrevUser(user);
+    setName(user?.name || "");
+    setEmail(user?.email || "");
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

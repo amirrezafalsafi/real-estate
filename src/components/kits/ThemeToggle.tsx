@@ -1,8 +1,10 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useSyncExternalStore } from "react";
 import { Sun, Moon } from "lucide-react";
 import { useTheme } from "@/components/providers/ThemeProvider";
+
+const subscribe = () => () => {};
 
 interface ThemeToggleProps {
   className?: string;
@@ -11,11 +13,7 @@ interface ThemeToggleProps {
 
 export function ThemeToggle({ className = "", showLabel = false }: ThemeToggleProps) {
   const { resolvedTheme, toggleTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useSyncExternalStore(subscribe, () => true, () => false);
 
   if (!mounted) {
     return (

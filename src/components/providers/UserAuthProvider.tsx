@@ -1,15 +1,20 @@
 "use client";
 
-import React, { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  type ReactNode,
+} from "react";
 import { useRouter } from "next/navigation";
 
 export interface UserProfile {
   id: string;
-  name: string;
   phone: string;
-  email?: string | null;
-  avatar?: string | null;
-  createdAt?: string;
+  name: string | null;
+  email: string | null;
+  role: string;
 }
 
 interface UserAuthContextType {
@@ -27,7 +32,36 @@ export function UserAuthProvider({ children }: { children: ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
 
-  const fetchCurrentUser = async () => {
+  useEffect(() => {
+    let ignore = false;
+    async function initUser() {
+      try {
+        const res = await fetch("/api/auth/me", { cache: "no-store" });
+        if (!ignore) {
+          if (res.ok) {
+            const data = await res.json();
+            setUser(data.user || null);
+          } else {
+            setUser(null);
+          }
+        }
+      } catch {
+        if (!ignore) {
+          setUser(null);
+        }
+      } finally {
+        if (!ignore) {
+          setIsLoading(false);
+        }
+      }
+    }
+    initUser();
+    return () => {
+      ignore = true;
+    };
+  }, []);
+
+  const refreshUser = async () => {
     try {
       const res = await fetch("/api/auth/me", { cache: "no-store" });
       if (res.ok) {
@@ -38,14 +72,8 @@ export function UserAuthProvider({ children }: { children: ReactNode }) {
       }
     } catch {
       setUser(null);
-    } finally {
-      setIsLoading(false);
     }
   };
-
-  useEffect(() => {
-    fetchCurrentUser();
-  }, []);
 
   const logout = async () => {
     try {
@@ -58,25 +86,27 @@ export function UserAuthProvider({ children }: { children: ReactNode }) {
     }
   };
 
-  const refreshUser = async () => {
-    await fetchCurrentUser();
-  };
-
   return (
-    <UserAuthContext.Provider value={{ user, isLoading, logout, refreshUser, setUser }}>
+    <UserAuthContext.Provider
+      value={{
+        user,
+        isLoading,
+        logout,
+        refreshUser,
+        setUser,
+      }}
+    >
       {children}
     </UserAuthContext.Provider>
   );
 }
 
-export function useUser() {
+export function useUserAuth() {
   const context = useContext(UserAuthContext);
   if (!context) {
-    throw new Error("useUser must be used within a UserAuthProvider");
+    throw new Error("useUserAuth must be used within a UserAuthProvider");
   }
   return context;
 }
 
-export const useUserAuth = useUser;
-
-export default UserAuthProvider;
+export const useUser = useUserAuth;
