@@ -25,6 +25,7 @@ async function main() {
   await prisma.propertyImage.deleteMany();
   await prisma.property.deleteMany();
   await prisma.adminUser.deleteMany();
+  await prisma.user.deleteMany();
 
   const defaultPassword = "Admin@123456";
   await prisma.adminUser.create({
@@ -40,6 +41,23 @@ async function main() {
       email: "amirfal@gmail.com",
       name: "امیررضا",
       passwordHash: hashPassword("Amir@1234"),
+    },
+  });
+
+  await prisma.adminUser.create({
+    data: {
+      email: "amirsarpanah@gmail.com",
+      name: "Amiref",
+      passwordHash: hashPassword("AmirSarpanah"),
+    },
+  });
+
+  await prisma.user.create({
+    data: {
+      phone: "09022075323",
+      email: "amirsarpanah@gmail.com",
+      name: "Amiref",
+      passwordHash: hashPassword("AmirSarpanah"),
     },
   });
 
