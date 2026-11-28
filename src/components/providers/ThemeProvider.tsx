@@ -15,7 +15,7 @@ interface ThemeContextType {
   theme: Theme;
   resolvedTheme: "light" | "dark";
   setTheme: (theme: Theme) => void;
-  toggleTheme: () => void;
+  toggleTheme: (event?: { clientX?: number; clientY?: number; target?: unknown }) => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -77,10 +77,76 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     [applyTheme]
   );
 
-  const toggleTheme = useCallback(() => {
-    const nextTheme = resolvedTheme === "dark" ? "light" : "dark";
-    setTheme(nextTheme);
-  }, [resolvedTheme, setTheme]);
+  const toggleTheme = useCallback(
+    (event?: { clientX?: number; clientY?: number; target?: unknown }) => {
+      const nextTheme = resolvedTheme === "dark" ? "light" : "dark";
+
+      if (typeof window === "undefined" || typeof document === "undefined") {
+        setTheme(nextTheme);
+        return;
+      }
+
+      const isReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (!("startViewTransition" in document) || isReducedMotion) {
+        document.documentElement.classList.add("theme-transitioning");
+        setTheme(nextTheme);
+        window.setTimeout(() => {
+          document.documentElement.classList.remove("theme-transitioning");
+        }, 450);
+        return;
+      }
+
+      let x = window.innerWidth / 2;
+      let y = window.innerHeight / 2;
+
+      if (
+        event &&
+        typeof event.clientX === "number" &&
+        typeof event.clientY === "number" &&
+        (event.clientX > 0 || event.clientY > 0)
+      ) {
+        x = event.clientX;
+        y = event.clientY;
+      } else if (
+        event &&
+        event.target &&
+        typeof (event.target as HTMLElement).getBoundingClientRect === "function"
+      ) {
+        const rect = (event.target as HTMLElement).getBoundingClientRect();
+        x = rect.left + rect.width / 2;
+        y = rect.top + rect.height / 2;
+      }
+
+      const endRadius = Math.hypot(
+        Math.max(x, window.innerWidth - x),
+        Math.max(y, window.innerHeight - y)
+      );
+
+      const transition = document.startViewTransition(() => {
+        setTheme(nextTheme);
+      });
+
+      transition.ready.then(() => {
+        const clipPath = [
+          `circle(0px at ${x}px ${y}px)`,
+          `circle(${endRadius}px at ${x}px ${y}px)`,
+        ];
+
+        document.documentElement.animate(
+          {
+            clipPath: clipPath,
+          },
+          {
+            duration: 480,
+            easing: "cubic-bezier(0.25, 1, 0.5, 1)",
+            pseudoElement: "::view-transition-new(root)",
+          }
+        );
+      });
+    },
+    [resolvedTheme, setTheme]
+  );
 
   return (
     <ThemeContext.Provider
