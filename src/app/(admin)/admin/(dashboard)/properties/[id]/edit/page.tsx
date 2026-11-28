@@ -37,8 +37,8 @@ export default function EditPropertyPage({ params }: EditPropertyProps) {
     <Suspense
       fallback={
         <div className="space-y-6 animate-pulse">
-          <div className="h-10 w-64 rounded-2xl bg-slate-800" />
-          <div className="h-150 w-full rounded-3xl bg-slate-800" />
+          <div className="h-10 w-64 rounded-2xl bg-slate-200 dark:bg-slate-800" />
+          <div className="h-150 w-full rounded-3xl bg-slate-200 dark:bg-slate-800" />
         </div>
       }
     >

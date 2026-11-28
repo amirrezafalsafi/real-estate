@@ -124,10 +124,10 @@ export function AdminPropertiesTable({ properties }: AdminPropertiesTableProps) 
         </div>
       )}
 
-      <div className="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-900/90 shadow-xl">
+      <div className="overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 shadow-sm dark:shadow-xl transition-colors">
         <table className="w-full min-w-[850px] border-collapse text-right text-xs">
           <thead>
-            <tr className="border-b border-slate-800 bg-slate-850 text-slate-400">
+            <tr className="border-b border-slate-100 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-850 text-slate-600 dark:text-slate-400">
               <th className="py-3.5 px-4 font-bold">ملک و تصویر</th>
               <th className="py-3.5 px-4 font-bold">نوع معامله</th>
               <th className="py-3.5 px-4 font-bold">قیمت / شرایط</th>
@@ -138,10 +138,10 @@ export function AdminPropertiesTable({ properties }: AdminPropertiesTableProps) 
             </tr>
           </thead>
 
-          <tbody className="divide-y divide-slate-800/80 text-slate-300">
+          <tbody className="divide-y divide-slate-100 dark:divide-slate-800/80 text-slate-700 dark:text-slate-300">
             {propertyList.length === 0 ? (
               <tr>
-                <td colSpan={7} className="py-12 text-center text-slate-500">
+                <td colSpan={7} className="py-12 text-center text-slate-400 dark:text-slate-500">
                   هیچ ملکی با این مشخصات یافت نشد.
                 </td>
               </tr>
@@ -153,10 +153,10 @@ export function AdminPropertiesTable({ properties }: AdminPropertiesTableProps) 
                     : "/images/properties/prop-1.webp";
 
                 return (
-                  <tr key={prop.id} className="hover:bg-slate-800/50 transition-colors">
+                  <tr key={prop.id} className="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors">
                     <td className="py-3 px-4">
                       <div className="flex items-center gap-3">
-                        <div className="relative h-12 w-14 shrink-0 overflow-hidden rounded-lg bg-slate-800 border border-slate-700">
+                        <div className="relative h-12 w-14 shrink-0 overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
                           <Image
                             src={primaryImage}
                             alt={prop.title}
@@ -165,11 +165,11 @@ export function AdminPropertiesTable({ properties }: AdminPropertiesTableProps) 
                           />
                         </div>
                         <div className="min-w-0 max-w-xs">
-                          <span className="block font-bold text-slate-100 truncate hover:text-blue-400 transition-colors">
+                          <span className="block font-bold text-slate-900 dark:text-slate-100 truncate hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                             {prop.title}
                           </span>
-                          <span className="flex items-center gap-1 text-[11px] text-slate-400 mt-0.5">
-                            <MapPin className="h-3 w-3 text-slate-500 shrink-0" />
+                          <span className="flex items-center gap-1 text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
+                            <MapPin className="h-3 w-3 text-slate-400 dark:text-slate-500 shrink-0" />
                             <span>
                               {prop.city}
                               {prop.district ? `، ${prop.district}` : ""}
@@ -183,8 +183,8 @@ export function AdminPropertiesTable({ properties }: AdminPropertiesTableProps) 
                       <span
                         className={`inline-block rounded-md px-2 py-0.5 text-[11px] font-bold border ${
                           prop.listingType === "SALE"
-                            ? "bg-blue-500/10 text-blue-400 border-blue-500/30"
-                            : "bg-sky-500/10 text-sky-400 border-sky-500/30"
+                            ? "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/30"
+                            : "bg-sky-500/10 text-sky-600 dark:text-sky-400 border-sky-500/30"
                         }`}
                       >
                         {prop.listingType === "SALE" ? "فروش" : "رهن و اجاره"}
@@ -193,20 +193,20 @@ export function AdminPropertiesTable({ properties }: AdminPropertiesTableProps) 
 
                     <td className="py-3 px-4 font-mono">
                       {prop.listingType === "SALE" ? (
-                        <span className="font-bold text-slate-100">
+                        <span className="font-bold text-slate-900 dark:text-slate-100">
                           {formatPrice(prop.price, "تومان", { fallbackToNegotiable: true })}
                         </span>
                       ) : (
                         <div className="space-y-0.5">
-                          <div className="text-[11px] text-slate-400">
+                          <div className="text-[11px] text-slate-500 dark:text-slate-400">
                             رهن:{" "}
-                            <span className="font-bold text-slate-200">
+                            <span className="font-bold text-slate-800 dark:text-slate-200">
                               {formatPrice(prop.deposit, "تومان", { fallbackToNegotiable: true })}
                             </span>
                           </div>
-                          <div className="text-[11px] text-slate-400">
+                          <div className="text-[11px] text-slate-500 dark:text-slate-400">
                             اجاره:{" "}
-                            <span className="font-bold text-blue-400">
+                            <span className="font-bold text-blue-600 dark:text-blue-400">
                               {formatPrice(prop.monthlyRent, "تومان", { fallbackToNegotiable: true })}
                             </span>
                           </div>
@@ -220,7 +220,7 @@ export function AdminPropertiesTable({ properties }: AdminPropertiesTableProps) 
                         onChange={(e) =>
                           handleStatusChange(prop.id, e.target.value as PropertyStatus)
                         }
-                        className={`rounded-lg border px-2.5 py-1 text-xs font-bold focus:outline-none bg-slate-900 cursor-pointer ${
+                        className={`rounded-lg border px-2.5 py-1 text-xs font-bold focus:outline-none bg-white dark:bg-slate-900 cursor-pointer transition-colors ${
                           PROPERTY_STATUS_LABELS[prop.status]?.color || ""
                         }`}
                       >
@@ -238,7 +238,7 @@ export function AdminPropertiesTable({ properties }: AdminPropertiesTableProps) 
                         className={`inline-flex h-8 w-8 items-center justify-center rounded-lg border transition-all ${
                           prop.featured
                             ? "bg-blue-600 text-white border-blue-500 shadow-sm shadow-blue-500/20"
-                            : "bg-slate-800 text-slate-500 border-slate-700 hover:text-slate-300"
+                            : "bg-slate-50 dark:bg-slate-800 text-slate-400 dark:text-slate-500 border-slate-200 dark:border-slate-700 hover:text-slate-700 dark:hover:text-slate-300"
                         }`}
                         title={prop.featured ? "حذف از املاک ویژه" : "تنظیم به عنوان ملک ویژه"}
                       >
@@ -246,7 +246,7 @@ export function AdminPropertiesTable({ properties }: AdminPropertiesTableProps) 
                       </button>
                     </td>
 
-                    <td className="py-3 px-4 font-mono text-slate-400 text-[11px]">
+                    <td className="py-3 px-4 font-mono text-slate-500 dark:text-slate-400 text-[11px]">
                       {formatJalaliDate(prop.createdAt)}
                     </td>
 
@@ -255,7 +255,7 @@ export function AdminPropertiesTable({ properties }: AdminPropertiesTableProps) 
 
                         <Link
                           href={`/admin/properties/${prop.id}/edit`}
-                          className="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-700 bg-slate-800 text-slate-300 hover:border-blue-500 hover:text-blue-400 transition-colors"
+                          className="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                           title="ویرایش ملک"
                         >
                           <Edit className="h-3.5 w-3.5" />
@@ -264,7 +264,7 @@ export function AdminPropertiesTable({ properties }: AdminPropertiesTableProps) 
                         <Link
                           href={`/properties/${prop.slug}`}
                           target="_blank"
-                          className="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-700 bg-slate-800 text-slate-300 hover:border-sky-500 hover:text-sky-400 transition-colors"
+                          className="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:border-sky-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
                           title="مشاهده آگهی در وب‌سایت"
                         >
                           <ExternalLink className="h-3.5 w-3.5" />
@@ -273,7 +273,7 @@ export function AdminPropertiesTable({ properties }: AdminPropertiesTableProps) 
                         <button
                           type="button"
                           onClick={() => setDeleteModalId(prop.id)}
-                          className="flex h-8 w-8 items-center justify-center rounded-lg border border-rose-500/20 bg-rose-500/10 text-rose-400 hover:bg-rose-500 hover:text-white transition-colors"
+                          className="flex h-8 w-8 items-center justify-center rounded-lg border border-rose-500/20 bg-rose-500/10 text-rose-500 dark:text-rose-400 hover:bg-rose-500 hover:text-white transition-colors"
                           title="حذف ملک"
                         >
                           <Trash2 className="h-3.5 w-3.5" />
@@ -289,16 +289,16 @@ export function AdminPropertiesTable({ properties }: AdminPropertiesTableProps) 
       </div>
 
       {deleteModalId && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 p-4 backdrop-blur-xs">
-          <div className="w-full max-w-md rounded-3xl border border-slate-800 bg-slate-900 p-6 shadow-2xl text-right">
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-rose-500/15 text-rose-400 border border-rose-500/30">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 dark:bg-slate-950/70 p-4 backdrop-blur-xs">
+          <div className="w-full max-w-md rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-2xl text-right transition-colors">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-rose-500/15 text-rose-500 dark:text-rose-400 border border-rose-500/30">
               <AlertTriangle className="h-6 w-6" />
             </div>
 
-            <h3 className="text-base font-black text-white">تأیید حذف ملک</h3>
-            <p className="mt-2 text-xs leading-relaxed text-slate-400">
+            <h3 className="text-base font-black text-slate-900 dark:text-white">تأیید حذف ملک</h3>
+            <p className="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
               آیا از حذف ملک{" "}
-              <span className="font-bold text-slate-200">«{propertyToDelete?.title}»</span> اطمینان
+              <span className="font-bold text-slate-900 dark:text-slate-200">«{propertyToDelete?.title}»</span> اطمینان
               دارید؟ کلیه تصاویر و اطلاعات مرتبط نیز حذف خواهند شد. این عملیات غیرقابل بازگشت است.
             </p>
 
@@ -307,7 +307,7 @@ export function AdminPropertiesTable({ properties }: AdminPropertiesTableProps) 
                 type="button"
                 onClick={() => setDeleteModalId(null)}
                 disabled={Boolean(deletingId)}
-                className="rounded-xl border border-slate-800 bg-slate-800 px-4 py-2.5 text-xs font-bold text-slate-300 hover:bg-slate-700 transition-colors"
+                className="rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-4 py-2.5 text-xs font-bold text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
               >
                 انصراف
               </button>

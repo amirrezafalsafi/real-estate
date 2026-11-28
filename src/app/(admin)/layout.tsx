@@ -5,5 +5,9 @@ export default function AdminRootLayout({
 }: Readonly<{
   children: ReactNode;
 }>) {
-  return <div className="min-h-screen bg-slate-950 text-slate-100 antialiased">{children}</div>;
+  return (
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 antialiased transition-colors">
+      {children}
+    </div>
+  );
 }

@@ -11,6 +11,7 @@ import {
   AlertCircle,
   Loader2,
 } from "lucide-react";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export default function AdminLoginPage() {
   const router = useRouter();
@@ -53,24 +54,28 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-slate-950 px-4 py-12 text-right">
+    <div className="flex min-h-screen items-center justify-center bg-slate-50 dark:bg-slate-950 px-4 py-12 text-right relative transition-colors">
+      <div className="absolute top-6 left-6">
+        <ThemeToggle className="border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm" />
+      </div>
+
       <div className="w-full max-w-md">
         <div className="mb-8 text-center">
-          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-600/10 border border-blue-500/20 text-blue-400 shadow-xl shadow-blue-500/10">
+          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-600/10 text-blue-600 dark:bg-blue-600/15 dark:text-blue-400 border border-blue-500/20 shadow-xl shadow-blue-500/10">
             <ShieldCheck className="h-9 w-9 stroke-[1.8]" />
           </div>
-          <h1 className="text-2xl font-black tracking-tight text-white sm:text-3xl">
+          <h1 className="text-2xl font-black tracking-tight text-slate-900 dark:text-white sm:text-3xl">
             ورود به پنل مدیریت
           </h1>
-          <p className="mt-2 text-xs sm:text-sm text-slate-400">
+          <p className="mt-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400">
             سامانه تخصصی املاک و مستغلات مسکن پلاس
           </p>
         </div>
 
-        <div className="rounded-3xl border border-slate-800 bg-slate-900/90 p-6 sm:p-8 shadow-2xl backdrop-blur-md">
+        <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 p-6 sm:p-8 shadow-2xl backdrop-blur-md transition-colors">
           {errorMessage && (
-            <div className="mb-6 flex items-start gap-3 rounded-2xl border border-rose-500/30 bg-rose-500/10 p-4 text-xs font-semibold text-rose-300">
-              <AlertCircle className="h-5 w-5 shrink-0 text-rose-400 mt-0.5" />
+            <div className="mb-6 flex items-start gap-3 rounded-2xl border border-rose-500/30 bg-rose-500/10 p-4 text-xs font-semibold text-rose-600 dark:text-rose-300">
+              <AlertCircle className="h-5 w-5 shrink-0 text-rose-500 dark:text-rose-400 mt-0.5" />
               <span className="leading-relaxed">{errorMessage}</span>
             </div>
           )}
@@ -79,7 +84,7 @@ export default function AdminLoginPage() {
             <div className="space-y-1.5">
               <label
                 htmlFor="email"
-                className="block text-xs font-bold text-slate-300"
+                className="block text-xs font-bold text-slate-700 dark:text-slate-300"
               >
                 ایمیل مدیر
               </label>
@@ -92,7 +97,7 @@ export default function AdminLoginPage() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="admin@maskanplus.ir"
                   dir="ltr"
-                  className="w-full rounded-xl border border-slate-700 bg-slate-800/80 px-4 py-3 pl-10 text-sm text-slate-100 placeholder:text-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 text-left font-sans"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 px-4 py-3 pl-10 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-850 focus:outline-none focus:ring-2 focus:ring-blue-500/20 text-left font-sans transition-colors"
                 />
                 <Mail className="pointer-events-none absolute left-3.5 top-3.5 h-4 w-4 text-slate-400" />
               </div>
@@ -101,7 +106,7 @@ export default function AdminLoginPage() {
             <div className="space-y-1.5">
               <label
                 htmlFor="password"
-                className="block text-xs font-bold text-slate-300"
+                className="block text-xs font-bold text-slate-700 dark:text-slate-300"
               >
                 رمز عبور
               </label>
@@ -114,12 +119,12 @@ export default function AdminLoginPage() {
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••••••"
                   dir="ltr"
-                  className="w-full rounded-xl border border-slate-700 bg-slate-800/80 px-4 py-3 pl-10 text-sm text-slate-100 placeholder:text-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 text-left font-sans"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 px-4 py-3 pl-10 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-850 focus:outline-none focus:ring-2 focus:ring-blue-500/20 text-left font-sans transition-colors"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute left-3.5 top-3.5 text-slate-400 hover:text-slate-200 transition-colors"
+                  className="absolute left-3.5 top-3.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors"
                   aria-label={showPassword ? "مخفی کردن رمز عبور" : "نمایش رمز عبور"}
                 >
                   {showPassword ? (
@@ -150,8 +155,8 @@ export default function AdminLoginPage() {
             </button>
           </form>
 
-          <div className="mt-8 border-t border-slate-800/80 pt-5 text-center">
-            <p className="text-[11px] text-slate-500 leading-relaxed">
+          <div className="mt-8 border-t border-slate-200 dark:border-slate-800/80 pt-5 text-center">
+            <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">
               کلیه تلاش‌های ورود به سامانه با ثبت آدرس IP و اعتبارسنجی رمزنگاری‌شده رصد و حفاظت
               می‌شوند.
             </p>

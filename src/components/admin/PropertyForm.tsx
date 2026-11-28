@@ -268,16 +268,16 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-8">
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-slate-800 pb-5">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-5">
         <div>
-          <div className="flex items-center gap-2 text-xs text-slate-500 mb-1">
-            <Link href="/admin/properties" className="hover:text-slate-300 transition-colors">
+          <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mb-1">
+            <Link href="/admin/properties" className="hover:text-slate-900 dark:hover:text-slate-300 transition-colors">
               املاک
             </Link>
             <span>/</span>
-            <span className="text-slate-400">{isEdit ? "ویرایش آگهی ملک" : "ثبت ملک جدید"}</span>
+            <span className="text-slate-500 dark:text-slate-400">{isEdit ? "ویرایش آگهی ملک" : "ثبت ملک جدید"}</span>
           </div>
-          <h1 className="text-xl sm:text-2xl font-black text-white">
+          <h1 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
             {isEdit ? `ویرایش ملک: ${initialData?.title}` : "ثبت و انتشار آگهی ملک جدید"}
           </h1>
         </div>
@@ -285,7 +285,7 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
         <div className="flex items-center gap-3">
           <Link
             href="/admin/properties"
-            className="rounded-xl border border-slate-800 bg-slate-900 px-4 py-2.5 text-xs font-bold text-slate-300 hover:bg-slate-800 transition-colors"
+            className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 py-2.5 text-xs font-bold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors shadow-xs"
           >
             انصراف و بازگشت
           </Link>
@@ -305,15 +305,15 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
       </div>
 
       {formError && (
-        <div className="flex items-center gap-3 rounded-2xl border border-rose-500/30 bg-rose-500/10 p-4 text-xs font-bold text-rose-300">
-          <AlertCircle className="h-5 w-5 shrink-0 text-rose-400" />
+        <div className="flex items-center gap-3 rounded-2xl border border-rose-500/30 bg-rose-500/10 p-4 text-xs font-bold text-rose-600 dark:text-rose-300">
+          <AlertCircle className="h-5 w-5 shrink-0 text-rose-500 dark:text-rose-400" />
           <span>{formError}</span>
         </div>
       )}
 
       {formSuccess && (
-        <div className="flex items-center gap-3 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-xs font-bold text-emerald-300">
-          <CheckCircle2 className="h-5 w-5 shrink-0 text-emerald-400" />
+        <div className="flex items-center gap-3 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-xs font-bold text-emerald-600 dark:text-emerald-300">
+          <CheckCircle2 className="h-5 w-5 shrink-0 text-emerald-500 dark:text-emerald-400" />
           <span>{formSuccess}</span>
         </div>
       )}
@@ -322,15 +322,15 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
 
         <div className="space-y-6 lg:col-span-8">
 
-          <div className="rounded-3xl border border-slate-800 bg-slate-900/90 p-6 space-y-5">
-            <h2 className="text-sm font-bold text-slate-200 border-b border-slate-800 pb-3 flex items-center gap-2">
-              <Building2 className="h-4 w-4 text-blue-400" />
+          <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 p-6 space-y-5 shadow-xs dark:shadow-xl transition-colors">
+            <h2 className="text-sm font-bold text-slate-900 dark:text-slate-200 border-b border-slate-100 dark:border-slate-800 pb-3 flex items-center gap-2">
+              <Building2 className="h-4 w-4 text-blue-600 dark:text-blue-400" />
               <span>مشخصات و عنوان ملک</span>
             </h2>
 
             <div className="space-y-1.5">
-              <label className="block text-xs font-bold text-slate-300">
-                عنوان آگهی <span className="text-rose-400">*</span>
+              <label className="block text-xs font-bold text-slate-700 dark:text-slate-300">
+                عنوان آگهی <span className="text-rose-500">*</span>
               </label>
               <input
                 type="text"
@@ -338,12 +338,12 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
                 value={title}
                 onChange={handleTitleChange}
                 placeholder="مثال: فروش آپارتمان ۱۶۰ متری لوکس در سعادت‌آباد"
-                className="w-full rounded-xl border border-slate-700 bg-slate-800/90 px-4 py-2.5 text-sm text-slate-100 placeholder:text-slate-500 focus:border-blue-500 focus:outline-none"
+                className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/90 px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-850 focus:outline-none transition-colors"
               />
             </div>
 
             <div className="space-y-1.5">
-              <label className="block text-xs font-bold text-slate-300">
+              <label className="block text-xs font-bold text-slate-700 dark:text-slate-300">
                 نامک یکتا در آدرس اینترنتی (Slug)
               </label>
               <input
@@ -355,16 +355,16 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
                 }}
                 dir="ltr"
                 placeholder="slug-url-property"
-                className="w-full rounded-xl border border-slate-700 bg-slate-800/90 px-4 py-2.5 text-xs font-mono text-slate-200 placeholder:text-slate-500 focus:border-blue-500 focus:outline-none text-left"
+                className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/90 px-4 py-2.5 text-xs font-mono text-slate-900 dark:text-slate-200 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-850 focus:outline-none text-left transition-colors"
               />
-              <span className="block text-[11px] text-slate-500">
+              <span className="block text-[11px] text-slate-500 dark:text-slate-400">
                 به صورت خودکار از عنوان فارسی تولید می‌شود یا می‌توانید دستی ویرایش کنید.
               </span>
             </div>
 
             <div className="space-y-1.5">
-              <label className="block text-xs font-bold text-slate-300">
-                توضیحات کامل ملک <span className="text-rose-400">*</span>
+              <label className="block text-xs font-bold text-slate-700 dark:text-slate-300">
+                توضیحات کامل ملک <span className="text-rose-500">*</span>
               </label>
               <textarea
                 rows={5}
@@ -372,27 +372,27 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder="توضیحات دقیق درباره موقعیت، نورگیری، نقشه، سند و شرایط تحویل..."
-                className="w-full rounded-xl border border-slate-700 bg-slate-800/90 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:border-blue-500 focus:outline-none"
+                className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/90 px-4 py-3 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-850 focus:outline-none transition-colors"
               />
             </div>
           </div>
 
-          <div className="rounded-3xl border border-slate-800 bg-slate-900/90 p-6 space-y-5">
-            <h2 className="text-sm font-bold text-slate-200 border-b border-slate-800 pb-3 flex items-center gap-2">
-              <DollarSign className="h-4 w-4 text-emerald-400" />
+          <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 p-6 space-y-5 shadow-xs dark:shadow-xl transition-colors">
+            <h2 className="text-sm font-bold text-slate-900 dark:text-slate-200 border-b border-slate-100 dark:border-slate-800 pb-3 flex items-center gap-2">
+              <DollarSign className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
               <span>نوع معامله و مبالغ مالی</span>
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
               <div className="space-y-1.5">
-                <label className="block text-xs font-bold text-slate-300">
-                  نوع معامله <span className="text-rose-400">*</span>
+                <label className="block text-xs font-bold text-slate-700 dark:text-slate-300">
+                  نوع معامله <span className="text-rose-500">*</span>
                 </label>
                 <select
                   value={listingType}
                   onChange={(e) => setListingType(e.target.value as ListingType)}
-                  className="w-full rounded-xl border border-slate-700 bg-slate-800 px-3.5 py-2.5 text-sm text-slate-100 focus:border-blue-500 focus:outline-none"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-3.5 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-850 focus:outline-none transition-colors"
                 >
                   <option value="SALE">خرید و فروش</option>
                   <option value="RENT">رهن و اجاره</option>
@@ -400,13 +400,13 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
               </div>
 
               <div className="space-y-1.5">
-                <label className="block text-xs font-bold text-slate-300">
-                  نوع ملک <span className="text-rose-400">*</span>
+                <label className="block text-xs font-bold text-slate-700 dark:text-slate-300">
+                  نوع ملک <span className="text-rose-500">*</span>
                 </label>
                 <select
                   value={propertyType}
                   onChange={(e) => setPropertyType(e.target.value as PropertyType)}
-                  className="w-full rounded-xl border border-slate-700 bg-slate-800 px-3.5 py-2.5 text-sm text-slate-100 focus:border-blue-500 focus:outline-none"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-3.5 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-850 focus:outline-none transition-colors"
                 >
                   <option value="APARTMENT">آپارتمان</option>
                   <option value="VILLA">ویلا</option>
@@ -419,8 +419,8 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
 
             {listingType === "SALE" ? (
               <div className="space-y-1.5">
-                <label className="block text-xs font-bold text-slate-300">
-                  قیمت کل فروش (تومان) <span className="text-rose-400">*</span>
+                <label className="block text-xs font-bold text-slate-700 dark:text-slate-300">
+                  قیمت کل فروش (تومان) <span className="text-rose-500">*</span>
                 </label>
                 <input
                   type="number"
@@ -430,14 +430,14 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
                   onChange={(e) => setPrice(e.target.value)}
                   placeholder="مثال: ۲۵۰۰۰۰۰۰۰۰۰"
                   dir="ltr"
-                  className="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-2.5 text-sm text-slate-100 placeholder:text-slate-500 focus:border-blue-500 focus:outline-none text-left"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-850 focus:outline-none text-left transition-colors"
                 />
               </div>
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1.5">
-                  <label className="block text-xs font-bold text-slate-300">
-                    مبلغ ودیعه / رهن (تومان) <span className="text-rose-400">*</span>
+                  <label className="block text-xs font-bold text-slate-700 dark:text-slate-300">
+                    مبلغ ودیعه / رهن (تومان) <span className="text-rose-500">*</span>
                   </label>
                   <input
                     type="number"
@@ -447,13 +447,13 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
                     onChange={(e) => setDeposit(e.target.value)}
                     placeholder="مثال: ۱۰۰۰۰۰۰۰۰۰"
                     dir="ltr"
-                    className="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-2.5 text-sm text-slate-100 placeholder:text-slate-500 focus:border-blue-500 focus:outline-none text-left"
+                    className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-850 focus:outline-none text-left transition-colors"
                   />
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="block text-xs font-bold text-slate-300">
-                    اجاره ماهانه (تومان) <span className="text-rose-400">*</span>
+                  <label className="block text-xs font-bold text-slate-700 dark:text-slate-300">
+                    اجاره ماهانه (تومان) <span className="text-rose-500">*</span>
                   </label>
                   <input
                     type="number"
@@ -463,24 +463,24 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
                     onChange={(e) => setMonthlyRent(e.target.value)}
                     placeholder="مثال: ۳۵۰۰۰۰۰۰ (برای رهن کامل ۰ بگذارید)"
                     dir="ltr"
-                    className="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-2.5 text-sm text-slate-100 placeholder:text-slate-500 focus:border-blue-500 focus:outline-none text-left"
+                    className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-850 focus:outline-none text-left transition-colors"
                   />
                 </div>
               </div>
             )}
           </div>
 
-          <div className="rounded-3xl border border-slate-800 bg-slate-900/90 p-6 space-y-5">
-            <h2 className="text-sm font-bold text-slate-200 border-b border-slate-800 pb-3 flex items-center gap-2">
-              <Maximize2 className="h-4 w-4 text-sky-400" />
+          <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 p-6 space-y-5 shadow-xs dark:shadow-xl transition-colors">
+            <h2 className="text-sm font-bold text-slate-900 dark:text-slate-200 border-b border-slate-100 dark:border-slate-800 pb-3 flex items-center gap-2">
+              <Maximize2 className="h-4 w-4 text-sky-600 dark:text-sky-400" />
               <span>مشخصات فنی و متراژ</span>
             </h2>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
 
               <div className="space-y-1.5">
-                <label className="block text-xs font-bold text-slate-300">
-                  متراژ (متر مربع) <span className="text-rose-400">*</span>
+                <label className="block text-xs font-bold text-slate-700 dark:text-slate-300">
+                  متراژ (متر مربع) <span className="text-rose-500">*</span>
                 </label>
                 <input
                   type="number"
@@ -490,12 +490,12 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
                   onChange={(e) => setArea(e.target.value)}
                   placeholder="مثال: ۱۴۰"
                   dir="ltr"
-                  className="w-full rounded-xl border border-slate-700 bg-slate-800 px-3.5 py-2.5 text-sm text-slate-100 focus:border-blue-500 focus:outline-none text-left"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-3.5 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-850 focus:outline-none text-left transition-colors"
                 />
               </div>
 
               <div className="space-y-1.5">
-                <label className="block text-xs font-bold text-slate-300">تعداد خواب</label>
+                <label className="block text-xs font-bold text-slate-700 dark:text-slate-300">تعداد خواب</label>
                 <input
                   type="number"
                   min={0}
@@ -503,12 +503,12 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
                   onChange={(e) => setBedrooms(e.target.value)}
                   placeholder="مثال: ۳"
                   dir="ltr"
-                  className="w-full rounded-xl border border-slate-700 bg-slate-800 px-3.5 py-2.5 text-sm text-slate-100 focus:border-blue-500 focus:outline-none text-left"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-3.5 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-850 focus:outline-none text-left transition-colors"
                 />
               </div>
 
               <div className="space-y-1.5">
-                <label className="block text-xs font-bold text-slate-300">سرویس بهداشتی</label>
+                <label className="block text-xs font-bold text-slate-700 dark:text-slate-300">سرویس بهداشتی</label>
                 <input
                   type="number"
                   min={1}
@@ -516,24 +516,24 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
                   onChange={(e) => setBathrooms(e.target.value)}
                   placeholder="مثال: ۲"
                   dir="ltr"
-                  className="w-full rounded-xl border border-slate-700 bg-slate-800 px-3.5 py-2.5 text-sm text-slate-100 focus:border-blue-500 focus:outline-none text-left"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-3.5 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-850 focus:outline-none text-left transition-colors"
                 />
               </div>
 
               <div className="space-y-1.5">
-                <label className="block text-xs font-bold text-slate-300">طبقه</label>
+                <label className="block text-xs font-bold text-slate-700 dark:text-slate-300">طبقه</label>
                 <input
                   type="number"
                   value={floor}
                   onChange={(e) => setFloor(e.target.value)}
                   placeholder="مثال: ۴ (همکف: ۰)"
                   dir="ltr"
-                  className="w-full rounded-xl border border-slate-700 bg-slate-800 px-3.5 py-2.5 text-sm text-slate-100 focus:border-blue-500 focus:outline-none text-left"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-3.5 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-850 focus:outline-none text-left transition-colors"
                 />
               </div>
 
               <div className="space-y-1.5">
-                <label className="block text-xs font-bold text-slate-300">سال ساخت</label>
+                <label className="block text-xs font-bold text-slate-700 dark:text-slate-300">سال ساخت</label>
                 <input
                   type="number"
                   min={1350}
@@ -542,67 +542,67 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
                   onChange={(e) => setYearBuilt(e.target.value)}
                   placeholder="مثال: ۱۴۰۲"
                   dir="ltr"
-                  className="w-full rounded-xl border border-slate-700 bg-slate-800 px-3.5 py-2.5 text-sm text-slate-100 focus:border-blue-500 focus:outline-none text-left"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-3.5 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-850 focus:outline-none text-left transition-colors"
                 />
               </div>
             </div>
 
-            <div className="border-t border-slate-800 pt-4">
-              <span className="block text-xs font-bold text-slate-300 mb-3">امکانات اصلی ملک</span>
+            <div className="border-t border-slate-100 dark:border-slate-800 pt-4">
+              <span className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-3">امکانات اصلی ملک</span>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                <label className="flex items-center gap-2 rounded-xl border border-slate-800 bg-slate-800/40 p-3 cursor-pointer hover:border-slate-700">
+                <label className="flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 p-3 cursor-pointer hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
                   <input
                     type="checkbox"
                     checked={parking}
                     onChange={(e) => setParking(e.target.checked)}
-                    className="h-4 w-4 rounded border-slate-700 text-blue-500 focus:ring-blue-500 bg-slate-900"
+                    className="h-4 w-4 rounded border-slate-300 dark:border-slate-700 text-blue-600 focus:ring-blue-500 bg-white dark:bg-slate-900"
                   />
-                  <span className="text-xs font-medium text-slate-200">پارکینگ اختصاصی</span>
+                  <span className="text-xs font-medium text-slate-800 dark:text-slate-200">پارکینگ اختصاصی</span>
                 </label>
 
-                <label className="flex items-center gap-2 rounded-xl border border-slate-800 bg-slate-800/40 p-3 cursor-pointer hover:border-slate-700">
+                <label className="flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 p-3 cursor-pointer hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
                   <input
                     type="checkbox"
                     checked={elevator}
                     onChange={(e) => setElevator(e.target.checked)}
-                    className="h-4 w-4 rounded border-slate-700 text-blue-500 focus:ring-blue-500 bg-slate-900"
+                    className="h-4 w-4 rounded border-slate-300 dark:border-slate-700 text-blue-600 focus:ring-blue-500 bg-white dark:bg-slate-900"
                   />
-                  <span className="text-xs font-medium text-slate-200">آسانسور</span>
+                  <span className="text-xs font-medium text-slate-800 dark:text-slate-200">آسانسور</span>
                 </label>
 
-                <label className="flex items-center gap-2 rounded-xl border border-slate-800 bg-slate-800/40 p-3 cursor-pointer hover:border-slate-700">
+                <label className="flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 p-3 cursor-pointer hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
                   <input
                     type="checkbox"
                     checked={storage}
                     onChange={(e) => setStorage(e.target.checked)}
-                    className="h-4 w-4 rounded border-slate-700 text-blue-500 focus:ring-blue-500 bg-slate-900"
+                    className="h-4 w-4 rounded border-slate-300 dark:border-slate-700 text-blue-600 focus:ring-blue-500 bg-white dark:bg-slate-900"
                   />
-                  <span className="text-xs font-medium text-slate-200">انباری</span>
+                  <span className="text-xs font-medium text-slate-800 dark:text-slate-200">انباری</span>
                 </label>
 
-                <label className="flex items-center gap-2 rounded-xl border border-slate-800 bg-slate-800/40 p-3 cursor-pointer hover:border-slate-700">
+                <label className="flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 p-3 cursor-pointer hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
                   <input
                     type="checkbox"
                     checked={balcony}
                     onChange={(e) => setBalcony(e.target.checked)}
-                    className="h-4 w-4 rounded border-slate-700 text-blue-500 focus:ring-blue-500 bg-slate-900"
+                    className="h-4 w-4 rounded border-slate-300 dark:border-slate-700 text-blue-600 focus:ring-blue-500 bg-white dark:bg-slate-900"
                   />
-                  <span className="text-xs font-medium text-slate-200">بالکن / تراس</span>
+                  <span className="text-xs font-medium text-slate-800 dark:text-slate-200">بالکن / تراس</span>
                 </label>
               </div>
             </div>
           </div>
 
-          <div className="rounded-3xl border border-slate-800 bg-slate-900/90 p-6 space-y-5">
-            <h2 className="text-sm font-bold text-slate-200 border-b border-slate-800 pb-3 flex items-center gap-2">
-              <MapPin className="h-4 w-4 text-rose-400" />
+          <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 p-6 space-y-5 shadow-xs dark:shadow-xl transition-colors">
+            <h2 className="text-sm font-bold text-slate-900 dark:text-slate-200 border-b border-slate-100 dark:border-slate-800 pb-3 flex items-center gap-2">
+              <MapPin className="h-4 w-4 text-rose-500 dark:text-rose-400" />
               <span>موقعیت مکانی و آدرس</span>
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-1.5">
-                <label className="block text-xs font-bold text-slate-300">
-                  شهر <span className="text-rose-400">*</span>
+                <label className="block text-xs font-bold text-slate-700 dark:text-slate-300">
+                  شهر <span className="text-rose-500">*</span>
                 </label>
                 <input
                   type="text"
@@ -610,25 +610,25 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
                   placeholder="مثال: تهران"
-                  className="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-2.5 text-sm text-slate-100 focus:border-blue-500 focus:outline-none"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-850 focus:outline-none transition-colors"
                 />
               </div>
 
               <div className="space-y-1.5">
-                <label className="block text-xs font-bold text-slate-300">محله / منطقه</label>
+                <label className="block text-xs font-bold text-slate-700 dark:text-slate-300">محله / منطقه</label>
                 <input
                   type="text"
                   value={district}
                   onChange={(e) => setDistrict(e.target.value)}
                   placeholder="مثال: سعادت‌آباد"
-                  className="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-2.5 text-sm text-slate-100 focus:border-blue-500 focus:outline-none"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-850 focus:outline-none transition-colors"
                 />
               </div>
             </div>
 
             <div className="space-y-1.5">
-              <label className="block text-xs font-bold text-slate-300">
-                آدرس کامل یا تقاطع <span className="text-rose-400">*</span>
+              <label className="block text-xs font-bold text-slate-700 dark:text-slate-300">
+                آدرس کامل یا تقاطع <span className="text-rose-500">*</span>
               </label>
               <input
                 type="text"
@@ -636,7 +636,7 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
                 placeholder="مثال: بلوار شهرداری، خیابان سرو غربی، کوچه ارغوان"
-                className="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-2.5 text-sm text-slate-100 focus:border-blue-500 focus:outline-none"
+                className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-850 focus:outline-none transition-colors"
               />
             </div>
           </div>
@@ -644,17 +644,17 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
 
         <div className="space-y-6 lg:col-span-4">
 
-          <div className="rounded-3xl border border-slate-800 bg-slate-900/90 p-5 space-y-4">
-            <h3 className="text-xs font-bold text-slate-300 border-b border-slate-800 pb-2">
+          <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 p-5 space-y-4 shadow-xs dark:shadow-xl transition-colors">
+            <h3 className="text-xs font-bold text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800 pb-2">
               وضعیت انتشار و نشان ویژه
             </h3>
 
             <div className="space-y-1.5">
-              <label className="block text-xs font-medium text-slate-400">وضعیت ملک</label>
+              <label className="block text-xs font-medium text-slate-500 dark:text-slate-400">وضعیت ملک</label>
               <select
                 value={status}
                 onChange={(e) => setStatus(e.target.value as PropertyStatus)}
-                className="w-full rounded-xl border border-slate-700 bg-slate-800 px-3 py-2 text-xs font-bold text-slate-100 focus:border-blue-500 focus:outline-none"
+                className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-3 py-2 text-xs font-bold text-slate-900 dark:text-slate-100 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-850 focus:outline-none transition-colors"
               >
                 <option value="ACTIVE">🟢 فعال و آماده بازدید</option>
                 <option value="SOLD">🔴 فروخته شده</option>
@@ -668,32 +668,32 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
                 type="checkbox"
                 checked={featured}
                 onChange={(e) => setFeatured(e.target.checked)}
-                className="h-4 w-4 rounded border-blue-500 text-blue-500 focus:ring-blue-500 bg-slate-900"
+                className="h-4 w-4 rounded border-blue-500 text-blue-600 focus:ring-blue-500 bg-white dark:bg-slate-900"
               />
-              <div className="flex items-center gap-1.5 text-xs font-bold text-blue-300">
-                <Sparkles className="h-4 w-4 text-blue-400" />
+              <div className="flex items-center gap-1.5 text-xs font-bold text-blue-700 dark:text-blue-300">
+                <Sparkles className="h-4 w-4 text-blue-600 dark:text-blue-400" />
                 <span>نمایش به عنوان ملک ویژه</span>
               </div>
             </label>
           </div>
 
-          <div className="rounded-3xl border border-slate-800 bg-slate-900/90 p-5 space-y-4">
-            <div className="flex items-center justify-between border-b border-slate-800 pb-2">
-              <h3 className="text-xs font-bold text-slate-300">
+          <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 p-5 space-y-4 shadow-xs dark:shadow-xl transition-colors">
+            <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
+              <h3 className="text-xs font-bold text-slate-700 dark:text-slate-300">
                 تصاویر آگهی ({images.length} تصویر)
               </h3>
               {images.length > 0 && (
-                <span className="text-[10px] text-blue-400">تصویر اول کاور اصلی است</span>
+                <span className="text-[10px] text-blue-600 dark:text-blue-400">تصویر اول کاور اصلی است</span>
               )}
             </div>
 
             <div className="space-y-2">
-              <label className="flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-slate-700 bg-slate-800/40 p-4 cursor-pointer hover:border-blue-500 hover:bg-slate-800 transition-all text-center">
-                <Upload className="h-6 w-6 text-blue-400 mb-1" />
-                <span className="text-xs font-bold text-slate-200">
+              <label className="flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-4 cursor-pointer hover:border-blue-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all text-center">
+                <Upload className="h-6 w-6 text-blue-600 dark:text-blue-400 mb-1" />
+                <span className="text-xs font-bold text-slate-700 dark:text-slate-200">
                   {isUploading ? "در حال آپلود تصاویر..." : "انتخاب یا کشیدن فایل تصاویر"}
                 </span>
-                <span className="text-[10px] text-slate-500 mt-0.5">
+                <span className="text-[10px] text-slate-400 dark:text-slate-500 mt-0.5">
                   پشتیبانی از چندین تصویر همزمان (JPG, PNG, WebP)
                 </span>
                 <input
@@ -713,12 +713,12 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
                   value={newImageUrl}
                   onChange={(e) => setNewImageUrl(e.target.value)}
                   dir="ltr"
-                  className="flex-1 rounded-xl border border-slate-700 bg-slate-800 px-3 py-1.5 text-xs text-slate-100 placeholder:text-slate-500 text-left focus:border-blue-500 focus:outline-none"
+                  className="flex-1 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-3 py-1.5 text-xs text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 text-left focus:border-blue-500 focus:bg-white dark:focus:bg-slate-850 focus:outline-none transition-colors"
                 />
                 <button
                   type="button"
                   onClick={handleAddImageUrl}
-                  className="flex items-center justify-center h-8 w-8 rounded-xl bg-slate-800 text-blue-400 hover:bg-slate-700 transition-colors"
+                  className="flex items-center justify-center h-8 w-8 rounded-xl bg-slate-100 dark:bg-slate-800 text-blue-600 dark:text-blue-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
                   title="افزودن لینک"
                 >
                   <Plus className="h-4 w-4" />
@@ -727,7 +727,7 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
             </div>
 
             {images.length === 0 ? (
-              <p className="text-center text-[11px] text-slate-500 py-3">
+              <p className="text-center text-[11px] text-slate-400 dark:text-slate-500 py-3">
                 هنوز هیچ تصویری بارگذاری نشده است.
               </p>
             ) : (
@@ -735,9 +735,9 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
                 {images.map((img, idx) => (
                   <div
                     key={`${img.url}-${idx}`}
-                    className="flex items-center gap-2 rounded-xl border border-slate-800 bg-slate-850 p-2"
+                    className="flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-850 p-2 transition-colors"
                   >
-                    <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-lg bg-slate-800">
+                    <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-lg bg-slate-200 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
                       <Image
                         src={img.url}
                         alt={`تصویر ${idx + 1}`}
@@ -752,10 +752,10 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
                     </div>
 
                     <div className="flex-1 min-w-0 text-right">
-                      <span className="block truncate text-[11px] font-mono text-slate-300 dir-ltr">
+                      <span className="block truncate text-[11px] font-mono text-slate-700 dark:text-slate-300 dir-ltr">
                         {img.url.split("/").pop()}
                       </span>
-                      <span className="block text-[10px] text-slate-500">
+                      <span className="block text-[10px] text-slate-400 dark:text-slate-500">
                         ترتیب: {idx + 1}
                       </span>
                     </div>
@@ -765,7 +765,7 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
                         type="button"
                         onClick={() => handleMoveImageUp(idx)}
                         disabled={idx === 0}
-                        className="p-1 rounded bg-slate-800 text-slate-400 hover:text-white disabled:opacity-30"
+                        className="p-1 rounded bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-300 dark:hover:text-white disabled:opacity-30"
                         title="انتقال به بالا"
                       >
                         <ArrowUp className="h-3 w-3" />
@@ -774,7 +774,7 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
                         type="button"
                         onClick={() => handleMoveImageDown(idx)}
                         disabled={idx === images.length - 1}
-                        className="p-1 rounded bg-slate-800 text-slate-400 hover:text-white disabled:opacity-30"
+                        className="p-1 rounded bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-300 dark:hover:text-white disabled:opacity-30"
                         title="انتقال به پایین"
                       >
                         <ArrowDown className="h-3 w-3" />
@@ -782,7 +782,7 @@ export function PropertyForm({ initialData }: PropertyFormProps) {
                       <button
                         type="button"
                         onClick={() => handleRemoveImage(idx)}
-                        className="p-1 rounded bg-rose-500/20 text-rose-400 hover:bg-rose-500 hover:text-white transition-colors"
+                        className="p-1 rounded bg-rose-500/10 text-rose-500 dark:text-rose-400 hover:bg-rose-500 hover:text-white transition-colors"
                         title="حذف تصویر"
                       >
                         <X className="h-3.5 w-3.5" />

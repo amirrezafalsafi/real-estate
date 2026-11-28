@@ -5,7 +5,7 @@ import { AdminHeader } from "@/components/admin/AdminHeader";
 export const instant = false;
 
 function SidebarFallback() {
-  return <aside className="w-64 shrink-0 border-l border-slate-800 bg-slate-950" />;
+  return <aside className="w-64 shrink-0 border-l border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950" />;
 }
 
 export default function AdminDashboardLayout({
@@ -14,13 +14,13 @@ export default function AdminDashboardLayout({
   children: ReactNode;
 }>) {
   return (
-    <div className="flex min-h-screen bg-slate-950 text-slate-100">
+    <div className="flex min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors">
       <Suspense fallback={<SidebarFallback />}>
         <AdminSidebar />
       </Suspense>
       <div className="flex flex-1 flex-col overflow-hidden">
         <AdminHeader />
-        <main className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 bg-slate-900/40">
+        <main className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 bg-slate-100/60 dark:bg-slate-900/40 transition-colors">
           {children}
         </main>
       </div>

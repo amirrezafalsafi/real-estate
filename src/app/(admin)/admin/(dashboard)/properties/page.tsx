@@ -98,13 +98,13 @@ async function PropertiesContent({
   return (
     <div className="space-y-6">
 
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-slate-800 pb-5">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-5">
         <div>
-          <h1 className="text-xl sm:text-2xl font-black text-white flex items-center gap-2">
-            <Building2 className="h-6 w-6 text-blue-400" />
+          <h1 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white flex items-center gap-2">
+            <Building2 className="h-6 w-6 text-blue-600 dark:text-blue-400" />
             <span>مدیریت فایل‌های املاک</span>
           </h1>
-          <p className="mt-1 text-xs text-slate-400">
+          <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
             مجموعاً {formatNumber(total)} ملک در سامانه ثبت شده است.
           </p>
         </div>
@@ -118,7 +118,7 @@ async function PropertiesContent({
         </Link>
       </div>
 
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 rounded-2xl border border-slate-800 bg-slate-900/90 p-4">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 p-4 transition-colors">
 
         <form method="GET" action="/admin/properties" className="relative flex-1 max-w-md">
           {status && status !== "ALL" && (
@@ -129,9 +129,9 @@ async function PropertiesContent({
             name="query"
             defaultValue={searchTerm}
             placeholder="جستجو بر اساس عنوان، شهر، منطقه یا آدرس..."
-            className="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-2 text-xs text-slate-100 placeholder:text-slate-500 pr-10 focus:border-blue-500 focus:outline-none"
+            className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-4 py-2 text-xs text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 pr-10 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-850 focus:outline-none transition-colors"
           />
-          <Search className="pointer-events-none absolute right-3.5 top-2.5 h-4 w-4 text-slate-500" />
+          <Search className="pointer-events-none absolute right-3.5 top-2.5 h-4 w-4 text-slate-400 dark:text-slate-500" />
         </form>
 
         <div className="flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0">
@@ -144,7 +144,7 @@ async function PropertiesContent({
                 className={`rounded-xl px-3 py-1.5 text-xs font-bold transition-all shrink-0 ${
                   isSelected
                     ? "bg-blue-600 text-white font-black shadow-sm shadow-blue-500/20"
-                    : "bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-slate-200"
+                    : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-slate-200"
                 }`}
               >
                 {opt.label}
@@ -174,7 +174,7 @@ async function PropertiesContent({
       />
 
       {totalPages > 1 && (
-        <div className="flex items-center justify-between border-t border-slate-800 pt-5 text-xs text-slate-400">
+        <div className="flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-5 text-xs text-slate-500 dark:text-slate-400">
           <span>
             صفحه {toPersianDigits(currentPage)} از {toPersianDigits(totalPages)}
           </span>
@@ -183,7 +183,7 @@ async function PropertiesContent({
             {currentPage > 1 ? (
               <Link
                 href={createQueryUrl({ page: String(currentPage - 1) })}
-                className="flex items-center gap-1 rounded-xl border border-slate-800 bg-slate-900 px-3 py-2 text-slate-300 hover:bg-slate-800 transition-colors"
+                className="flex items-center gap-1 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-3 py-2 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors shadow-xs"
               >
                 <ChevronRight className="h-4 w-4" />
                 <span>قبلی</span>
@@ -193,7 +193,7 @@ async function PropertiesContent({
             {currentPage < totalPages ? (
               <Link
                 href={createQueryUrl({ page: String(currentPage + 1) })}
-                className="flex items-center gap-1 rounded-xl border border-slate-800 bg-slate-900 px-3 py-2 text-slate-300 hover:bg-slate-800 transition-colors"
+                className="flex items-center gap-1 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-3 py-2 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors shadow-xs"
               >
                 <span>بعدی</span>
                 <ChevronLeft className="h-4 w-4" />
@@ -209,47 +209,47 @@ async function PropertiesContent({
 export function PropertiesLoadingSkeleton() {
   return (
     <div className="space-y-6 animate-pulse text-right">
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-slate-800 pb-5">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-5">
         <div className="space-y-2">
-          <div className="h-7 w-60 rounded-xl bg-slate-800" />
-          <div className="h-3 w-44 rounded bg-slate-800/60" />
+          <div className="h-7 w-60 rounded-xl bg-slate-200 dark:bg-slate-800" />
+          <div className="h-3 w-44 rounded bg-slate-200/80 dark:bg-slate-800/60" />
         </div>
-        <div className="h-10 w-36 rounded-xl bg-blue-600/30" />
+        <div className="h-10 w-36 rounded-xl bg-blue-600/20 dark:bg-blue-600/30" />
       </div>
 
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 rounded-2xl border border-slate-800 bg-slate-900/90 p-4">
-        <div className="h-9 w-full max-w-md rounded-xl bg-slate-800" />
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 p-4">
+        <div className="h-9 w-full max-w-md rounded-xl bg-slate-200 dark:bg-slate-800" />
         <div className="flex items-center gap-2">
           {Array.from({ length: 4 }).map((_, i) => (
-            <div key={i} className="h-8 w-16 rounded-xl bg-slate-800/70" />
+            <div key={i} className="h-8 w-16 rounded-xl bg-slate-200/80 dark:bg-slate-800/70" />
           ))}
         </div>
       </div>
 
-      <div className="overflow-x-auto rounded-3xl border border-slate-800 bg-slate-900/90">
-        <div className="p-4 border-b border-slate-800 bg-slate-850 flex items-center justify-between">
-          <div className="h-4 w-40 rounded bg-slate-800" />
-          <div className="h-4 w-24 rounded bg-slate-800" />
-          <div className="h-4 w-28 rounded bg-slate-800" />
-          <div className="h-4 w-20 rounded bg-slate-800" />
-          <div className="h-4 w-24 rounded bg-slate-800" />
+      <div className="overflow-x-auto rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90">
+        <div className="p-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-850 flex items-center justify-between">
+          <div className="h-4 w-40 rounded bg-slate-200 dark:bg-slate-800" />
+          <div className="h-4 w-24 rounded bg-slate-200 dark:bg-slate-800" />
+          <div className="h-4 w-28 rounded bg-slate-200 dark:bg-slate-800" />
+          <div className="h-4 w-20 rounded bg-slate-200 dark:bg-slate-800" />
+          <div className="h-4 w-24 rounded bg-slate-200 dark:bg-slate-800" />
         </div>
-        <div className="divide-y divide-slate-800/60">
+        <div className="divide-y divide-slate-100 dark:divide-slate-800/60">
           {Array.from({ length: 6 }).map((_, i) => (
             <div key={i} className="p-4 flex items-center justify-between gap-4">
               <div className="flex items-center gap-3">
-                <div className="h-12 w-12 rounded-xl bg-slate-800 shrink-0" />
+                <div className="h-12 w-12 rounded-xl bg-slate-200 dark:bg-slate-800 shrink-0" />
                 <div className="space-y-1.5">
-                  <div className="h-4 w-48 rounded bg-slate-800" />
-                  <div className="h-3 w-28 rounded bg-slate-800/60" />
+                  <div className="h-4 w-48 rounded bg-slate-200 dark:bg-slate-800" />
+                  <div className="h-3 w-28 rounded bg-slate-200/80 dark:bg-slate-800/60" />
                 </div>
               </div>
-              <div className="h-6 w-20 rounded-lg bg-slate-800" />
-              <div className="h-4 w-28 rounded bg-slate-800" />
-              <div className="h-6 w-16 rounded-lg bg-slate-800" />
+              <div className="h-6 w-20 rounded-lg bg-slate-200 dark:bg-slate-800" />
+              <div className="h-4 w-28 rounded bg-slate-200 dark:bg-slate-800" />
+              <div className="h-6 w-16 rounded-lg bg-slate-200 dark:bg-slate-800" />
               <div className="flex items-center gap-2">
-                <div className="h-8 w-8 rounded-lg bg-slate-800" />
-                <div className="h-8 w-8 rounded-lg bg-slate-800" />
+                <div className="h-8 w-8 rounded-lg bg-slate-200 dark:bg-slate-800" />
+                <div className="h-8 w-8 rounded-lg bg-slate-200 dark:bg-slate-800" />
               </div>
             </div>
           ))}
