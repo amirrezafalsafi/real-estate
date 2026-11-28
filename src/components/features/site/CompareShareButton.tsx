@@ -11,7 +11,7 @@ export function CompareShareButton() {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: "مقایسه تخصصی املاک در مسکن پلاس",
+          title: "مقایسه تخصصی املاک در سرپناه",
           url,
         });
         return;

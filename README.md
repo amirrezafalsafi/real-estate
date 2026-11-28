@@ -1,4 +1,4 @@
-# 🏢 سامانه جامع املاک و مستغلات مسکن پلاس (Maskan Plus)
+# 🏢 سامانه جامع املاک و مستغلات سرپناه (Sarpanah)
 
 سامانه تخصصی و مدرن خرید، فروش، رهن و اجاره انواع آپارتمان، ویلا، املاک اداری، تجاری و زمین با معماری مدرن **Next.js 16 (App Router)**، کامپوننت‌های سرور، بهینه‌سازی کامل سئو و پنل مدیریت امن و پیشرفته.
 
@@ -88,7 +88,7 @@ npm start
 ## 🔐 ورود به پنل مدیریت (Admin)
 
 - **آدرس صفحه ورود**: `http://localhost:3000/admin/login`
-- **ایمیل پیش‌فرض**: `admin@maskanplus.ir`
+- **ایمیل پیش‌فرض**: `admin@sarpanah.ir`
 - **کلمه عبور پیش‌فرض**: `Admin@123456`
 
 ### ایجاد کاربر مدیر جدید به صورت دستی
@@ -109,7 +109,7 @@ async function createAdmin(email, name, password) {
   console.log("مدیر جدید ایجاد شد:", user.email);
 }
 
-createAdmin("newadmin@maskanplus.ir", "مدیر همکار", "Password@123");
+createAdmin("newadmin@sarpanah.ir", "مدیر همکار", "Password@123");
 ```
 
 ---
@@ -127,7 +127,7 @@ datasource db {
 ```
 2. در فایل `.env` آدرس اتصال دیتابیس PostgreSQL خود را قرار دهید:
 ```env
-DATABASE_URL="postgresql://user:password@localhost:5432/maskan_plus?schema=public"
+DATABASE_URL="postgresql://user:password@localhost:5432/sarpanah_db?schema=public"
 ```
 3. دستور مایگریشن را اجرا نمایید:
 ```bash
@@ -146,7 +146,7 @@ npx prisma db seed
 │   │   ├── admin/
 │   │   │   ├── (dashboard)/     # پیشخوان، مدیریت املاک، پیام‌ها و تنظیمات
 │   │   │   └── login/           # صفحه ورود اختصاصی ادمین
-│   ├── (site)/                  # وب‌سایت عمومی مسکن پلاس
+│   ├── (site)/                  # وب‌سایت عمومی سرپناه
 │   │   ├── compare/             # صفحه مقایسه تخصصی ۲ ملک
 │   │   ├── properties/          # لیست و جزئیات هر ملک (/properties/[slug])
 │   │   └── page.tsx             # صفحه اصلی (Landing Page)

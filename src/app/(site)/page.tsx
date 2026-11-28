@@ -96,7 +96,7 @@ export default async function HomePage() {
       icon: ShieldCheck,
       title: "تایید اصالت حقوقی و سند ملک",
       description:
-        "تمام آگهی‌های اختصاصی مسکن پلاس از نظر اسناد مالکیت و پروانه کارشناسی شده‌اند تا معامله‌ای امن داشته باشید.",
+        "تمام آگهی‌های اختصاصی سرپناه از نظر اسناد مالکیت و پروانه کارشناسی شده‌اند تا معامله‌ای امن داشته باشید.",
     },
     {
       icon: Users,
@@ -124,7 +124,7 @@ export default async function HomePage() {
         <div className="absolute inset-0 -z-10">
           <Image
             src="/images/properties/prop-2.webp"
-            alt="خانه رویایی مسکن پلاس"
+            alt="خانه رویایی سرپناه"
             fill
             priority
             className="object-cover object-center brightness-35"
@@ -170,7 +170,7 @@ export default async function HomePage() {
               املاک ویژه و برگزیده
             </h2>
             <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-              مجموعه‌ای از لوکس‌ترین و خوش‌قیمت‌ترین املاک کارشناسی شده توسط مشاوران مسکن پلاس
+              مجموعه‌ای از لوکس‌ترین و خوش‌قیمت‌ترین املاک کارشناسی شده توسط مشاوران سرپناه
             </p>
           </div>
 
@@ -246,7 +246,7 @@ export default async function HomePage() {
             <span>مزایای معامله با ما</span>
           </div>
           <h2 className="text-2xl font-black text-slate-900 dark:text-white sm:text-3xl">
-            چرا مسکن پلاس را انتخاب کنیم؟
+            چرا سرپناه را انتخاب کنیم؟
           </h2>
           <p className="text-sm text-slate-500 dark:text-slate-400">
             ما با اتکا به تجربه، ابزارهای نوین ارزیابی و تیم حقوقی زبده، اطمینان و آسودگی خاطر را در معامله شما تضمین می‌کنیم.
@@ -365,7 +365,7 @@ export default async function HomePage() {
             </h2>
 
             <p className="text-sm leading-relaxed text-slate-300">
-              کافی است مشخصات خود را ثبت فرمایید تا کارشناس ارشد منطقه‌ای مسکن پلاس در کمتر از ۳۰ دقیقه با شما تماس گرفته و دقیق‌ترین تحلیل قیمت و پیشنهادات ملکی را به شما ارائه نماید.
+              کافی است مشخصات خود را ثبت فرمایید تا کارشناس ارشد منطقه‌ای سرپناه در کمتر از ۳۰ دقیقه با شما تماس گرفته و دقیق‌ترین تحلیل قیمت و پیشنهادات ملکی را به شما ارائه نماید.
             </p>
 
             <div className="space-y-3 pt-2 text-xs sm:text-sm text-slate-300">
@@ -398,7 +398,7 @@ export default async function HomePage() {
                 درخواست مشاوره فوری
               </h3>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                اطلاعات شما نزد مسکن پلاس کاملاً محفوظ است.
+                اطلاعات شما نزد سرپناه کاملاً محفوظ است.
               </p>
             </div>
 
@@ -414,7 +414,7 @@ export default async function HomePage() {
               قصد فروش یا اجاره دادن ملک خود را دارید؟
             </h2>
             <p className="text-sm sm:text-base font-medium text-blue-100 leading-relaxed">
-              آگهی ملک خود را در کمتر از ۲ دقیقه به صورت کاملاً رایگان در مسکن پلاس ثبت کنید تا در معرض دید روزانه هزاران خریدار و مستاجر واقعی قرار گیرد.
+              آگهی ملک خود را در کمتر از ۲ دقیقه به صورت کاملاً رایگان در سرپناه ثبت کنید تا در معرض دید روزانه هزاران خریدار و مستاجر واقعی قرار گیرد.
             </p>
           </div>
 

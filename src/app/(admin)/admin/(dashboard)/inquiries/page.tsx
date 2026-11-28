@@ -9,7 +9,7 @@ import { toPersianDigits, formatNumber } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "درخواست‌های مشاوره | پنل مدیریت",
-  description: "مدیریت پیام‌ها و درخواست‌های بازدید و مشاوره املاک مسکن پلاس",
+  description: "مدیریت پیام‌ها و درخواست‌های بازدید و مشاوره املاک سرپناه",
 };
 
 interface SearchParamsProps {

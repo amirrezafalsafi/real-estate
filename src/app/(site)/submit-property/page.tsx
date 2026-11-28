@@ -10,9 +10,9 @@ import {
 import { SubmitPropertyForm } from "@/components/site/SubmitPropertyForm";
 
 export const metadata: Metadata = {
-  title: "ثبت رایگان آگهی ملک | مسکن پلاس",
+  title: "ثبت رایگان آگهی ملک | سرپناه",
   description:
-    "ثبت رایگان آگهی فروش، رهن و اجاره آپارتمان، ویلا، زمین، مغازه و دفتر کار در سامانه مسکن پلاس با امکان کارشناسی تخصصی و بیشترین بازدید.",
+    "ثبت رایگان آگهی فروش، رهن و اجاره آپارتمان، ویلا، زمین، مغازه و دفتر کار در سامانه سرپناه با امکان کارشناسی تخصصی و بیشترین بازدید.",
 };
 
 export default function SubmitPropertyPage() {

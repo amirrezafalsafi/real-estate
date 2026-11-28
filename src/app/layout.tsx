@@ -5,8 +5,8 @@ import "#styles/index.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "مسکن پلاس | سامانه جامع خرید، فروش، رهن و اجاره ملک",
-    template: "%s | مسکن پلاس",
+    default: "سرپناه | سامانه جامع خرید، فروش، رهن و اجاره ملک",
+    template: "%s | سرپناه",
   },
   description:
     "سامانه تخصصی خرید، فروش، رهن و اجاره آپارتمان، ویلا، ملک اداری، تجاری و زمین در سراسر کشور با بهترین قیمت و دسترسی آسان به مشاوران املاک.",
@@ -19,11 +19,11 @@ export const metadata: Metadata = {
     "مشاور املاک",
     "اجاره مغازه",
   ],
-  authors: [{ name: "مسکن پلاس" }],
-  creator: "مسکن پلاس",
+  authors: [{ name: "سرپناه" }],
+  creator: "سرپناه",
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"),
   openGraph: {
-    title: "مسکن پلاس | سامانه جامع خرید، فروش، رهن و اجاره ملک",
+    title: "سرپناه | سامانه جامع خرید، فروش، رهن و اجاره ملک",
     description: "سامانه تخصصی املاک و مستغلات در سراسر کشور",
     locale: "fa_IR",
     type: "website",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
 };
 
-const themeScript = `(function(){try{var t=localStorage.getItem('maskan_theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d)){document.documentElement.classList.add('dark')}else{document.documentElement.classList.remove('dark')}}catch(e){}})()`;
+const themeScript = `(function(){try{var t=localStorage.getItem('sarpanah_theme')||localStorage.getItem('maskan_theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d)){document.documentElement.classList.add('dark')}else{document.documentElement.classList.remove('dark')}}catch(e){}})()`;
 
 export default function RootLayout({
   children,

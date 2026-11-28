@@ -51,8 +51,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!property) {
     return {
-      title: "ملک یافت نشد | مسکن پلاس",
-      description: "ملک مورد نظر در سامانه مسکن پلاس یافت نشد.",
+      title: "ملک یافت نشد | سرپناه",
+      description: "ملک مورد نظر در سامانه سرپناه یافت نشد.",
     };
   }
 
@@ -66,7 +66,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     ? formatPrice(property.price)
     : `ودیعه: ${formatPrice(property.deposit)} | اجاره: ${formatPrice(property.monthlyRent)}`;
 
-  const pageTitle = `${property.title} | مسکن پلاس`;
+  const pageTitle = `${property.title} | سرپناه`;
   const pageDescription = `${property.title} در شهر ${property.city}${
     property.district ? `، منطقه ${property.district}` : ""
   } - متراژ ${property.area} متر، ${property.bedrooms} خواب. ${priceInfo}. ${property.description.slice(
@@ -485,10 +485,10 @@ export default async function PropertyDetailPage({ params }: PageProps) {
               <div className="mt-8 flex items-start gap-3 rounded-2xl bg-blue-50/60 dark:bg-blue-950/30 border border-blue-200/80 dark:border-blue-900/50 p-4 transition-colors">
                 <ShieldCheck className="h-6 w-6 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
                 <div className="text-xs text-blue-900 dark:text-blue-200 space-y-1">
-                  <p className="font-bold">تضمین اصالت آگهی توسط مسکن پلاس</p>
+                  <p className="font-bold">تضمین اصالت آگهی توسط سرپناه</p>
                   <p className="leading-relaxed text-blue-800/90 dark:text-blue-300/80">
                     کلیه اطلاعات این ملک، مشخصات سند، کاربری و مدارک حقوقی توسط تیم کارشناسان
-                    مسکن پلاس بازبینی و راستی‌آزمایی شده است.
+                    سرپناه بازبینی و راستی‌آزمایی شده است.
                   </p>
                 </div>
               </div>
@@ -539,7 +539,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
               <div className="rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 shadow-xs text-xs text-slate-600 dark:text-slate-400 space-y-3 transition-colors">
                 <div className="flex items-center gap-2 font-bold text-slate-800 dark:text-slate-200">
                   <ShieldCheck className="h-4 w-4 text-blue-600 dark:text-blue-400 shrink-0" />
-                  <span>توصیه‌های امنیتی مسکن پلاس</span>
+                  <span>توصیه‌های امنیتی سرپناه</span>
                 </div>
                 <ul className="space-y-2 list-disc list-inside text-slate-500 dark:text-slate-400 leading-relaxed pr-1">
                   <li>قبل از هرگونه پرداخت وجه، حتماً از ملک به صورت حضوری بازدید فرمایید.</li>

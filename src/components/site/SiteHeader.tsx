@@ -89,7 +89,7 @@ export function SiteHeader() {
             </div>
             <div className="flex flex-col text-right">
               <span className="text-xl font-black tracking-tight text-slate-900 dark:text-white">
-                مسکن <span className="text-blue-600 dark:text-blue-400">پلاس</span>
+                سر<span className="text-blue-600 dark:text-blue-400">پناه</span>
               </span>
               <span className="text-[11px] font-medium text-slate-500 dark:text-slate-400">
                 سامانه هوشمند خرید و اجاره ملک

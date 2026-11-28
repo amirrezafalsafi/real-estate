@@ -10,7 +10,7 @@ import type { PropertyStatus } from "@/types";
 
 export const metadata: Metadata = {
   title: "مدیریت املاک | پنل مدیریت",
-  description: "لیست، جستجو، ویرایش و مدیریت وضعیت املاک مسکن پلاس",
+  description: "لیست، جستجو، ویرایش و مدیریت وضعیت املاک سرپناه",
 };
 
 interface SearchParamsProps {

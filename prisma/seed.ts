@@ -29,7 +29,7 @@ async function main() {
   const defaultPassword = "Admin@123456";
   const admin = await prisma.adminUser.create({
     data: {
-      email: "admin@maskanplus.ir",
+      email: "admin@sarpanah.ir",
       name: "مدیر ارشد سامانه",
       passwordHash: hashPassword(defaultPassword),
     },

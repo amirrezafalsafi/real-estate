@@ -19,7 +19,7 @@ import type { PropertySortOption } from "@/lib/validations/property-filter.zod";
 import { Filter, X, ChevronRight, ChevronLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "جستجو و فیلتر املاک | مسکن پلاس",
+  title: "جستجو و فیلتر املاک | سرپناه",
   description:
     "مشاهده و مقایسه انواع آگهی‌های کارشناسی شده خرید و فروش آپارتمان، رهن و اجاره خانه، ویلا، زمین و دفاتر اداری با فیلترهای پیشرفته قیمت، متراژ و امکانات.",
 };

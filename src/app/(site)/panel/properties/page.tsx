@@ -77,7 +77,7 @@ export default async function UserPropertiesPage({ searchParams }: UserPropertie
             <span>املاک و آگهی‌های من</span>
           </h1>
           <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-            مجموعاً {formatNumber(totalCount)} ملک توسط شما در سامانه مسکن پلاس ثبت شده است.
+            مجموعاً {formatNumber(totalCount)} ملک توسط شما در سامانه سرپناه ثبت شده است.
           </p>
         </div>
 

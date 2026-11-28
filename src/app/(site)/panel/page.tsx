@@ -20,7 +20,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
-  title: "پیشخوان کاربری | مسکن پلاس",
+  title: "پیشخوان کاربری | سرپناه",
   description: "مدیریت املاک ثبت‌شده، درخواست‌های مشاوره و اطلاعات حساب کاربری",
 };
 
@@ -146,7 +146,7 @@ export default async function UserPanelPage() {
               آخرین آگهی‌های ثبت‌شده شما
             </h2>
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-              لیست فایل‌های ملکی که در سامانه مسکن پلاس منتشر نموده‌اید
+              لیست فایل‌های ملکی که در سامانه سرپناه منتشر نموده‌اید
             </p>
           </div>
           <Link

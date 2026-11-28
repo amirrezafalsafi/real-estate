@@ -67,7 +67,7 @@ export default function ErrorPage({
             <span>•</span>
             <Link href="/contact" className="flex items-center gap-1 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
               <PhoneCall className="h-3.5 w-3.5" />
-              <span>پشتیبانی مسکن پلاس</span>
+              <span>پشتیبانی سرپناه</span>
             </Link>
           </div>
         </div>

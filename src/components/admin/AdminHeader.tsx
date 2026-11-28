@@ -25,7 +25,7 @@ export function AdminHeader() {
           </div>
           <div>
             <span className="block text-xs font-bold text-slate-800 dark:text-slate-200">مدیر ارشد سامانه</span>
-            <span className="block text-[10px] text-slate-500">admin@maskanplus.ir</span>
+            <span className="block text-[10px] text-slate-500">admin@sarpanah.ir</span>
           </div>
         </div>
 

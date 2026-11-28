@@ -11,8 +11,8 @@ import prisma from "@/lib/prisma";
 import { formatNumber, formatPrice, toPersianDigits } from "@/lib/format";
 
 export const metadata: Metadata = {
-  title: "داشبورد مدیریت | مسکن پلاس",
-  description: "خلاصه آمار و وضعیت سامانه املاک و مستغلات مسکن پلاس",
+  title: "داشبورد مدیریت | سرپناه",
+  description: "خلاصه آمار و وضعیت سامانه املاک و مستغلات سرپناه",
   robots: {
     index: false,
     follow: false,

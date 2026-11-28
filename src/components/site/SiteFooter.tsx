@@ -78,14 +78,14 @@ export function SiteFooter() {
               </div>
               <div className="flex flex-col">
                 <span className="text-2xl font-black text-white">
-                  مسکن <span className="text-blue-400">پلاس</span>
+                  سر<span className="text-blue-400">پناه</span>
                 </span>
                 <span className="text-xs text-slate-400">سامانه هوشمند معاملات املاک</span>
               </div>
             </Link>
 
             <p className="text-sm leading-relaxed text-slate-400 max-w-md">
-              مسکن پلاس با هدف شفافیت، سرعت و امنیت در معاملات ملکی راه‌اندازی شده است. با دسترسی به معتبرترین بانک اطلاعاتی املاک فروش و رهن و اجاره، در هر کجای کشور ملک ایده‌آل خود را به سادگی بیابید.
+              سرپناه با هدف شفافیت، سرعت و امنیت در معاملات ملکی راه‌اندازی شده است. با دسترسی به معتبرترین بانک اطلاعاتی املاک فروش و رهن و اجاره، در هر کجای کشور ملک ایده‌آل خود را به سادگی بیابید.
             </p>
 
             <div className="flex items-center gap-2 text-xs text-blue-400 font-semibold">
@@ -139,7 +139,7 @@ export function SiteFooter() {
             <ul className="space-y-3 text-xs sm:text-sm text-slate-400">
               <li className="flex items-start gap-2.5">
                 <MapPin className="h-4 w-4 text-blue-400 shrink-0 mt-0.5" />
-                <span>تهران، سعادت‌آباد، بلوار فرهنگ، نبش خیابان پیوند، برج مسکن پلاس</span>
+                <span>تهران، سعادت‌آباد، بلوار فرهنگ، نبش خیابان پیوند، برج سرپناه</span>
               </li>
 
               <li className="flex items-center gap-2.5">
@@ -152,7 +152,7 @@ export function SiteFooter() {
               <li className="flex items-center gap-2.5">
                 <Mail className="h-4 w-4 text-blue-400 shrink-0" />
                 <span dir="ltr" className="text-slate-300">
-                  support@maskanplus.ir
+                  support@sarpanah.ir
                 </span>
               </li>
 
@@ -166,7 +166,7 @@ export function SiteFooter() {
 
         <div className="mt-12 border-t border-slate-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>
-            تمامی حقوق مادی و معنوی این سامانه متعلق به شرکت فناوری املاک <strong className="text-slate-400">مسکن پلاس</strong> می‌باشد. © {currentYear}
+            تمامی حقوق مادی و معنوی این سامانه متعلق به شرکت فناوری املاک <strong className="text-slate-400">سرپناه</strong> می‌باشد. © {currentYear}
           </p>
           <div className="flex items-center gap-4 text-slate-400">
             <Link href="/privacy" className="hover:text-blue-400 transition-colors">

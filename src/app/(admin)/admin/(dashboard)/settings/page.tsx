@@ -5,7 +5,7 @@ import prisma from "@/lib/prisma";
 
 export const metadata: Metadata = {
   title: "تنظیمات سامانه | پنل مدیریت",
-  description: "تنظیمات فنی، امنیتی و پیکربندی سامانه مسکن پلاس",
+  description: "تنظیمات فنی، امنیتی و پیکربندی سامانه سرپناه",
 };
 
 export default async function AdminSettingsPage() {
@@ -42,7 +42,7 @@ export default async function AdminSettingsPage() {
             </div>
             <div className="flex justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/60">
               <span className="text-slate-500 dark:text-slate-400">ایمیل:</span>
-              <span className="font-mono text-slate-900 dark:text-slate-100">{admin?.email || "admin@maskanplus.ir"}</span>
+              <span className="font-mono text-slate-900 dark:text-slate-100">{admin?.email || "admin@sarpanah.ir"}</span>
             </div>
             <div className="flex justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/60">
               <span className="text-slate-500 dark:text-slate-400">الگوریتم هش کلمه عبور:</span>

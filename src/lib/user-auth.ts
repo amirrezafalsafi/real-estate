@@ -3,7 +3,7 @@ import { cookies } from "next/headers";
 
 const USER_JWT_SECRET_STRING =
   process.env.USER_JWT_SECRET ||
-  "maskan-plus-user-secret-jwt-key-2026-production-ready-key";
+  "sarpanah-user-secret-jwt-key-2026-production-ready-key";
 const USER_JWT_SECRET = new TextEncoder().encode(USER_JWT_SECRET_STRING);
 
 export const USER_COOKIE_NAME = "user_session";

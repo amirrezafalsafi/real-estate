@@ -142,7 +142,7 @@ export function CompareStudio({ initialProperties, presets }: CompareStudioProps
       <div className="text-center max-w-2xl mx-auto space-y-3">
         <div className="inline-flex items-center gap-2 rounded-full bg-blue-600/10 dark:bg-blue-500/15 px-4 py-1.5 text-xs font-black text-blue-700 dark:text-blue-300 border border-blue-500/20">
           <Scale className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-          <span>استودیوی مقایسه هوشمند مسکن پلاس</span>
+          <span>استودیوی مقایسه هوشمند سرپناه</span>
         </div>
         <h1 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
           مقایسه تخصصی و همزمان املاک
@@ -573,7 +573,7 @@ export function CompareStudio({ initialProperties, presets }: CompareStudioProps
 
       <div className="rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-800/60 p-6 sm:p-8 transition-colors">
         <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-white mb-4">
-          مزایای جدول مقایسه تخصصی مسکن پلاس
+          مزایای جدول مقایسه تخصصی سرپناه
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
           <div className="space-y-1.5">

@@ -75,7 +75,7 @@ function SignupFormContent() {
             <Building2 className="h-6 w-6 stroke-[2.2]" />
           </div>
           <span className="text-2xl font-black tracking-tight text-slate-900 dark:text-white">
-            مسکن <span className="text-blue-600 dark:text-blue-400">پلاس</span>
+            سر<span className="text-blue-600 dark:text-blue-400">پناه</span>
           </span>
         </Link>
         <h1 className="text-2xl font-black text-slate-900 dark:text-white sm:text-3xl">

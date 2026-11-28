@@ -14,9 +14,9 @@ import {
 import { ContactForm } from "@/components/site/ContactForm";
 
 export const metadata: Metadata = {
-  title: "تماس با ما | مسکن پلاس",
+  title: "تماس با ما | سرپناه",
   description:
-    "راه‌های ارتباطی، آدرس دفتر مرکزی، شماره تماس مشاورین ملکی و فرم ثبت درخواست مشاوره حقوقی و ملکی در سامانه مسکن پلاس.",
+    "راه‌های ارتباطی، آدرس دفتر مرکزی، شماره تماس مشاورین ملکی و فرم ثبت درخواست مشاوره حقوقی و ملکی در سامانه سرپناه.",
 };
 
 export default function ContactPage() {
@@ -35,7 +35,7 @@ export default function ContactPage() {
       title: "نشانی دفتر مرکزی",
       subtitle: "ملاقات حضوری با هماهنگی قبلی",
       primaryValue: "تهران، سعادت‌آباد، بلوار فرهنگ",
-      secondaryValue: "نبش خیابان پیوند، برج مسکن پلاس، طبقه ۵",
+      secondaryValue: "نبش خیابان پیوند، برج سرپناه، طبقه ۵",
       link: "https://nshn.ir",
       accent: "sky",
     },
@@ -52,16 +52,16 @@ export default function ContactPage() {
       icon: Mail,
       title: "پست الکترونیک رسمی",
       subtitle: "امور اداری، پشتیبانی و قراردادها",
-      primaryValue: "support@maskanplus.ir",
-      secondaryValue: "legal@maskanplus.ir",
-      link: "mailto:support@maskanplus.ir",
+      primaryValue: "support@sarpanah.ir",
+      secondaryValue: "legal@sarpanah.ir",
+      link: "mailto:support@sarpanah.ir",
       accent: "indigo",
     },
   ];
 
   const faqs = [
     {
-      q: "آیا دریافت مشاوره ملکی در مسکن پلاس مشمول هزینه است؟",
+      q: "آیا دریافت مشاوره ملکی در سرپناه مشمول هزینه است؟",
       a: "خیر، تمامی مشاوره‌های تلفنی، ارزیابی اولیه قیمت و پاسخ به پرسش‌های شما توسط تیم کارشناسان ما به صورت کاملاً رایگان ارائه می‌شود.",
     },
     {
@@ -70,7 +70,7 @@ export default function ContactPage() {
     },
     {
       q: "آیا در جلسات قرارداد وکیل حقوقی حضور دارد؟",
-      a: "بله، در تمامی مراحل نگارش مبایعه‌نامه و اجاره‌نامه، کارشناس ارشد حقوقی مسکن پلاس جهت اعتبارسنجی اسناد ثبتی و حفظ حقوق طرفین در کنار شما خواهد بود.",
+      a: "بله، در تمامی مراحل نگارش مبایعه‌نامه و اجاره‌نامه، کارشناس ارشد حقوقی سرپناه جهت اعتبارسنجی اسناد ثبتی و حفظ حقوق طرفین در کنار شما خواهد بود.",
     },
     {
       q: "مدت زمان پاسخگویی به درخواست‌های ثبت‌شده چقدر است؟",
@@ -94,7 +94,7 @@ export default function ContactPage() {
           <span>پاسخگویی و پشتیبانی همه‌روزه</span>
         </div>
         <h1 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
-          ارتباط با کارشناسان مسکن پلاس
+          ارتباط با کارشناسان سرپناه
         </h1>
         <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
           پرسش، پیشنهاد یا نیاز به مشاوره تخصصی در زمینه خرید، فروش، رهن یا اجاره دارید؟ تیم پشتیبانی و مشاوران حقوقی ما مشتاقانه آماده پاسخگویی به شما هستند.
@@ -167,7 +167,7 @@ export default function ContactPage() {
             </div>
 
             <p className="text-xs text-slate-300 leading-relaxed">
-              کارشناسان مسکن پلاس قبل از هرگونه پرداخت، اصالت سند ثبتی، کاربری شهرداری و مدارک هویتی مالک را استعلام می‌نمایند تا تجربه‌ای امن و مطمئن در معاملات ملکی رقم بخورد.
+              کارشناسان سرپناه قبل از هرگونه پرداخت، اصالت سند ثبتی، کاربری شهرداری و مدارک هویتی مالک را استعلام می‌نمایند تا تجربه‌ای امن و مطمئن در معاملات ملکی رقم بخورد.
             </p>
 
             <div className="pt-4 border-t border-slate-800 space-y-3 text-xs">
@@ -187,10 +187,10 @@ export default function ContactPage() {
           <div className="rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 space-y-4 shadow-xs transition-colors">
             <div className="flex items-center gap-2 text-slate-900 dark:text-white font-black text-sm">
               <MapPin className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-              <span>موقعیت مکانی دفتر مرکزی مسکن پلاس</span>
+              <span>موقعیت مکانی دفتر مرکزی سرپناه</span>
             </div>
             <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-              تهران، سعادت‌آباد، میدان کاج، بلوار فرهنگ، نبش خیابان پیوند، برج تجاری-اداری مسکن پلاس، ورودی شمالی، طبقه ۵، واحد ۵۰۲
+              تهران، سعادت‌آباد، میدان کاج، بلوار فرهنگ، نبش خیابان پیوند، برج تجاری-اداری سرپناه، ورودی شمالی، طبقه ۵، واحد ۵۰۲
             </p>
             <div className="pt-2 flex items-center gap-3">
               <a

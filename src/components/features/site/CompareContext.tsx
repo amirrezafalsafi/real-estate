@@ -35,7 +35,7 @@ interface CompareContextType {
 
 const CompareContext = createContext<CompareContextType | undefined>(undefined);
 
-const STORAGE_KEY = "maskan_compare_items_v2";
+const STORAGE_KEY = "sarpanah_compare_items_v2";
 const MAX_COMPARE_ITEMS = 2;
 
 const listeners = new Set<() => void>();

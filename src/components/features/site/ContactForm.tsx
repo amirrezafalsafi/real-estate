@@ -42,7 +42,7 @@ export function ContactForm() {
         setFeedbackMessage(data.error || "خطا در ثبت پیام. لطفاً اطلاعات را بررسی کرده و مجدداً تلاش فرمایید.");
       } else {
         setStatus("success");
-        setFeedbackMessage("پیام شما با موفقیت ثبت گردید. کارشناسان مسکن پلاس در اسرع وقت با شما تماس خواهند گرفت.");
+        setFeedbackMessage("پیام شما با موفقیت ثبت گردید. کارشناسان سرپناه در اسرع وقت با شما تماس خواهند گرفت.");
         setName("");
         setPhone("");
         setMessage("");

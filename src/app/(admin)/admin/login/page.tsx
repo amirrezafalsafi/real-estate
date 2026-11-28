@@ -68,7 +68,7 @@ export default function AdminLoginPage() {
             ورود به پنل مدیریت
           </h1>
           <p className="mt-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-            سامانه تخصصی املاک و مستغلات مسکن پلاس
+            سامانه تخصصی املاک و مستغلات سرپناه
           </p>
         </div>
 
@@ -95,7 +95,7 @@ export default function AdminLoginPage() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="admin@maskanplus.ir"
+                  placeholder="admin@sarpanah.ir"
                   dir="ltr"
                   className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 px-4 py-3 pl-10 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-850 focus:outline-none focus:ring-2 focus:ring-blue-500/20 text-left font-sans transition-colors"
                 />

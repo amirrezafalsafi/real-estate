@@ -55,7 +55,7 @@ export function AdminSidebar() {
           </div>
           <div className="flex flex-col text-right">
             <span className="font-black text-sm text-slate-900 dark:text-white">پنل مدیریت املاک</span>
-            <span className="text-[11px] font-medium text-slate-500 dark:text-slate-400">سامانه مسکن پلاس</span>
+            <span className="text-[11px] font-medium text-slate-500 dark:text-slate-400">سامانه سرپناه</span>
           </div>
         </div>
 

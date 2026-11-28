@@ -27,9 +27,9 @@ import { CompareStudio, type ComparePreset } from "@/components/site/CompareStud
 import type { PropertyItem } from "@/types";
 
 export const metadata: Metadata = {
-  title: "مقایسه تخصصی املاک | مسکن پلاس",
+  title: "مقایسه تخصصی املاک | سرپناه",
   description:
-    "مقایسه دقیق قیمت، متراژ، طبقه، سال ساخت و امکانات املاک منتخب در مسکن پلاس برای تصمیم‌گیری آگاهانه‌تر.",
+    "مقایسه دقیق قیمت، متراژ، طبقه، سال ساخت و امکانات املاک منتخب در سرپناه برای تصمیم‌گیری آگاهانه‌تر.",
 };
 
 interface SearchParamsProps {
